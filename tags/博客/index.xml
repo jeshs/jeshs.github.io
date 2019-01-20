@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>博客 on Tom blog</title>
-    <link>https://example.org/tags/%E5%8D%9A%E5%AE%A2/</link>
+    <link>https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
     <description>Recent content in 博客 on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://example.org/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用hugo搭建博客</title>
-      <link>https://example.org/2019/01/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://jeshs.github.io/2019/01/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 20 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.org/2019/01/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://jeshs.github.io/2019/01/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>&lt;p&gt;Hugo是开源的静态网站生成器，用go语言编写，生成网站速度灵活。本文以Windows为例，介绍使用Hugo搭建博客的基本步骤&lt;/p&gt;</description>
     </item>
     

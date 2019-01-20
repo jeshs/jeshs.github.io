@@ -3,52 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.org/2019/01/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://jeshs.github.io/2019/01/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2019-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.org/archives/</loc>
+    <loc>https://jeshs.github.io/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://jeshs.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/tags/hugo/</loc>
-    <lastmod>2019-01-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://example.org/post/</loc>
+    <loc>https://jeshs.github.io/tags/hugo/</loc>
     <lastmod>2019-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://jeshs.github.io/post/</loc>
     <lastmod>2019-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/</loc>
+    <loc>https://jeshs.github.io/tags/</loc>
     <lastmod>2019-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/categories/%E5%85%B6%E5%AE%83/</loc>
+    <loc>https://jeshs.github.io/</loc>
     <lastmod>2019-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.org/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>https://jeshs.github.io/categories/%E5%85%B6%E5%AE%83/</loc>
+    <lastmod>2019-01-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2019-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
