@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
-<meta name="keywords" content="">
+<meta name="keywords" content=", 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍使用Hugo搭建博客的基本步骤">
 
 
@@ -236,9 +236,7 @@
             <div class="main-content-wrap">
               <p>Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍使用Hugo搭建博客的基本步骤</p>
 
-<h1 id="安装hugo">安装Hugo</h1>
-
-<h2 id="下载hugo">下载Hugo</h2>
+<h1 id="下载hugo">下载Hugo</h1>
 
 <ol>
 <li><p>在本地创建1个文件夹，如 <code>D:\Program Files\Hugo</code>，然后在<code>Hugo</code>文件夹下再创建2个子文件夹</p>
@@ -255,28 +253,24 @@ D:\Program Files\Hugo\Sites
 
 <li><p>验证Hugo安装，输入<code>hugo version</code>，出现如下提示说明安装成功，如果没有出现下列提示，请检查环境变量<code>path</code>是否配置正确</p>
 
-<pre><code>hugo version
+<pre><code class="language-powershell">hugo version
 </code></pre></li>
 </ol>
 
-<h2 id="创建网站">创建网站</h2>
+<h1 id="创建网站">创建网站</h1>
 
 <p>安装完成后，接下来生成网站</p>
 
 <ol>
-<li>进入<code>Sites</code>目录，输入<code>hugo new site example.com</code>，其中<code>example.com</code>是自定义网站名，生成网站成功后会在路径<code>Sites</code>下创建<code>example.com</code>文件夹</li>
+<li><p>进入<code>Sites</code>目录，输入<code>hugo new site example.com</code>，其中<code>example.com</code>是自定义网站名，生成网站成功后会在路径<code>Sites</code>下创建<code>example.com</code>文件夹</p>
+
+<pre><code class="language-shell">hugo new site example.com
+</code></pre></li>
+
+<li><p>进入网站文件夹<code>D:\Program Files\Hugo\Sites\example.com</code>，可以看到网站的目录</p></li>
 </ol>
 
-<pre><code>   hugo new site example.com
-</code></pre>
-
-<ol>
-<li>进入网站文件夹<code>D:\Program Files\Hugo\Sites\example.com</code>，可以看到网站的目录
-
-<br /></li>
-</ol>
-
-<h2 id="添加主题">添加主题</h2>
+<h1 id="添加主题">添加主题</h1>
 
 <p>Hugo主题可以在<a href="https://themes.gohugo.io/">Hugo官方主题</a>中选择，进入某个主题的详情页会看到<code>DOWNLOAD</code>按钮，点击后跳转到github页面，复制github地址，可通过<code>git submodule add</code>命令或<code>git clone</code>命令下载，这里以<a href="https://github.com/olOwOlo/hugo-theme-even">even</a>主题为例</p>
 
@@ -286,9 +280,9 @@ D:\Program Files\Hugo\Sites
 
 <p>进入网站文件夹，使用<code>git init</code>初始化后再下载主题</p>
 
-<pre><code class="language-powershell">  cd example.com
-  git init
-  git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
+<pre><code class="language-shell">cd example.com
+git init
+git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
 </code></pre>
 
 <ul>
@@ -297,12 +291,12 @@ D:\Program Files\Hugo\Sites
 
 <p>进入网站文件夹，使用<code>git clone</code>直接下载</p>
 
-<pre><code class="language-powershell">  git clone https://github.com/olOwOlo/hugo-theme-even themes/even
+<pre><code class="language-shell">git clone https://github.com/olOwOlo/hugo-theme-even themes/even
 </code></pre>
 
 <p>下载完后，在<code>/themes/even/exampleSite</code>目录下有个<code>config.toml</code>文件，将该文件复制到网站文件夹下替换原来的<code>config.toml</code>，根据需求更改配置文件即可。也可以直接将<code>/themes/even/exampleSite</code>下的全部文件复制到网站目录下，<code>/themes/even/exampleSite/content</code>包含了一些文章Demo，可以快速查看主题效果</p>
 
-<h2 id="添加一篇文章">添加一篇文章</h2>
+<h1 id="添加一篇文章">添加一篇文章</h1>
 
 <p>在网站目录下，使用<code>hugo new post/my-first-post.md</code>创建一篇文章，其中<code>my-first-post</code>是文章名字，此命令会在<code>coneten</code>目录下创建文件</p>
 
@@ -313,7 +307,7 @@ D:\Program Files\Hugo\Sites
 
 <p>使用Markdown编辑文章<code>my-first-post.md</code>的内容，推荐<a href="https://typora.io/">Typora编辑器</a></p>
 
-<h2 id="启动hugo服务">启动Hugo服务</h2>
+<h1 id="启动hugo服务">启动Hugo服务</h1>
 
 <p>编辑完成后，需要本地预览，在网站目录下，使用<code>hugo server -D</code>启动</p>
 
@@ -328,11 +322,11 @@ D:\Program Files\Hugo\Sites
 
 <p>不同主题下的文章一般不能共用，在启动<code>Hugo Server</code> 时可能会报错，需要删除<code>conetent</code>下其它主题的文章</p>
 
-<h2 id="配置">配置</h2>
+<h1 id="配置">配置</h1>
 
 <p>根据需要对网站配置文件<code>config.toml</code>进行配置，发布网站时，需要将<code>baseURL</code>设置为自己的域名，如果在本地服务器查看网站，则不需要设置</p>
 
-<h2 id="参考">参考</h2>
+<h1 id="参考">参考</h1>
 
 <blockquote>
 <p><a href="https://gohugo.io/getting-started/quick-start/">Hugo quick-start</a></p>
@@ -366,14 +360,14 @@ D:\Program Files\Hugo\Sites
                 <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E9%83%A8%E7%BD%B2%E5%88%B0github/" data-tooltip="Hugo部署到Github">
               
                   <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
                 </a>
             </li>
             <li class="post-action">
               
                 <a class="post-action-btn btn btn--disabled">
               
-                  <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -434,14 +428,14 @@ D:\Program Files\Hugo\Sites
                 <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E9%83%A8%E7%BD%B2%E5%88%B0github/" data-tooltip="Hugo部署到Github">
               
                   <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
                 </a>
             </li>
             <li class="post-action">
               
                 <a class="post-action-btn btn btn--disabled">
               
-                  <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -508,7 +502,7 @@ D:\Program Files\Hugo\Sites
       <div id="about-card-location">
         <i class="fa fa-map-marker"></i>
         <br/>
-        China
+        中国
       </div>
     
   </div>
