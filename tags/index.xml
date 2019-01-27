@@ -39,6 +39,24 @@
     </item>
     
     <item>
+      <title>Tag1</title>
+      <link>https://jeshs.github.io/tags/tag1/</link>
+      <pubDate>Sun, 27 Jan 2019 08:20:00 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/tags/tag1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tag2</title>
+      <link>https://jeshs.github.io/tags/tag2/</link>
+      <pubDate>Sun, 27 Jan 2019 08:20:00 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>博客</title>
       <link>https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 20 Jan 2019 20:50:33 +0800</pubDate>

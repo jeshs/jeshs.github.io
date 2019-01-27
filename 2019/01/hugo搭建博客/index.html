@@ -331,9 +331,27 @@ git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
 
 <h1 id="创建一篇文章">创建一篇文章</h1>
 
+<p>创建文章前，可以将主题文件夹下<code>D:\Program Files\Hugo\Sites\blog\themes\hugo-tranquilpeak-theme\archetypes</code>的内容复制到网站根目录的<code>archetypes</code>文件夹下，这个是文章的模板文件</p>
+
 <p>在网站目录下，创建一篇文章，其中<code>my-first-post</code>是文章名字，文章会保存在<code>coneten/post</code>目录下</p>
 
 <pre><code>hugo new post/my-first-post.md
+</code></pre>
+
+<p>由于<code>archetypes</code>文章模板的作用，生成的文章开头，会带有一些配置字段，可以按需要更改模板中的配置</p>
+
+<pre><code class="language-shell">title: &quot;Hugo搭建博客&quot;
+date: 2019-01-20T20:50:33+08:00
+categories:
+- 其它
+- 博客
+tags:
+- Hugo
+- 博客
+keywords:
+- Hugo
+- 博客
+thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a3f6f009a058b0b/16f81/images/gopher-hero.svg
 </code></pre>
 
 <p><strong>注意</strong>: 有的主题打开网站后看不到网站中创建的文章，是由于主题默认的路径为<code>posts</code>而不是<code>post</code>，此时可将文件夹名称<code>post</code>改为<code>posts</code>，创建文章时命令改为<code>hugo new posts/my-first-post.md</code>，也可以修改配置文件<code>config.toml</code>中指向的文件夹路径</p>
@@ -565,6 +583,23 @@ git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E4%B8%80/">
+                <h3 class="media-heading">Git基本使用一</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E9%83%A8%E7%BD%B2%E5%88%B0github/">
                 <h3 class="media-heading">Hugo部署到Github</h3>
               </a>
@@ -603,7 +638,7 @@ git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         2 posts found
+         3 posts found
       </p>
     </div>
   </div>
