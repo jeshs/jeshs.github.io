@@ -6,27 +6,27 @@
     <description>Recent content in Posts on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jan 2019 10:53:45 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Feb 2019 16:00:38 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>自动化测试报告（一）——Allure2简介</title>
-      <link>https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Wed, 30 Jan 2019 10:53:45 +0800</pubDate>
+      <title>Git基础——子模块</title>
+      <link>https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Fri, 01 Feb 2019 16:00:38 +0800</pubDate>
       
-      <guid>https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/</guid>
-      <description>&lt;p&gt;Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出&lt;/p&gt;</description>
+      <guid>https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/</guid>
+      <description>&lt;p&gt;之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Git基础——子模块</title>
-      <link>https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Mon, 21 Jan 2019 19:18:38 +0800</pubDate>
+      <title>自动化测试报告（一）——Allure2简介</title>
+      <link>https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Thu, 31 Jan 2019 18:13:45 +0800</pubDate>
       
-      <guid>https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/</guid>
-      <description>&lt;p&gt;之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解&lt;/p&gt;</description>
+      <guid>https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/</guid>
+      <description>&lt;p&gt;Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出&lt;/p&gt;</description>
     </item>
     
     <item>

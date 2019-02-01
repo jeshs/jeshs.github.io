@@ -7,40 +7,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
-<meta name="keywords" content="Hugo, 博客, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客">
+<meta name="keywords" content="Git, submodule, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解">
 
 
-<meta property="og:description" content="Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客">
+<meta property="og:description" content="之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugo搭建博客（一）——搭建Hugo博客">
-<meta name="twitter:title" content="Hugo搭建博客（一）——搭建Hugo博客">
-<meta property="og:url" content="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
-<meta property="twitter:url" content="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
+<meta property="og:title" content="Git基础——子模块">
+<meta name="twitter:title" content="Git基础——子模块">
+<meta property="og:url" content="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客">
-<meta name="twitter:description" content="Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客">
+<meta property="og:description" content="之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解">
+<meta name="twitter:description" content="之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-01-20T20:50:33">
+    <meta property="article:published_time" content="2019-02-01T16:00:38">
   
   
-    <meta property="article:modified_time" content="2019-01-20T20:50:33">
+    <meta property="article:modified_time" content="2019-02-01T16:00:38">
   
-  
-  
-    
-      <meta property="article:section" content="其它">
-    
-      <meta property="article:section" content="博客">
-    
   
   
     
-      <meta property="article:tag" content="Hugo">
+      <meta property="article:section" content="工具">
     
-      <meta property="article:tag" content="博客">
+      <meta property="article:section" content="Git">
+    
+  
+  
+    
+      <meta property="article:tag" content="Git">
+    
+      <meta property="article:tag" content="submodule">
     
   
 
@@ -53,8 +53,8 @@
 
 
 
-  <meta property="og:image" content="https://avatars0.githubusercontent.com/u/29385237?s=400&v=4">
-  <meta property="twitter:image" content="https://avatars0.githubusercontent.com/u/29385237?s=400&v=4">
+  <meta property="og:image" content="https://raw.githubusercontent.com/schacon/git-scm/master/source/images/logos/downloads/Git-Icon-1788C.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/schacon/git-scm/master/source/images/logos/downloads/Git-Icon-1788C.png">
 
 
 
@@ -64,14 +64,14 @@
   <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
 
 
-    <title>Hugo搭建博客（一）——搭建Hugo博客</title>
+    <title>Git基础——子模块</title>
 
     <link rel="icon" href="https://jeshs.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
+    <link rel="canonical" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -209,15 +209,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Hugo搭建博客（一）——搭建Hugo博客
+      Git基础——子模块
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-01-20T20:50:33&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-02-01T16:00:38&#43;08:00">
         
-  一月 20, 2019
+  二月 1, 2019
 
       </time>
     
@@ -226,9 +226,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://jeshs.github.io/categories/%e5%85%b6%e5%ae%83">其它</a>, 
+      <a class="category-link" href="https://jeshs.github.io/categories/%e5%b7%a5%e5%85%b7">工具</a>, 
     
-      <a class="category-link" href="https://jeshs.github.io/categories/%e5%8d%9a%e5%ae%a2">博客</a>
+      <a class="category-link" href="https://jeshs.github.io/categories/git">Git</a>
     
   
 
@@ -238,150 +238,129 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客</p>
+              <p>之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解</p>
 
-<h1 id="下载hugo">下载Hugo</h1>
+<h1 id="什么是git子模块">什么是Git子模块?</h1>
 
-<ol>
-<li><p>在本地创建1个文件夹，如 <code>D:\Program Files\Hugo</code>，然后在<code>Hugo</code>文件夹下再创建2个子文件夹</p>
+<p>在一个项目中，有可能需要包含并使用另一个项目，它们虽然是两个独立的项目，但是处于一个项目中，为了避免混乱，Git引入了子模块submodule的概念</p>
 
-<pre><code>#存放Hugo可执行文件
-D:\Program Files\Hugo\bin
-#存放网站文件
-D:\Program Files\Hugo\Sites
-</code></pre></li>
+<blockquote>
+<p>子模块允许你将一个 Git 仓库作为另一个 Git 仓库的子目录。 它能让你将另一个仓库克隆到自己的项目中，同时还保持提交的独立</p>
+</blockquote>
 
-<li><p>前往官方下载地址<a href="https://github.com/gohugoio/hugo/releases">Hugo下载</a>，下载完成后解压到上一步创建的<code>D:\Program Files\hugo\bin</code>文件夹</p></li>
+<h1 id="git子模块基本使用">Git子模块基本使用</h1>
 
-<li><p>将<code>D:\Program Files\hugo\bin</code>添加到系统变量<code>path</code>中</p></li>
+<h2 id="给项目添加子模块">给项目添加子模块</h2>
 
-<li><p>验证Hugo安装，输入<code>hugo version</code>，出现如下提示说明安装成功，如果没有出现下列提示，请检查环境变量<code>path</code>是否配置正确</p>
+<p>将一个已存在的 Git 仓库添加为正在工作的仓库的子模块</p>
 
-<pre><code class="language-powershell">&gt; hugo version
-Hugo Static Site Generator v0.53-8FC339DC2529FF77E494A1C12CD1FF9FBCB880A4 windows/amd64 BuildDate: 2018-12-24T08:26:16Z
-</code></pre></li>
-</ol>
-
-<h1 id="创建网站">创建网站</h1>
-
-<p>安装完成后，接下来创建网站</p>
-
-<ol>
-<li><p>进入<code>Sites</code>目录，输入<code>hugo new site example.com</code>，其中<code>example.com</code>是网站名，生成网站成功后会在路径<code>Sites</code>下创建<code>example.com</code>文件夹</p>
-
-<pre><code>hugo new site example.com
-</code></pre></li>
-
-<li><p>进入网站文件夹<code>D:\Program Files\Hugo\Sites\example.com</code>，可以看到网站的目录</p>
-
-<pre><code>&gt; tree example.com
-D:\PROGRAM FILES\HUGO\SITES\EXAMPLE.COM
-├─archetypes
-├─content
-├─data
-├─layouts
-├─static
-└─themes
+<pre><code class="language-shell">git submodule add &lt;GIT-PROJECT-URL&gt;
 </code></pre>
 
-<ul>
-<li><code>archetypes</code> 使用<code>hugu new post</code>生成新文章的模板，可以自定义里面的值</li>
-<li><code>content</code> 存放网站内容</li>
-<li><code>data</code> 存储Hugo在生成您的网站时可以使用的配置文件</li>
-<li><code>layouts</code> 以.html文件的形式存储模板，指定如何将内容的视图呈现到静态网站中</li>
-<li><code>static</code> 存储所有静态内容：图像，CSS，JavaScript等，当Hugo构建您的站点时，静态目录中的所有资产都将按原样复制</li>
-<li><code>themes</code> 存放主题</li>
-<li><code>config.toml</code> 配置文件</li>
-</ul></li>
-</ol>
+<p>添加成功后会在项目下创建一个<code>.gitmodules</code>文件，该文件保存了子模块的信息，该文件也像 <code>.gitignore</code> 文件一样受到（通过）版本控制。 它会和该项目的其他部分一同被拉取推送</p>
 
-<h1 id="添加主题">添加主题</h1>
+<h2 id="克隆含有子模块的项目">克隆含有子模块的项目</h2>
 
-<h2 id="下载主题">下载主题</h2>
-
-<p>Hugo主题可以在<a href="https://themes.gohugo.io/">Hugo官方主题</a>中选择，进入某个主题的详情页会看到<code>DOWNLOAD</code>按钮，点击后跳转到Github页面，复制Github地址，可通过<code>git submodule add</code>命令或<code>git clone</code>命令下载，这里以<a href="https://github.com/olOwOlo/hugo-theme-even">even</a>主题为例</p>
+<p>克隆含有子模块的项目，有两种方式</p>
 
 <ul>
-<li><p>通过git submodule add以Git子模块的方式下载（推荐）</p>
+<li><p>使用<code>git clone</code>克隆，克隆后默认会包含该子模块目录，但子模块中没有任何文件，只是一个空目录</p>
 
-<p>进入网站文件夹，使用<code>git init</code>初始化后再下载主题</p>
+<pre><code class="language-shell">git clone &lt;GIT-PROJECT-URL&gt;
+</code></pre>
 
-<pre><code>cd example.com
-git init
-git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
+<p>必须运行两个命令：<code>git submodule init</code> 用来初始化本地配置文件，而 <code>git submodule update</code> 则从该项目中抓取所有数据并检出父项目中列出的合适的提交</p>
+
+<pre><code class="language-shell">git submodule init
+git submodule update
 </code></pre></li>
 
-<li><p>通过<code>git clone</code>下载（此方式下载的主题带有<code>.git</code>和网站本身的Git版本控制产生冲突）</p>
+<li><p>另一个方法是给 <code>git clone</code> 命令传递 <code>--recursive</code> 选项，它就会自动初始化并更新仓库中的每一个子模块</p>
 
-<p>进入网站文件夹，使用<code>git clone</code>直接下载</p>
-
-<pre><code>git clone https://github.com/olOwOlo/hugo-theme-even themes/even
+<pre><code class="language-shell">git clone --recursive &lt;GIT-PROJECT-URL&gt;
 </code></pre></li>
 </ul>
 
-<h2 id="复制主题的配置文件">复制主题的配置文件</h2>
+<h2 id="在包含子模块的项目上工作">在包含子模块的项目上工作</h2>
 
-<p>下载完后，找到主题目录<code>/themes/even/exampleSite</code>下的配置文件<code>config.toml</code>，将该文件复制到网站文件夹下替换原来的<code>config.toml</code>，根据需求更改配置文件即可。也可以同时将<code>/themes/even/exampleSite</code>下的全部文件复制到网站目录下，<code>/themes/even/exampleSite/content</code>包含了一些示例文章可作参考</p>
+<h3 id="拉取上游修改">拉取上游修改</h3>
 
-<h2 id="主题的选择">主题的选择</h2>
+<p>如果想要在子模块中查看新工作，可以进入到目录中运行 <code>git fetch</code> 与 <code>git merge</code>，合并上游分支来更新本地代码</p>
 
-<p>主题最好选择国人制作的，考虑到评论系统，社交分享，SEO优化等都更适合国内的情况，个人推荐的主题<a href="https://github.com/olOwOlo/hugo-theme-even">hugo-theme-even</a>、<a href="https://github.com/xianmin/hugo-theme-jane">hugo-theme-jane</a>、<a href="https://github.com/laozhu/hugo-nuo">hugo-nuo</a>、<a href="https://github.com/nodejh/hugo-theme-cactus-plus">hugo-theme-cactus-plus</a></p>
-
-<h1 id="创建一篇文章">创建一篇文章</h1>
-
-<p>创建文章前，可以将主题文件夹下<code>D:\Program Files\Hugo\Sites\blog\themes\hugo-tranquilpeak-theme\archetypes</code>的内容复制到网站根目录的<code>archetypes</code>文件夹下，这个是文章的模板文件</p>
-
-<p>在网站目录下，创建一篇文章，其中<code>my-first-post</code>是文章名字，文章会保存在<code>coneten/post</code>目录下</p>
-
-<pre><code>hugo new post/my-first-post.md
+<pre><code class="language-shell">$ git fetch
+$ git merge origin/master
 </code></pre>
 
-<p>由于<code>archetypes</code>文章模板的作用，生成的文章开头，会带有一些配置字段，可以按需要更改模板中的配置</p>
+<p>如果你不想在子目录中手动抓取与合并，那么还有种更容易的方式。 运行 <code>git submodule update --remote</code>，Git 将会进入子模块然后抓取并更新。Git 默认会尝试更新<strong>所有</strong>子模块，所以如果有很多子模块的话，你可以传递想要更新的子模块的名字。</p>
 
-<pre><code class="language-shell">title: &quot;Hugo搭建博客&quot;
-date: 2019-01-20T20:50:33+08:00
-categories:
-- 其它
-- 博客
-tags:
-- Hugo
-- 博客
-keywords:
-- Hugo
-- 博客
-thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a3f6f009a058b0b/16f81/images/gopher-hero.svg
+<pre><code class="language-shell">$ git submodule update --remote
 </code></pre>
 
-<p><strong>注意</strong>: 有的主题打开网站后看不到网站中创建的文章，是由于主题默认的路径为<code>posts</code>而不是<code>post</code>，此时可将文件夹名称<code>post</code>改为<code>posts</code>，创建文章时命令改为<code>hugo new posts/my-first-post.md</code>，也可以修改配置文件<code>config.toml</code>中指向的文件夹路径</p>
+<h3 id="在子模块上工作">在子模块上工作</h3>
 
-<p>使用Markdown编辑文章<code>my-first-post.md</code>的内容，推荐<a href="https://typora.io/">Typora编辑器</a></p>
+<p>当我们运行 <code>git submodule update</code> 从子模块仓库中抓取修改时，Git 将会获得这些改动并更新子目录中的文件，但是会将子仓库留在一个称作 “游离的 HEAD” 的状态。 这意味着没有本地工作分支（例如 “master”）跟踪改动。 所以你做的任何改动都不会被跟踪</p>
 
-<h1 id="启动hugo服务">启动Hugo服务</h1>
+<p>为了将子模块设置得更容易进入并修改，你需要做两件事。 首先，进入每个子模块并检出其相应的工作分支。 接着，若你做了更改就需要告诉 Git 它该做什么，然后运行 <code>git submodule update --remote</code> 来从上游拉取新工作。 你可以选择将它们合并到你的本地工作中，也可以尝试将你的工作变基到新的更改上</p>
 
-<p>编辑完成后，需要本地预览，在网站目录下，使用<code>hugo server -D</code>启动，其中<code>server</code>参数表示在本地启动Hugo服务器，<code>-D</code>参数会把草稿文章，也就是<code>draft</code>值为<code>false</code>的文章也一起构建</p>
+<ol>
+<li>首先，进入子模块checkout分支</li>
+</ol>
 
-<pre><code class="language-powershell">hugo server -D
+<pre><code class="language-shell">   $ git checkout master
 </code></pre>
 
-<p>在浏览器输入<code>http://localhost:1313/</code>即可预览网站</p>
+<ol>
+<li>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</li>
+</ol>
 
-<p>Hugo 服务器会监控文件夹<code>content,data,layouts,static,themes</code>和<code>config.toml</code>的变动，实时展示配置和文件的变化，不需要重新构建，可以一边编辑文章，一边预览效果。但是某些时候需要清除浏览器缓存</p>
+<pre><code class="language-shell">   $ git submodule update --remote --merge
+</code></pre>
 
-<p>遇到一个问题，在更换主题的时候，有时候打开本地网页会报错，先执行<code>Ctrl + C</code>关闭本地<code>Hugo</code>服务器再执行<code>hugo server -D</code>重启服务就行了</p>
+<ol>
+<li>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</li>
+</ol>
 
-<p>不同主题下的文章一般不能共用，在启动<code>Hugo Server</code> 时可能会报错，需要删除<code>content</code>目录下其它主题的文章</p>
+<pre><code class="language-shell">   $ git submodule update --remote --rebase
+</code></pre>
 
-<h1 id="配置">配置</h1>
+<ol>
+<li><p>如果你忘记 <code>--rebase</code> 或 <code>--merge</code>，Git 会将子模块更新为服务器上的状态。并且会将项目重置为一个游离的 HEAD 状态</p>
 
-<p>配置文件的具体说明可以参考主题官网，主题通常会自定义一些参数</p>
+<pre><code class="language-shell">$ git submodule update --remote
+</code></pre>
 
-<p>根据需要对网站配置文件<code>config.toml</code>进行配置，发布网站时，需要将<code>baseURL</code>设置为自己的域名。当然，如果只是在本地服务器查看网站，则不需要设置</p>
+<p>即便这真的发生了也不要紧，你只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
+
+<p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p></li>
+</ol>
+
+<h3 id="发布子模块改动">发布子模块改动</h3>
+
+<p>如果我们在主项目中提交并推送但并不推送子模块上的改动，其他人尝试检出我们修改会遇到麻烦，因为他们无法得到依赖的子模块改动。 那些改动只存在于我们本地的拷贝中。</p>
+
+<p>为了确保这不会发生，你可以让 Git 在推送到主项目前检查所有子模块是否已推送。 <code>git push</code> 命令接受可以设置为 “check” 或 “on-demand” 的 <code>--recurse-submodules</code> 参数。 如果任何提交的子模块改动没有推送那么 “check” 选项会直接使 <code>push</code> 操作失败</p>
+
+<pre><code class="language-shell">$ git push --recurse-submodules=check
+</code></pre>
+
+<p>另一个选项是使用 “on-demand” 值，Git 进入到 子模块中然后在推送主项目前推送子模块。 如果那个子模块因为某些原因推送失败，主项目也会推送失败</p>
+
+<pre><code class="language-shell">$ git push --recurse-submodules=on-demand
+</code></pre>
+
+<h3 id="合并子模块改动">合并子模块改动</h3>
+
+<ol>
+<li>首先解决冲突</li>
+<li>然后返回到主项目目录中</li>
+<li>再次检查 SHA-1 值</li>
+<li>解决冲突的子模块记录</li>
+<li>提交我们的合并</li>
+</ol>
 
 <h1 id="参考">参考</h1>
 
-<blockquote>
-<p><a href="https://gohugo.io/getting-started/quick-start/">Hugo quick-start</a></p>
-</blockquote>
+<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">Git官方文档</a></p>
               
             </div>
           </div>
@@ -393,9 +372,9 @@ thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/hugo/">Hugo</a>
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/git/">Git</a>
 
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/">博客</a>
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/submodule/">submodule</a>
 
                   </div>
                 
@@ -408,7 +387,7 @@ thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/" data-tooltip="Hugo搭建博客（二）——部署到Github">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -416,7 +395,7 @@ thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/" data-tooltip="自动化测试报告（一）——Allure2简介">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -476,7 +455,7 @@ thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/" data-tooltip="Hugo搭建博客（二）——部署到Github">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -484,7 +463,7 @@ thumbnailImage: https://d33wubrfki0l68.cloudfront.net/d7c79b5c53384a57cfcf5bfb1a
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/" data-tooltip="自动化测试报告（一）——Allure2简介">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -708,9 +687,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/jeshs.github.io\/2019\/01\/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2\/';
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/02\/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97\/';
           
-            this.page.identifier = '\/2019\/01\/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2\/'
+            this.page.identifier = '\/2019\/02\/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97\/'
           
         };
         (function() {
