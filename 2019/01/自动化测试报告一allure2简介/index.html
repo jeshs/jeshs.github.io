@@ -7,42 +7,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
-<meta name="keywords" content="Hugo, Github, Disqus, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github">
+<meta name="keywords" content="Allure2, 测试报告, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
 
 
-<meta property="og:description" content="在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github">
+<meta property="og:description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hugo搭建博客（二）——部署到Github">
-<meta name="twitter:title" content="Hugo搭建博客（二）——部署到Github">
-<meta property="og:url" content="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/">
-<meta property="twitter:url" content="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/">
+<meta property="og:title" content="自动化测试报告（一）——Allure2简介">
+<meta name="twitter:title" content="自动化测试报告（一）——Allure2简介">
+<meta property="og:url" content="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github">
-<meta name="twitter:description" content="在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github">
+<meta property="og:description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
+<meta name="twitter:description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-01-20T22:07:46">
+    <meta property="article:published_time" content="2019-01-30T10:53:45">
   
   
-    <meta property="article:modified_time" content="2019-01-20T22:07:46">
+    <meta property="article:modified_time" content="2019-01-30T10:53:45">
   
-  
-  
-    
-      <meta property="article:section" content="其它">
-    
-      <meta property="article:section" content="博客">
-    
   
   
     
-      <meta property="article:tag" content="Hugo">
+      <meta property="article:section" content="自动化测试">
     
-      <meta property="article:tag" content="Github">
+      <meta property="article:section" content="测试报告">
     
-      <meta property="article:tag" content="Disqus">
+  
+  
+    
+      <meta property="article:tag" content="Allure2">
+    
+      <meta property="article:tag" content="测试报告">
     
   
 
@@ -55,8 +53,8 @@
 
 
 
-  <meta property="og:image" content="https://avatars1.githubusercontent.com/u/9919?s=200&v=4">
-  <meta property="twitter:image" content="https://avatars1.githubusercontent.com/u/9919?s=200&v=4">
+  <meta property="og:image" content="https://avatars3.githubusercontent.com/u/5879127?s=200&v=4">
+  <meta property="twitter:image" content="https://avatars3.githubusercontent.com/u/5879127?s=200&v=4">
 
 
 
@@ -66,14 +64,14 @@
   <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
 
 
-    <title>Hugo搭建博客（二）——部署到Github</title>
+    <title>自动化测试报告（一）——Allure2简介</title>
 
     <link rel="icon" href="https://jeshs.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/">
+    <link rel="canonical" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -211,15 +209,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Hugo搭建博客（二）——部署到Github
+      自动化测试报告（一）——Allure2简介
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-01-20T22:07:46&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-01-30T10:53:45&#43;08:00">
         
-  一月 20, 2019
+  一月 30, 2019
 
       </time>
     
@@ -228,9 +226,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://jeshs.github.io/categories/%e5%85%b6%e5%ae%83">其它</a>, 
+      <a class="category-link" href="https://jeshs.github.io/categories/%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95">自动化测试</a>, 
     
-      <a class="category-link" href="https://jeshs.github.io/categories/%e5%8d%9a%e5%ae%a2">博客</a>
+      <a class="category-link" href="https://jeshs.github.io/categories/%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a">测试报告</a>
     
   
 
@@ -240,99 +238,184 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github</p>
+              <p>Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出</p>
 
-<h1 id="部署hugo博客">部署Hugo博客</h1>
+<h1 id="简介">简介</h1>
 
-<p>Github Pages又分为两种方式，一种是通过<code>User/Organization Pages</code>，另一种是<code>Project Pages</code>，两者的区别可以看这里<a href="https://help.github.com/articles/user-organization-and-project-pages/#user--organization-pages">User, Organization, and Project Pages</a>，使用个人页面 <code>User Pages</code>相对简单一些</p>
+<p>Allure是自动化测试报告框架，相比junit添加了许多功能，生成的报告更美观，支持多种编程语言，如Java, PHP, Ruby, Python, Scala and C#，支持命令行、Jenkins、Maven等方式生成报告</p>
 
-<h2 id="部署到github个人页面">部署到Github个人页面</h2>
+<p><a href="https://demo.qameta.io/allure/">demo查看</a></p>
+
+<h1 id="运行过程">运行过程</h1>
+
+<p>Allure生成报告分成两个阶段</p>
+
+<ul>
+<li><p>第一步，测试执行阶段</p>
+
+<p>附加到测试框架的称为适配器<code>adapter</code>的小型库将有关已执行测试的信息保存到XML文件中，这些库支持主流的编程语言Java，PHP，Ruby，Python，Scala，C#等</p>
+
+<p>以Java来说，支持junit4、junit5、TestNG、Cucumbere JVM、Selenide</p></li>
+
+<li><p>第二步，生成报告阶段</p>
+
+<p>XML文件将转换为HTML报告。这可以通过命令行工具，CI插件或构建工具来完成</p></li>
+</ul>
+
+<h1 id="安装">安装</h1>
+
+<p>安装Windows版本</p>
 
 <ol>
-<li><p>在Github创建一个仓库，例如名字叫<code>blog</code>，可以是私有的，这个仓库用来存放网站内容和源文件</p></li>
+<li><p>在<a href="https://github.com/allure-framework/allure2/releases">Github</a>或者<a href="http://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/">Maven仓库</a>下载最新版</p></li>
 
-<li><p>再创建一个名称为<code>&lt;username&gt;.github.io</code>的仓库，username为GitHub用户名，这个仓库用于存放最终发布的网站内容</p></li>
+<li><p>解压，将解压后的路径配置到系统环境变量，新建系统变量，名称为<code>ALLURE_HOME</code>，值为解压后的路径，如<code>D:\Program Files\allure-2.9.0</code>并把<code>%ALLURE_HOME%\bin</code>添加到<code>path</code>中，注意使用英文分号和其它变量值隔开</p>
 
-<li><p>进入本地网站目录</p>
-
-<pre><code class="language-shell">cd &lt;YOUR PROJECT&gt;
+<pre><code>ALLURE_HOME D:\Program Files\allure-2.9.0
+Path %ALLURE_HOME%\bin
 </code></pre></li>
 
-<li><p>关联远程blog仓库</p>
+<li><p>验证安装</p>
 
-<pre><code class="language-shell">git remote add origin git@github.com:jeshs/blog.git
-</code></pre></li>
-
-<li><p>将本地网站全部内容推送到远程blog仓库</p>
-
-<pre><code class="language-shell">git push -u origin master
-</code></pre></li>
-
-<li><p>确保本地网站正常，<code>hugo server</code>运行后在本地打开<code>localhost:1313</code>检查网站效果和内容，注意<code>hugo server</code>这个命令不会构建草稿，所以如果有草稿需要发布，将文章中的<code>draft</code>设置为<code>false</code></p></li>
-
-<li><p>关闭本地Hugo服务器<code>Ctrl+C</code>，然后删除本地网站目录下的<code>public</code>文件夹</p></li>
-
-<li><p>创建<code>public</code>子模块，注意下面是一行命令，不是两行</p>
-
-<pre><code class="language-shell">git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
-</code></pre></li>
-
-<li><p>然后就可以执行<code>hugo</code>命令，此命令会自动将网站静态内容生成到<code>public</code>文件夹，然后提交到远程blog仓库</p>
-
-<pre><code class="language-shell">hugo
-cd public
-git status
-git add .
-git commit -m &quot;first commit&quot;
-git push -u orgin master
+<pre><code class="language-shell">$ allure --version
+2.9.0
 </code></pre></li>
 </ol>
 
-<p>过一会就可以打开<code>&lt;username&gt;.github.io</code>查看网站了</p>
+<h1 id="生成报告">生成报告</h1>
 
-<p><strong>注意</strong>：本地网站是关联的<code>blog</code>仓库，本地网站下的<code>public</code>文件夹是以子模块的形式关联的<code>github.io</code>仓库，他们是相对独立的</p>
+<h2 id="生成报告-1">生成报告</h2>
 
-<h2 id="自动部署脚本">自动部署脚本</h2>
+<p>在生成报告之前，需要运行测试以获取一些基本的测试结果数据，测试结果数据可以通过添加Allure库后执行测试生成的测试结果数据，后面会提到。另外，测试结果也可以由流行的测试框架生成的junit样式的xml报告，Maven生成的junit和testNG报告数据一般在<code>target\surefire-reports</code>目录下，Allure根据这些报告来生成新的测试报告</p>
 
-<p>将以上步骤添加到自动执行脚本中<code>deploy.sh</code>，脚本<code>commit</code>提交信息会使用执行时的时间，将脚本放到网站项目路径下，写完博客后，双击运行即可自动部署发布</p>
+<ul>
+<li><p>从Allure结果数据生成报告，需要添加集成相应的库执行测试后才会生成测试结果到<code>allure-results</code></p>
 
-<pre><code class="language-shell">#!/bin/bash
+<pre><code class="language-shell">$ allure generate &lt;PROJECT_PATH&gt;\target\allure-results\
+</code></pre></li>
 
-echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+<li><p>从Junit测试结果生成报告，经过测试，以下路径都可以作为报告生成的来源数据，但是报告的详细程度都不如从<code>target\allure-results</code>生成的全面，生成的报告是比较简单的，只包含一些基本信息，缺少Allure的高级功能</p>
 
-# Build the project.
-hugo # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+<pre><code class="language-shell">#这个命令生成报告过程中会报错，但是还是可以成功生成报告
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\Suite01\
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\xml\
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\junitreports\
+</code></pre></li>
+</ul>
 
-# Go To Public folder
-cd public
-# Add changes to git.
-git add .
+<p>如果不指定报告的生成目标路径，生成的报告会保存在当前目录下的<code>allure-report</code>文件夹，可以使用<code>-o</code>参数指定生成报告目标路径</p>
 
-# Commit changes.
-msg=&quot;rebuilding site `date`&quot;
-if [ $# -eq 1 ]
-  then msg=&quot;$1&quot;
-fi
-git commit -m &quot;$msg&quot;
-
-# Push source and build repos.
-git push origin master
-
-# Come Back up to the Project Root
-cd ..
+<pre><code class="language-shell">$ allure generate &lt;directory-with-results&gt; -o &lt;directory-with-report&gt;
 </code></pre>
 
-<h1 id="给网站添加评论">给网站添加评论</h1>
+<h2 id="打开已生成的报告">打开已生成的报告</h2>
 
-<p>Hugo支持Disqus评论，只需要在配置文件<code>config.toml</code>中设置<code>disqusShortname = &quot;disqusShortname&quot;</code>，如果没有<code>disqusShortname</code>，需要到<a href="https://disqus.com/">Disqus官网</a>注册一个账号，注册后添加一个网站，添加时会让填一个<code>shortname</code>，Disqus会生成一个shortname.disqus.com的网址，另外还需要把<code>config.toml</code>中的<code>baseURL</code>地址，也就是公网访问地址添加到Diqus的信任网址中，类似于互相添加信任</p>
+<p>生成报告后，在系统默认浏览器打开报告</p>
+
+<pre><code class="language-shell">$ allure open &lt;directory-with-report&gt;
+</code></pre>
+
+<h2 id="生成报告并打开报告">生成报告并打开报告</h2>
+
+<p>使用<code>allure serve</code>命令生成报告并启动一个本地服务器展示报告。这将从提供的路径中找到数据并在临时文件夹中生成报告，然后创建本地Jetty服务器实例，并在默认浏览器中打开测试报告，这个命令相当于<code>allure generate</code>和<code>allure open</code>两个命令合到一起</p>
+
+<pre><code class="language-shell">$ allure serve /home/path/to/project/target/surefire-reports/
+</code></pre>
+
+<h2 id="报告结构">报告结构</h2>
+
+<ul>
+<li>总览 概述页面显示了整个测试执行统计信息以及测试参数列表。带有仪表盘和小部件。可以拖动和配置</li>
+<li>类别 查看缺陷分类结果</li>
+<li>测试套 按套件和类分组的测试结果</li>
+<li>图表 展示测试用例执行情况百分比环形图、测试用例优先级条形图、测试用例耗时条形图、趋势图等</li>
+<li>时间刻度 可视化测试用例耗时情况</li>
+<li>功能 对于行为驱动的方法，根据Epic，Feature和Story标记对测试结果进行分组</li>
+<li>包 测试结果的树状布局，按不同的包进行分组</li>
+</ul>
+
+<h1 id="功能特性">功能特性</h1>
+
+<ul>
+<li><p>可以按故事<code>stories</code>或功能<code>features</code>对测试进行分组、附加文件、并通过一组自定义步骤和其他功能分发断言</p></li>
+
+<li><p>标记不稳定测试，给方法或类添加<code>@Flaky</code>注解标记为不稳定的测试，标记的方法或类再测试报告中会显示一个炸弹图标</p>
+
+<pre><code class="language-java">@Flaky
+public void aTestWhichFailsFromTimeToTime {
+   ...
+}
+</code></pre></li>
+
+<li><p>添加环境信息 要向Environment小部件添加信息，只需在生成报告之前将environment.properties（或environment.xml）文件创建到allure-results目录</p>
+
+<p><em>environment.properties</em></p>
+
+<pre><code>Browser=Chrome
+Browser.Version=63.0
+Stand=Production
+</code></pre>
+
+<p><em>environment.xml</em></p>
+
+<pre><code class="language-xml">&lt;environment&gt;
+  &lt;parameter&gt;
+      &lt;key&gt;Browser&lt;/key&gt;
+      &lt;value&gt;Chrome&lt;/value&gt;
+  &lt;/parameter&gt;
+  &lt;parameter&gt;
+      &lt;key&gt;Browser.Version&lt;/key&gt;
+      &lt;value&gt;63.0&lt;/value&gt;
+  &lt;/parameter&gt;
+  &lt;parameter&gt;
+      &lt;key&gt;Stand&lt;/key&gt;
+      &lt;value&gt;Production&lt;/value&gt;
+  &lt;/parameter&gt;
+&lt;/environment&gt;
+</code></pre></li>
+
+<li><p>缺陷分类，默认将缺陷分成两类</p>
+
+<ul>
+<li>产品缺陷 由被测对象产生 failed test</li>
+<li>测试缺陷 由测试代码产生 broken test</li>
+</ul>
+
+<p>要自定义缺陷，请在生成报告之前将categories.json文件添加到allure-results目录</p>
+
+<p><em>categories.json</em></p>
+
+<pre><code class="language-json">[
+{
+  &quot;name&quot;: &quot;Ignored tests&quot;, 
+  &quot;matchedStatuses&quot;: [&quot;skipped&quot;] 
+},
+{
+  &quot;name&quot;: &quot;Infrastructure problems&quot;,
+  &quot;matchedStatuses&quot;: [&quot;broken&quot;, &quot;failed&quot;]
+  &quot;messageRegex&quot;: &quot;.*bye-bye.*&quot;, 
+},
+{
+  &quot;name&quot;: &quot;Outdated tests&quot;,
+  &quot;matchedStatuses&quot;: [&quot;broken&quot;]
+  &quot;traceRegex&quot;: &quot;.*FileNotFoundException.*&quot;, 
+},
+{
+  &quot;name&quot;: &quot;Product defects&quot;,
+  &quot;matchedStatuses&quot;: [&quot;failed&quot;]
+},
+{
+  &quot;name&quot;: &quot;Test defects&quot;,
+  &quot;matchedStatuses&quot;: [&quot;broken&quot;]
+}
+]
+</code></pre></li>
+</ul>
 
 <h1 id="参考">参考</h1>
 
-<blockquote>
-<p><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">hosting-on-github</a></p>
-
-<p><a href="https://zh4ui.net/post/2017-04-20-hugo-with-disqus/">给Hugo添加disqus评论服务</a></p>
-</blockquote>
+<p><a href="https://docs.qameta.io/allure/#_about">Allure官方文档</a></p>
               
             </div>
           </div>
@@ -344,11 +427,9 @@ cd ..
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/hugo/">Hugo</a>
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/allure2/">Allure2</a>
 
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/github/">Github</a>
-
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/disqus/">Disqus</a>
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/">测试报告</a>
 
                   </div>
                 
@@ -361,7 +442,7 @@ cd ..
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" data-tooltip="Git基础——子模块">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -369,7 +450,7 @@ cd ..
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/" data-tooltip="Hugo搭建博客（一）——搭建Hugo博客">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" data-tooltip="Git基础——子模块">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -429,7 +510,7 @@ cd ..
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" data-tooltip="Git基础——子模块">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -437,7 +518,7 @@ cd ..
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/" data-tooltip="Hugo搭建博客（一）——搭建Hugo博客">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" data-tooltip="Git基础——子模块">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -661,9 +742,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/jeshs.github.io\/2019\/01\/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github\/';
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/01\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B\/';
           
-            this.page.identifier = '\/2019\/01\/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github\/'
+            this.page.identifier = '\/2019\/01\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B\/'
           
         };
         (function() {
