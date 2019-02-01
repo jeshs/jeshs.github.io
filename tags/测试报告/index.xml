@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试报告 on Tom blog</title>
+    <link>https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link>
+    <description>Recent content in 测试报告 on Tom blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Jan 2019 10:53:45 +0800</lastBuildDate>
+    
+	<atom:link href="https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>自动化测试报告（一）——Allure2基础介绍</title>
+      <link>https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Wed, 30 Jan 2019 10:53:45 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/</guid>
+      <description>&lt;p&gt;Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

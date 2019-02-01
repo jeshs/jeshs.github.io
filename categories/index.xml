@@ -28,5 +28,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>测试报告</title>
+      <link>https://jeshs.github.io/categories/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Wed, 30 Jan 2019 10:53:45 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自动化测试</title>
+      <link>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Wed, 30 Jan 2019 10:53:45 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

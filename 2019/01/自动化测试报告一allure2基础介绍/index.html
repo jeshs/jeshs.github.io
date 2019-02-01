@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Tom">
+<meta name="keywords" content="Allure2, 测试报告, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
+
+
+<meta property="og:description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动化测试报告（一）——Allure2基础介绍">
+<meta name="twitter:title" content="自动化测试报告（一）——Allure2基础介绍">
+<meta property="og:url" content="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/">
+<meta property="og:site_name" content="Tom blog">
+<meta property="og:description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
+<meta name="twitter:description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-01-30T10:53:45">
+  
+  
+    <meta property="article:modified_time" content="2019-01-30T10:53:45">
+  
+  
+  
+    
+      <meta property="article:section" content="自动化测试">
+    
+      <meta property="article:section" content="测试报告">
+    
+  
+  
+    
+      <meta property="article:tag" content="Allure2">
+    
+      <meta property="article:tag" content="测试报告">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://avatars3.githubusercontent.com/u/5879127?s=200&v=4">
+  <meta property="twitter:image" content="https://avatars3.githubusercontent.com/u/5879127?s=200&v=4">
+
+
+
+
+
+  <meta property="og:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
+  <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
+
+
+    <title>自动化测试报告（一）——Allure2基础介绍</title>
+
+    <link rel="icon" href="https://jeshs.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://jeshs.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jeshs.github.io/">Tom blog</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jeshs.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Tom</h4>
+        
+          <h5 class="sidebar-profile-bio">生命不息 奋斗不止</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      自动化测试报告（一）——Allure2基础介绍
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-01-30T10:53:45&#43;08:00">
+        
+  一月 30, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://jeshs.github.io/categories/%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95">自动化测试</a>, 
+    
+      <a class="category-link" href="https://jeshs.github.io/categories/%e6%b5%8b%e8%af%95%e6%8a%a5%e5%91%8a">测试报告</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出</p>
+
+<h1 id="简介">简介</h1>
+
+<p>Allure是自动化测试报告框架，相比junit添加了许多功能，生成的报告更美观，支持多种编程语言，如Java, PHP, Ruby, Python, Scala and C#，支持命令行、Jenkins、Maven等方式生成报告</p>
+
+<p><a href="https://demo.qameta.io/allure/">demo查看</a></p>
+
+<h1 id="运行过程">运行过程</h1>
+
+<p>Allure生成报告分成两个阶段</p>
+
+<ul>
+<li><p>第一步，测试执行阶段</p>
+
+<p>附加到测试框架的称为适配器<code>adapter</code>的小型库将有关已执行测试的信息保存到XML文件中，这些库支持主流的编程语言Java，PHP，Ruby，Python，Scala，C#等</p>
+
+<p>以Java来说，支持junit4、junit5、TestNG、Cucumbere JVM、Selenide</p></li>
+
+<li><p>第二步，生成报告阶段</p>
+
+<p>XML文件将转换为HTML报告。这可以通过命令行工具，CI插件或构建工具来完成</p></li>
+</ul>
+
+<h1 id="安装">安装</h1>
+
+<p>安装Windows版本</p>
+
+<ol>
+<li><p>在<a href="https://github.com/allure-framework/allure2/releases">Github</a>或者<a href="http://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/">Maven仓库</a>下载最新版</p></li>
+
+<li><p>解压，将解压后的路径配置到系统环境变量，新建系统变量，名称为<code>ALLURE_HOME</code>，值为解压后的路径，如<code>D:\Program Files\allure-2.9.0</code>并把<code>%ALLURE_HOME%\bin</code>添加到<code>path</code>中，注意使用英文分号和其它变量值隔开</p>
+
+<pre><code>ALLURE_HOME D:\Program Files\allure-2.9.0
+Path %ALLURE_HOME%\bin
+</code></pre></li>
+
+<li><p>验证安装</p>
+
+<pre><code class="language-shell">$ allure --version
+2.9.0
+</code></pre></li>
+</ol>
+
+<h1 id="生成报告">生成报告</h1>
+
+<h2 id="生成报告-1">生成报告</h2>
+
+<p>在生成报告之前，需要运行测试以获取一些基本的测试结果数据，测试结果数据可以通过添加Allure库后执行测试生成的测试结果数据，后面会提到。另外，测试结果也可以由流行的测试框架生成的junit样式的xml报告，Maven生成的junit和testNG报告数据一般在<code>target\surefire-reports</code>目录下，Allure根据这些报告来生成新的测试报告</p>
+
+<ul>
+<li><p>从Allure结果数据生成报告，需要添加集成相应的库执行测试后才会生成测试结果到<code>allure-results</code></p>
+
+<pre><code class="language-shell">$ allure generate &lt;PROJECT_PATH&gt;\target\allure-results\
+</code></pre></li>
+
+<li><p>从Junit测试结果生成报告，经过测试，以下路径都可以作为报告生成的来源数据，但是报告的详细程度都不如从<code>target\allure-results</code>生成的全面，生成的报告是比较简单的，只包含一些基本信息，缺少Allure的高级功能</p>
+
+<pre><code class="language-shell">#这个命令生成报告过程中会报错，但是还是可以成功生成报告
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\Suite01\
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\xml\
+$ allure generate &lt;PROJECT_PATH&gt;\target\surefire-reports\junitreports\
+</code></pre></li>
+</ul>
+
+<p>如果不指定报告的生成目标路径，生成的报告会保存在当前目录下的<code>allure-report</code>文件夹，可以使用<code>-o</code>参数指定生成报告目标路径</p>
+
+<pre><code class="language-shell">$ allure generate &lt;directory-with-results&gt; -o &lt;directory-with-report&gt;
+</code></pre>
+
+<h2 id="打开已生成的报告">打开已生成的报告</h2>
+
+<p>生成报告后，在系统默认浏览器打开报告</p>
+
+<pre><code class="language-shell">$ allure open &lt;directory-with-report&gt;
+</code></pre>
+
+<h2 id="生成报告并打开报告">生成报告并打开报告</h2>
+
+<p>使用<code>allure serve</code>命令生成报告并启动一个本地服务器展示报告。这将从提供的路径中找到数据并在临时文件夹中生成报告，然后创建本地Jetty服务器实例，并在默认浏览器中打开测试报告，这个命令相当于<code>allure generate</code>和<code>allure open</code>两个命令合到一起</p>
+
+<pre><code class="language-shell">$ allure serve /home/path/to/project/target/surefire-reports/
+</code></pre>
+
+<h2 id="报告结构">报告结构</h2>
+
+<ul>
+<li>总览 概述页面显示了整个测试执行统计信息以及测试参数列表。带有仪表盘和小部件。可以拖动和配置</li>
+<li>类别 查看缺陷分类结果</li>
+<li>测试套 按套件和类分组的测试结果</li>
+<li>图表 展示测试用例执行情况百分比环形图、测试用例优先级条形图、测试用例耗时条形图、趋势图等</li>
+<li>时间刻度 可视化测试用例耗时情况</li>
+<li>功能 对于行为驱动的方法，根据Epic，Feature和Story标记对测试结果进行分组</li>
+<li>包 测试结果的树状布局，按不同的包进行分组</li>
+</ul>
+
+<h1 id="功能特性">功能特性</h1>
+
+<ul>
+<li><p>可以按故事<code>stories</code>或功能<code>features</code>对测试进行分组、附加文件、并通过一组自定义步骤和其他功能分发断言</p></li>
+
+<li><p>标记不稳定测试，给方法或类添加<code>@Flaky</code>注解标记为不稳定的测试，标记的方法或类再测试报告中会显示一个炸弹图标</p>
+
+<pre><code class="language-java">@Flaky
+public void aTestWhichFailsFromTimeToTime {
+   ...
+}
+</code></pre></li>
+
+<li><p>添加环境信息 要向Environment小部件添加信息，只需在生成报告之前将environment.properties（或environment.xml）文件创建到allure-results目录</p>
+
+<p><em>environment.properties</em></p>
+
+<pre><code>Browser=Chrome
+Browser.Version=63.0
+Stand=Production
+</code></pre>
+
+<p><em>environment.xml</em></p>
+
+<pre><code class="language-xml">&lt;environment&gt;
+  &lt;parameter&gt;
+      &lt;key&gt;Browser&lt;/key&gt;
+      &lt;value&gt;Chrome&lt;/value&gt;
+  &lt;/parameter&gt;
+  &lt;parameter&gt;
+      &lt;key&gt;Browser.Version&lt;/key&gt;
+      &lt;value&gt;63.0&lt;/value&gt;
+  &lt;/parameter&gt;
+  &lt;parameter&gt;
+      &lt;key&gt;Stand&lt;/key&gt;
+      &lt;value&gt;Production&lt;/value&gt;
+  &lt;/parameter&gt;
+&lt;/environment&gt;
+</code></pre></li>
+
+<li><p>缺陷分类，默认将缺陷分成两类</p>
+
+<ul>
+<li>产品缺陷 由被测对象产生 failed test</li>
+<li>测试缺陷 由测试代码产生 broken test</li>
+</ul></li>
+</ul>
+
+<p>要自定义缺陷，请在生成报告之前将categories.json文件添加到allure-results目录</p>
+
+<p><em>categories.json</em></p>
+
+<pre><code>  [
+    {
+      &quot;name&quot;: &quot;Ignored tests&quot;, 
+      &quot;matchedStatuses&quot;: [&quot;skipped&quot;] 
+    },
+    {
+      &quot;name&quot;: &quot;Infrastructure problems&quot;,
+      &quot;matchedStatuses&quot;: [&quot;broken&quot;, &quot;failed&quot;]
+      &quot;messageRegex&quot;: &quot;.*bye-bye.*&quot;, 
+    },
+    {
+      &quot;name&quot;: &quot;Outdated tests&quot;,
+      &quot;matchedStatuses&quot;: [&quot;broken&quot;]
+      &quot;traceRegex&quot;: &quot;.*FileNotFoundException.*&quot;, 
+    },
+    {
+      &quot;name&quot;: &quot;Product defects&quot;,
+      &quot;matchedStatuses&quot;: [&quot;failed&quot;]
+    },
+    {
+      &quot;name&quot;: &quot;Test defects&quot;,
+      &quot;matchedStatuses&quot;: [&quot;broken&quot;]
+    }
+  ]
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/allure2/">Allure2</a>
+
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/">测试报告</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/" data-tooltip="Hugo搭建博客（二）——部署到Github">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Tom. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/" data-tooltip="Hugo搭建博客（二）——部署到Github">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Tom</h4>
+    
+      <div id="about-card-bio">生命不息 奋斗不止</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        IT
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        中国
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="搜索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D/">
+                <h3 class="media-heading">自动化测试报告（一）——Allure2基础介绍</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/">
+                <h3 class="media-heading">Hugo搭建博客（二）——部署到Github</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
+                <h3 class="media-heading">Hugo搭建博客（一）——搭建Hugo博客</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         3 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://jeshs.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jeshs.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/01\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D\/';
+          
+            this.page.identifier = '\/2019\/01\/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E5%9F%BA%E7%A1%80%E4%BB%8B%E7%BB%8D\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'tomblog1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Hugo搭建博客</title>
-      <link>https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <title>Hugo搭建博客（一）——搭建Hugo博客</title>
+      <link>https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 20 Jan 2019 20:50:33 +0800</pubDate>
       
-      <guid>https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/</guid>
       <description>&lt;p&gt;Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客&lt;/p&gt;</description>
     </item>
     
