@@ -273,6 +273,7 @@ Hugo Static Site Generator v0.53-8FC339DC2529FF77E494A1C12CD1FF9FBCB880A4 window
 </code></pre></li>
 
 <li><p>进入网站文件夹<code>D:\Program Files\Hugo\Sites\example.com</code>，可以看到网站的目录</p>
+<<<<<<< HEAD
 
 <pre><code>&gt; tree example.com
 D:\PROGRAM FILES\HUGO\SITES\EXAMPLE.COM
@@ -284,6 +285,19 @@ D:\PROGRAM FILES\HUGO\SITES\EXAMPLE.COM
 └─themes
 </code></pre>
 
+=======
+
+<pre><code>&gt; tree example.com
+D:\PROGRAM FILES\HUGO\SITES\EXAMPLE.COM
+├─archetypes
+├─content
+├─data
+├─layouts
+├─static
+└─themes
+</code></pre>
+
+>>>>>>> 7d39b8a7cf78f0ebd564dc3bb47609aa8bf86053
 <ul>
 <li><code>archetypes</code> 使用<code>hugu new post</code>生成新文章的模板，可以自定义里面的值</li>
 <li><code>content</code> 存放网站内容</li>
@@ -296,6 +310,7 @@ D:\PROGRAM FILES\HUGO\SITES\EXAMPLE.COM
 </ol>
 
 <h1 id="添加主题">添加主题</h1>
+<<<<<<< HEAD
 
 <h2 id="下载主题">下载主题</h2>
 
@@ -329,6 +344,43 @@ git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
 
 <h1 id="创建一篇文章">创建一篇文章</h1>
 
+=======
+
+<h2 id="下载主题">下载主题</h2>
+
+<p>Hugo主题可以在<a href="https://themes.gohugo.io/">Hugo官方主题</a>中选择，进入某个主题的详情页会看到<code>DOWNLOAD</code>按钮，点击后跳转到Github页面，复制Github地址，可通过<code>git submodule add</code>命令或<code>git clone</code>命令下载，这里以<a href="https://github.com/olOwOlo/hugo-theme-even">even</a>主题为例</p>
+
+<ul>
+<li>通过git submodule add以Git子模块的方式下载（推荐）</li>
+</ul>
+
+<p>进入网站文件夹，使用<code>git init</code>初始化后再下载主题</p>
+
+<pre><code class="language-shell">cd example.com
+git init
+git submodule add https://github.com/olOwOlo/hugo-theme-even.git themes/even
+</code></pre>
+
+<ul>
+<li>通过<code>git clone</code>下载（此方式下载的主题带有<code>.git</code>和网站本身的Git版本控制产生冲突）</li>
+</ul>
+
+<p>进入网站文件夹，使用<code>git clone</code>直接下载</p>
+
+<pre><code class="language-shell">git clone https://github.com/olOwOlo/hugo-theme-even themes/even
+</code></pre>
+
+<h2 id="复制主题的配置文件">复制主题的配置文件</h2>
+
+<p>下载完后，找到主题目录<code>/themes/even/exampleSite</code>下的配置文件<code>config.toml</code>，将该文件复制到网站文件夹下替换原来的<code>config.toml</code>，根据需求更改配置文件即可。也可以同时将<code>/themes/even/exampleSite</code>下的全部文件复制到网站目录下，<code>/themes/even/exampleSite/content</code>包含了一些示例文章可作参考</p>
+
+<h2 id="主题的选择">主题的选择</h2>
+
+<p>主题最好选择国人制作的，考虑到评论系统，社交分享，SEO优化等都更适合国内的情况，个人推荐的主题<a href="https://github.com/olOwOlo/hugo-theme-even">hugo-theme-even</a>、<a href="https://github.com/xianmin/hugo-theme-jane">hugo-theme-jane</a>、<a href="https://github.com/laozhu/hugo-nuo">hugo-nuo</a>、<a href="https://github.com/nodejh/hugo-theme-cactus-plus">hugo-theme-cactus-plus</a></p>
+
+<h1 id="创建一篇文章">创建一篇文章</h1>
+
+>>>>>>> 7d39b8a7cf78f0ebd564dc3bb47609aa8bf86053
 <p>创建文章前，可以将主题文件夹下<code>D:\Program Files\Hugo\Sites\blog\themes\hugo-tranquilpeak-theme\archetypes</code>的内容复制到网站根目录的<code>archetypes</code>文件夹下，这个是文章的模板文件</p>
 
 <p>在网站目录下，创建一篇文章，其中<code>my-first-post</code>是文章名字，文章会保存在<code>coneten/post</code>目录下</p>
