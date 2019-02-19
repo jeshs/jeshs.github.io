@@ -7,20 +7,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
-<meta name="keywords" content=", 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
+<meta name="keywords" content="brook, 代理, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="在Linux上搭建brook代理服务器">
 
 
-<meta property="og:description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Submodule">
-<meta name="twitter:title" content="Submodule">
-<meta property="og:url" content="https://jeshs.github.io/tags/submodule/">
-<meta property="twitter:url" content="https://jeshs.github.io/tags/submodule/">
+<meta property="og:description" content="在Linux上搭建brook代理服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建brook服务器">
+<meta name="twitter:title" content="搭建brook服务器">
+<meta property="og:url" content="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
-<meta name="twitter:description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
+<meta property="og:description" content="在Linux上搭建brook代理服务器">
+<meta name="twitter:description" content="在Linux上搭建brook代理服务器">
 <meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-02-19T11:29:29">
+  
+  
+    <meta property="article:modified_time" content="2019-02-19T11:29:29">
+  
+  
+  
+    
+      <meta property="article:section" content="工具">
+    
+      <meta property="article:section" content="代理">
+    
+  
+  
+    
+      <meta property="article:tag" content="brook">
+    
+      <meta property="article:tag" content="代理">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -31,6 +53,9 @@
 
 
 
+  <meta property="og:image" content="https://camo.githubusercontent.com/8a76161b3de974c41b8e3273b9406cdc1ca4d62d/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f74787468696e6b696e672d66696c652f5f2f62726f6f6b5f323030783230302e706e67">
+  <meta property="twitter:image" content="https://camo.githubusercontent.com/8a76161b3de974c41b8e3273b9406cdc1ca4d62d/68747470733a2f2f73746f726167652e676f6f676c65617069732e636f6d2f74787468696e6b696e672d66696c652f5f2f62726f6f6b5f323030783230302e706e67">
+
 
 
 
@@ -39,16 +64,14 @@
   <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
 
 
-    <title>Submodule</title>
+    <title>搭建brook服务器</title>
 
     <link rel="icon" href="https://jeshs.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jeshs.github.io/tags/submodule/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://jeshs.github.io/tags/submodule/">
+    <link rel="canonical" href="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -175,40 +198,26 @@
 </nav>
 
       
-        
 
-      
       <div id="main" data-behavior="5"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
+    <h1 class="post-title" itemprop="headline">
+      搭建brook服务器
+    </h1>
   
-
-
   
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
-          Git基础——子模块
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-01T16:00:38&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-02-19T11:29:29&#43;08:00">
         
-  二月 1, 2019
+  二月 19, 2019
 
       </time>
     
@@ -219,37 +228,174 @@
     
       <a class="category-link" href="https://jeshs.github.io/categories/%e5%b7%a5%e5%85%b7">工具</a>, 
     
-      <a class="category-link" href="https://jeshs.github.io/categories/git">Git</a>
+      <a class="category-link" href="https://jeshs.github.io/categories/%e4%bb%a3%e7%90%86">代理</a>
     
   
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>在Linux上搭建brook代理服务器</p>
+
+<h1 id="brook简介">brook简介</h1>
+
+<p>Brook是一个跨平台的代理软件，使用简单，支持Linux、MacOS、Windows、Android、iOS等</p>
+
+<h1 id="安装brook服务器">安装brook服务器</h1>
+
+<p>brook分为服务端和客户端</p>
+
+<ol>
+<li><p>登录Linux服务器，下载brook，请将<code>v20190205</code>替换为最新版本</p>
+
+<pre><code class="language-shell">wget https://github.com/txthinking/brook/releases/download/v20190205/brook
+</code></pre></li>
+
+<li><p>赋予brook执行权限</p>
+
+<pre><code class="language-shell">chmod +x brook
+</code></pre></li>
+
+<li><p>启动brook，端口设置为<code>9999</code>，密码设置为<code>password</code>，同时监听TCP/UDP</p>
+
+<pre><code class="language-shell">./brook server -l :9999 -p password
+</code></pre></li>
+
+<li><p>停止brook<code>Control + C</code></p></li>
+
+<li><p>启动brook并在后台运行</p>
+
+<pre><code class="language-shell">nohup ./brook server -l :9999 -p password &amp;
+</code></pre></li>
+
+<li><p>如果想要停止后台brook，运行<code>killall brook</code></p></li>
+</ol>
+
+<h1 id="brook客户端">brook客户端</h1>
+
+<p>brook客户端支持多平台，这里只尝试了Android端和Windows端</p>
+
+<h2 id="android客户端">Android客户端</h2>
+
+<ol>
+<li>下载Android版本brook客户端<a href="https://github.com/txthinking/brook/releases">Brook.apk</a></li>
+<li>启动APP，配置服务器IP+端口、密码，点击“开启”按钮即可正常使用了</li>
+</ol>
+
+<h2 id="windows客户端">Windows客户端</h2>
+
+<p>Windows客户端有两种，一种是GUI，一种是CLI命令行的。我测试使用都不能正常使用，GUI版本无法访问Google。CLI版本提示<code>Invalid Version</code>，服务器提示<code>cipher: message authentication failed</code>，不知道是不是bug,还是版本有问题</p>
+
+<ul>
+<li><p>GUI版本</p>
+
+<ul>
+<li>下载<a href="https://github.com/txthinking/brook/releases">Brook.exe</a></li>
+<li>打开后任务栏有个图标，右键图标，点击Setting，配置服务器IP+端口，密码，点击SAVE保存配置</li>
+<li>右键任务栏图标，点击Start开启代理</li>
+</ul></li>
+
+<li><p>CLI版本</p>
+
+<ul>
+<li><p>下载<a href="https://github.com/txthinking/brook/releases">brook_windows_amd64.exe</a></p></li>
+
+<li><p>打开CMD进入下载目录，执行命令开启代理</p></li>
+</ul>
+
+<pre><code class="language-shell">brook client -l 127.0.0.1:1080 -i 127.0.0.1 -s server_address:port -p password
+</code></pre></li>
+</ul>
+
+<h1 id="总结">总结</h1>
+
+<p>总体感觉搭建使用比较简单，比较小巧，但是没有v2ray、SSR等成熟稳定，可以考虑作为备用方案</p>
+
+<h1 id="参考">参考</h1>
+
+<p><a href="https://github.com/txthinking/brook/wiki/How-to-use-Brook-Windows-Client%3F">brook wiki</a></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/brook/">brook</a>
+
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E4%BB%A3%E7%90%86/">代理</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" data-tooltip="Git基础——子模块">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
       
-        <p>之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解</p>
-      
-      <p>
-        <a href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" class="postShorten-excerpt_link link">阅读全文</a>
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
-      </p>
-    </div>
-  </div>
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
   
-    <a href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://raw.githubusercontent.com/schacon/git-scm/master/source/images/logos/downloads/Git-Icon-1788C.png"/>
-      </div>
-    </a>
-  
-</article>
+</div>
 
             
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
             
-
-          </section>
-        
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 Tom. All Rights Reserved
@@ -257,6 +403,66 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/" data-tooltip="Git基础——子模块">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -449,6 +655,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/02\/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8\/';
+          
+            this.page.identifier = '\/2019\/02\/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'tomblog1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 

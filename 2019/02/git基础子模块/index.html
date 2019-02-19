@@ -257,7 +257,13 @@
 <pre><code class="language-shell">git submodule add &lt;GIT-PROJECT-URL&gt;
 </code></pre>
 
-<p>添加成功后会在项目下创建一个<code>.gitmodules</code>文件，该文件保存了子模块的信息，该文件也像 <code>.gitignore</code> 文件一样受到（通过）版本控制。 它会和该项目的其他部分一同被拉取推送</p>
+<p>添加成功后会在项目下创建一个<code>.gitmodules</code>文件，该文件保存了子模块的基本信息，包括名称、path、url等，该文件也像 <code>.gitignore</code> 文件一样受到（通过）版本控制。 它会和该项目的其他部分一同被拉取推送</p>
+
+<pre><code class="language-shell">$ cat .gitmodules
+[submodule &quot;DbConnector&quot;]
+    path = DbConnector
+    url = https://github.com/chaconinc/DbConnector
+</code></pre>
 
 <h2 id="克隆含有子模块的项目">克隆含有子模块的项目</h2>
 
@@ -296,6 +302,12 @@ $ git merge origin/master
 <pre><code class="language-shell">$ git submodule update --remote
 </code></pre>
 
+<p>上面的命令只会更新并检出子模块的<code>master</code>分支，如果想要指定子模块的分支，如<code>stable</code>分支，执行下面的设置</p>
+
+<pre><code class="language-shell">$ git config -f .gitmodules submodule.SUB_PROJECT.branch stable
+$ git submodule update --remote
+</code></pre>
+
 <h3 id="在子模块上工作">在子模块上工作</h3>
 
 <p>当我们运行 <code>git submodule update</code> 从子模块仓库中抓取修改时，Git 将会获得这些改动并更新子目录中的文件，但是会将子仓库留在一个称作 “游离的 HEAD” 的状态。 这意味着没有本地工作分支（例如 “master”）跟踪改动。 所以你做的任何改动都不会被跟踪</p>
@@ -303,33 +315,27 @@ $ git merge origin/master
 <p>为了将子模块设置得更容易进入并修改，你需要做两件事。 首先，进入每个子模块并检出其相应的工作分支。 接着，若你做了更改就需要告诉 Git 它该做什么，然后运行 <code>git submodule update --remote</code> 来从上游拉取新工作。 你可以选择将它们合并到你的本地工作中，也可以尝试将你的工作变基到新的更改上</p>
 
 <ol>
-<li>首先，进入子模块checkout分支</li>
-</ol>
+<li><p>首先，进入子模块目录然后检出一个分支</p>
 
-<pre><code class="language-shell">   $ git checkout master
-</code></pre>
+<pre><code class="language-shell">$ git checkout master
+</code></pre></li>
 
-<ol>
-<li>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</li>
-</ol>
+<li><p>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</p>
 
-<pre><code class="language-shell">   $ git submodule update --remote --merge
-</code></pre>
+<pre><code class="language-shell">$ git submodule update --remote --merge
+</code></pre></li>
 
-<ol>
-<li>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</li>
-</ol>
+<li><p>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</p>
 
-<pre><code class="language-shell">   $ git submodule update --remote --rebase
-</code></pre>
+<pre><code class="language-shell">$ git submodule update --remote --rebase
+</code></pre></li>
 
-<ol>
 <li><p>如果你忘记 <code>--rebase</code> 或 <code>--merge</code>，Git 会将子模块更新为服务器上的状态。并且会将项目重置为一个游离的 HEAD 状态</p>
 
 <pre><code class="language-shell">$ git submodule update --remote
 </code></pre>
 
-<p>即便这真的发生了也不要紧，你只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
+<p>出现这个问题，只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
 
 <p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p></li>
 </ol>
@@ -348,6 +354,32 @@ $ git merge origin/master
 <pre><code class="language-shell">$ git push --recurse-submodules=on-demand
 </code></pre>
 
+<h3 id="删除子模块">删除子模块</h3>
+
+<p>先反初始化，再删除子模块，最后提交。模块名后面不要加<code>/</code></p>
+
+<pre><code class="language-shell">#反初始化
+git submodule deinit &lt;submodule&gt;
+#不保留在工作目录
+git rm &lt;submodule&gt;
+#保留在工作目录
+git rm --cached &lt;submodule&gt;
+#提交
+git commit -am &quot;Remove a submodule.&quot;
+</code></pre>
+
+<h3 id="修改子模块url">修改子模块URL</h3>
+
+<ol>
+<li><p>编辑<code>.gitmodules</code>文件</p></li>
+
+<li><p>执行下列命令，执行后可以看到.git/config中url更新了</p>
+
+<pre><code class="language-shell">$ git submodule sync
+$ git commit -am &quot;Update submodule url.&quot; # 提交变更
+</code></pre></li>
+</ol>
+
 <h3 id="合并子模块改动">合并子模块改动</h3>
 
 <ol>
@@ -361,6 +393,8 @@ $ git merge origin/master
 <h1 id="参考">参考</h1>
 
 <p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">Git官方文档</a></p>
+
+<p><a href="https://www.jianshu.com/p/ed0cb6c75e25">[Git] 如何优雅的删除子模块(submodule)或修改Submodule URL</a></p>
               
             </div>
           </div>
@@ -387,7 +421,7 @@ $ git merge origin/master
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-tooltip="搭建brook服务器">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -455,7 +489,7 @@ $ git merge origin/master
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/" data-tooltip="搭建brook服务器">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -560,6 +594,23 @@ $ git merge origin/master
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                <h3 class="media-heading">搭建brook服务器</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在Linux上搭建brook代理服务器</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
                 <h3 class="media-heading">Git基础——子模块</h3>
               </a>
@@ -632,7 +683,7 @@ $ git merge origin/master
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         4 posts found
+         5 posts found
       </p>
     </div>
   </div>
