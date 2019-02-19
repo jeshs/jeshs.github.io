@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brook on Tom blog</title>
+    <link>https://jeshs.github.io/tags/brook/</link>
+    <description>Recent content in Brook on Tom blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Feb 2019 11:29:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://jeshs.github.io/tags/brook/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>搭建brook服务器</title>
+      <link>https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Tue, 19 Feb 2019 11:29:29 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>&lt;p&gt;在Linux上搭建brook代理服务器&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
