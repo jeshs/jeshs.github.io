@@ -315,33 +315,27 @@ $ git submodule update --remote
 <p>为了将子模块设置得更容易进入并修改，你需要做两件事。 首先，进入每个子模块并检出其相应的工作分支。 接着，若你做了更改就需要告诉 Git 它该做什么，然后运行 <code>git submodule update --remote</code> 来从上游拉取新工作。 你可以选择将它们合并到你的本地工作中，也可以尝试将你的工作变基到新的更改上</p>
 
 <ol>
-<li>首先，进入子模块目录然后检出一个分支</li>
-</ol>
+<li><p>首先，进入子模块目录然后检出一个分支</p>
 
-<pre><code class="language-shell">   $ git checkout master
-</code></pre>
+<pre><code class="language-shell">$ git checkout master
+</code></pre></li>
 
-<ol>
-<li>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</li>
-</ol>
+<li><p>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</p>
 
-<pre><code class="language-shell">   $ git submodule update --remote --merge
-</code></pre>
+<pre><code class="language-shell">$ git submodule update --remote --merge
+</code></pre></li>
 
-<ol>
-<li>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</li>
-</ol>
+<li><p>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</p>
 
-<pre><code class="language-shell">   $ git submodule update --remote --rebase
-</code></pre>
+<pre><code class="language-shell">$ git submodule update --remote --rebase
+</code></pre></li>
 
-<ol>
 <li><p>如果你忘记 <code>--rebase</code> 或 <code>--merge</code>，Git 会将子模块更新为服务器上的状态。并且会将项目重置为一个游离的 HEAD 状态</p>
 
 <pre><code class="language-shell">$ git submodule update --remote
 </code></pre>
 
-<p>即便这真的发生了也不要紧，你只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
+<p>出现这个问题，只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
 
 <p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p></li>
 </ol>
