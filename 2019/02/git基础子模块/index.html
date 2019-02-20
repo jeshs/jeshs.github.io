@@ -270,7 +270,7 @@
 <p>克隆含有子模块的项目，有两种方式</p>
 
 <ul>
-<li><p>使用<code>git clone</code>克隆，克隆后默认会包含该子模块目录，但子模块中没有任何文件，只是一个空目录</p>
+<li><p>使用<code>git clone</code>克隆主项目，克隆后默认会包含该子模块目录，但子模块中没有任何文件，只是一个空目录</p>
 
 <pre><code class="language-shell">git clone &lt;GIT-PROJECT-URL&gt;
 </code></pre>
@@ -281,7 +281,7 @@
 git submodule update
 </code></pre></li>
 
-<li><p>另一个方法是给 <code>git clone</code> 命令传递 <code>--recursive</code> 选项，它就会自动初始化并更新仓库中的每一个子模块</p>
+<li><p>另一个方法是克隆主项目时给 <code>git clone</code> 命令传递 <code>--recursive</code> 选项，它就会自动初始化并更新仓库中的每一个子模块</p>
 
 <pre><code class="language-shell">git clone --recursive &lt;GIT-PROJECT-URL&gt;
 </code></pre></li>
