@@ -71,25 +71,25 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/tags/genymotion/</loc>
-    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jeshs.github.io/categories/genymotion/</loc>
     <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/tags/git/</loc>
-    <lastmod>2019-02-01T16:00:38+08:00</lastmod>
+    <loc>https://jeshs.github.io/tags/genymotion/</loc>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jeshs.github.io/categories/git/</loc>
+    <lastmod>2019-02-01T16:00:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/tags/git/</loc>
     <lastmod>2019-02-01T16:00:38+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -131,13 +131,13 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/tags/%E4%BB%A3%E7%90%86/</loc>
+    <loc>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2019-02-19T11:29:29+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</loc>
+    <loc>https://jeshs.github.io/tags/%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2019-02-19T11:29:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -155,14 +155,14 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2019-01-20T20:50:33+08:00</lastmod>
+    <loc>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-01-20T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2019-01-20T22:07:46+08:00</lastmod>
+    <loc>https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-01-20T20:50:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -185,13 +185,13 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
+    <loc>https://jeshs.github.io/categories/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2019-01-31T18:13:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
+    <loc>https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2019-01-31T18:13:45+08:00</lastmod>
     <priority>0</priority>
   </url>
