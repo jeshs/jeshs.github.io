@@ -7,20 +7,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
-<meta name="keywords" content=", 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
+<meta name="keywords" content="VirtualBox, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="解决VirtualBox虚拟机不能ping通宿主机的问题">
 
 
-<meta property="og:description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Genymotion">
-<meta name="twitter:title" content="Genymotion">
-<meta property="og:url" content="https://jeshs.github.io/categories/genymotion/">
-<meta property="twitter:url" content="https://jeshs.github.io/categories/genymotion/">
+<meta property="og:description" content="解决VirtualBox虚拟机不能ping通宿主机的问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VirtualBox虚拟机不能ping通宿主机的解决方法">
+<meta name="twitter:title" content="VirtualBox虚拟机不能ping通宿主机的解决方法">
+<meta property="og:url" content="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
-<meta name="twitter:description" content="记录和分享测试技术,包括但不限于自动化测试、接口测试、性能测试、APP测试">
+<meta property="og:description" content="解决VirtualBox虚拟机不能ping通宿主机的问题">
+<meta name="twitter:description" content="解决VirtualBox虚拟机不能ping通宿主机的问题">
 <meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-02-24T21:13:40">
+  
+  
+    <meta property="article:modified_time" content="2019-02-24T21:13:40">
+  
+  
+  
+    
+      <meta property="article:section" content="问题解决">
+    
+      <meta property="article:section" content="VirtualBox">
+    
+  
+  
+    
+      <meta property="article:tag" content="VirtualBox">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -31,6 +51,9 @@
 
 
 
+  <meta property="og:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/virtualbox.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/virtualbox.png">
+
 
 
 
@@ -39,16 +62,14 @@
   <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
 
 
-    <title>Genymotion</title>
+    <title>VirtualBox虚拟机不能ping通宿主机的解决方法</title>
 
     <link rel="icon" href="https://jeshs.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jeshs.github.io/categories/genymotion/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://jeshs.github.io/categories/genymotion/">
+    <link rel="canonical" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -175,38 +196,24 @@
 </nav>
 
       
-        
 
-      
       <div id="main" data-behavior="5"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
+    <h1 class="post-title" itemprop="headline">
+      VirtualBox虚拟机不能ping通宿主机的解决方法
+    </h1>
   
-
-
   
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-          Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-24T15:11:56&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-02-24T21:13:40&#43;08:00">
         
   二月 24, 2019
 
@@ -219,37 +226,115 @@
     
       <a class="category-link" href="https://jeshs.github.io/categories/%e9%97%ae%e9%a2%98%e8%a7%a3%e5%86%b3">问题解决</a>, 
     
-      <a class="category-link" href="https://jeshs.github.io/categories/genymotion">Genymotion</a>
+      <a class="category-link" href="https://jeshs.github.io/categories/virtualbox">VirtualBox</a>
     
   
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>解决VirtualBox虚拟机不能ping通宿主机的问题</p>
+
+<h1 id="问题描述">问题描述</h1>
+
+<p>在VirtualBox虚拟中，无法ping通宿主机，宿主机可以ping通虚拟机</p>
+
+<p>虚拟机的网络已经设置为“桥接网卡”，也可以正常上网</p>
+
+<h1 id="问题原因">问题原因</h1>
+
+<p>Windows主机防火墙没有启用ICMPv4-in这个规则，被防火墙阻止</p>
+
+<h1 id="解决方法">解决方法</h1>
+
+<ol>
+<li>打开Windows控制面板 -&gt; 系统和安全 -&gt; 高级设置</li>
+<li>点击防火墙“入站规则”，找到“文件和打印机共享(回显请求 - ICMPv4-In)”，有两个配置，一个是“专用，公用”，另一个是“域”。右键启用“专用，公用”的那条规则即可</li>
+</ol>
+
+<h1 id="参考">参考</h1>
+
+<p><a href="https://blog.csdn.net/qq_22073849/article/details/54938949">虚拟机ping不通主机，但是主机可以ping通虚拟机 ——linux笔记（1）</a></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/virtualbox/">VirtualBox</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
       
-        <p>解决在Genymotion模拟器上安装APP失败的问题</p>
-      
-      <p>
-        <a href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="postShorten-excerpt_link link">阅读全文</a>
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
-      </p>
-    </div>
-  </div>
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
   
-    <a href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/genymotion.png"/>
-      </div>
-    </a>
-  
-</article>
+</div>
 
             
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
             
-
-          </section>
-        
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 Tom. All Rights Reserved
@@ -257,6 +342,66 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -517,6 +662,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/02\/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95\/';
+          
+            this.page.identifier = '\/2019\/02\/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'tomblog1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 

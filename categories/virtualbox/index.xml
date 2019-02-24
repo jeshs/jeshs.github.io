@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>问题解决 on Tom blog</title>
-    <link>https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
-    <description>Recent content in 问题解决 on Tom blog</description>
+    <title>Virtualbox on Tom blog</title>
+    <link>https://jeshs.github.io/categories/virtualbox/</link>
+    <description>Recent content in Virtualbox on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Feb 2019 21:13:40 +0800</lastBuildDate>
     
-	<atom:link href="https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jeshs.github.io/categories/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;p&gt;解决VirtualBox虚拟机不能ping通宿主机的问题&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法</title>
-      <link>https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Sun, 24 Feb 2019 15:11:56 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;p&gt;解决在Genymotion模拟器上安装APP失败的问题&lt;/p&gt;</description>
     </item>
     
   </channel>
