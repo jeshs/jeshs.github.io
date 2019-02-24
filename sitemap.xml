@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-02-22T16:54:03+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-02-22T09:01:31+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
     <lastmod>2019-02-19T11:29:29+08:00</lastmod>
   </url>
@@ -56,6 +71,18 @@
   </url>
   
   <url>
+    <loc>https://jeshs.github.io/tags/genymotion/</loc>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/categories/genymotion/</loc>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jeshs.github.io/tags/git/</loc>
     <lastmod>2019-02-01T16:00:38+08:00</lastmod>
     <priority>0</priority>
@@ -81,7 +108,7 @@
   
   <url>
     <loc>https://jeshs.github.io/post/</loc>
-    <lastmod>2019-02-19T11:29:29+08:00</lastmod>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -99,7 +126,7 @@
   
   <url>
     <loc>https://jeshs.github.io/</loc>
-    <lastmod>2019-02-19T11:29:29+08:00</lastmod>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -117,7 +144,13 @@
   
   <url>
     <loc>https://jeshs.github.io/categories/%E5%85%B6%E5%AE%83/</loc>
-    <lastmod>2019-01-20T22:07:46+08:00</lastmod>
+    <lastmod>2019-02-22T16:54:03+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2019-02-22T16:54:03+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,6 +173,18 @@
   </url>
   
   <url>
+    <loc>https://jeshs.github.io/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2019-02-22T16:54:03+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2019-02-22T09:01:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2019-01-31T18:13:45+08:00</lastmod>
     <priority>0</priority>
@@ -154,6 +199,12 @@
   <url>
     <loc>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2019-01-31T18:13:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   

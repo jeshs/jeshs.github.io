@@ -6,10 +6,28 @@
     <description>Recent content in 其它 on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Jan 2019 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Feb 2019 16:54:03 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/categories/%E5%85%B6%E5%AE%83/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>软件测试方法和技术实践笔记（二）——单元测试基础</title>
+      <link>https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 22 Feb 2019 16:54:03 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;p&gt;单元测试基础&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>软件测试方法和技术实践笔记（一）——软件测试基础</title>
+      <link>https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 22 Feb 2019 09:01:31 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;p&gt;软件测试基础概要&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hugo搭建博客（二）——部署到Github</title>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Tom">
+<meta name="keywords" content="单元测试, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="单元测试基础">
+
+
+<meta property="og:description" content="单元测试基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试方法和技术实践笔记（二）——单元测试基础">
+<meta name="twitter:title" content="软件测试方法和技术实践笔记（二）——单元测试基础">
+<meta property="og:url" content="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+<meta property="og:site_name" content="Tom blog">
+<meta property="og:description" content="单元测试基础">
+<meta name="twitter:description" content="单元测试基础">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-02-22T16:54:03">
+  
+  
+    <meta property="article:modified_time" content="2019-02-22T16:54:03">
+  
+  
+  
+    
+      <meta property="article:section" content="其它">
+    
+      <meta property="article:section" content="教程">
+    
+  
+  
+    
+      <meta property="article:tag" content="单元测试">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://nos.netease.com/edu-image/32DD60A1BD5954373E14336A6E621D8C.png?imageView&thumbnail=520x520&quality=100">
+  <meta property="twitter:image" content="https://nos.netease.com/edu-image/32DD60A1BD5954373E14336A6E621D8C.png?imageView&thumbnail=520x520&quality=100">
+
+
+
+
+
+  <meta property="og:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
+  <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
+
+
+    <title>软件测试方法和技术实践笔记（二）——单元测试基础</title>
+
+    <link rel="icon" href="https://jeshs.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://jeshs.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jeshs.github.io/">Tom blog</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jeshs.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Tom</h4>
+        
+          <h5 class="sidebar-profile-bio">生命不息 奋斗不止</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      软件测试方法和技术实践笔记（二）——单元测试基础
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-22T16:54:03&#43;08:00">
+        
+  二月 22, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://jeshs.github.io/categories/%e5%85%b6%e5%ae%83">其它</a>, 
+    
+      <a class="category-link" href="https://jeshs.github.io/categories/%e6%95%99%e7%a8%8b">教程</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>单元测试基础</p>
+
+<h1 id="单元测试的定义">单元测试的定义</h1>
+
+<h2 id="定义">定义</h2>
+
+<p>单元测试（又称为模块测试，Unit Testing）是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作</p>
+
+<h2 id="时机">时机</h2>
+
+<p>单元测试和编码同步进行，但在测试驱动开发(TDD)中，强调测试在先，编码在后</p>
+
+<p>单元测试一般由开发人员完成，QA人员辅助</p>
+
+<h2 id="目标">目标</h2>
+
+<p>输入和输出对应正确</p>
+
+<p>内部数据保持完整性，内部数据的形式、内容、相互关系</p>
+
+<p>边界值正确处理</p>
+
+<p>满足特定的逻辑覆盖</p>
+
+<h1 id="单元测试的必要性">单元测试的必要性</h1>
+
+<p>测试越早介入越好</p>
+
+<p>分析、设计、编码阶段 缺陷比例 10%、40%、50%</p>
+
+<p>软件生命周期阶段，越往后，bug产生的成本越高</p>
+
+<p>编码过程中，每写1000行代码会犯几十个错误</p>
+
+<p>编程和编译结束后，每1000行代码中大约残留2-6个bug</p>
+
+<p>寻找和解决BUG的代价占总体开发时间的30%-60%</p>
+
+<p>为什么程序员不愿做单元测试：</p>
+
+<ul>
+<li><p>不愿做 没有做单元测试习惯，没有意愿</p></li>
+
+<li><p>没时间 项目周期短，基于敏捷开发的节奏越来越快 写单元测试要花很多时间</p></li>
+
+<li><p>做不了 代码耦合性高，开展困难</p></li>
+
+<li><p>做不好 要达到较高的代码覆盖率很困难</p></li>
+</ul>
+
+<p>程序员心理：</p>
+
+<ul>
+<li><p>写单元测试导致不能按时完成任务，推迟项目进度</p></li>
+
+<li><p>单元测试价值不高，完全是浪费时间</p>
+
+<p>长期来看，相比没有单元测试的项目，有单元测试的项目在开发周期中更省时间</p></li>
+
+<li><p>业务逻辑简单，不值得写单元测试</p>
+
+<p>需求会变化，需求文档、代码注释往往不会更新。单元测试可以记录需求变更</p>
+
+<p>代码编写者去写单元测试比其他人更完善、更准确</p>
+
+<p>代码维护</p>
+
+<p>集成测试</p></li>
+
+<li><p>不知道怎么编写单元测试</p>
+
+<ul>
+<li>为所有类编写单元测试</li>
+<li>学会使用断言</li>
+<li>最大化测试覆盖率</li>
+<li>避免重复的测试代码</li>
+<li>不依赖测试方法的执行顺序</li>
+</ul></li>
+
+<li><p>项目前期尽量写单元测试，越到后期越失控</p></li>
+
+<li><p>项目没有要求，所以不写</p></li>
+</ul>
+
+<h1 id="代码如何测">代码如何测</h1>
+
+<p>评价标准：代码覆盖率</p>
+
+<p>代码覆盖的步骤：</p>
+
+<ul>
+<li>源代码转为流程图，流程图可以直观的描述代码逻辑</li>
+<li>分析流程图，选择需要覆盖的代码</li>
+<li>确定测试数据，生成测试用例</li>
+</ul>
+
+<p>白盒测试方法：</p>
+
+<ul>
+<li>语句（statement）覆盖</li>
+<li>分支（branch）覆盖/判定（decision）覆盖</li>
+<li>条件（condition）覆盖</li>
+<li>判定/条件覆盖</li>
+<li>条件组合覆盖</li>
+</ul>
+
+<h2 id="语句覆盖">语句覆盖</h2>
+
+<p>语句覆盖 = （被执行的语句数量/总的语句数量）* 100%</p>
+
+<p>达到100%的语句覆盖很困难</p>
+
+<ul>
+<li>不可达代码</li>
+<li>处理错误代码（处理异常）</li>
+<li>小概率事件</li>
+</ul>
+
+<h2 id="分支-判定覆盖">分支/判定覆盖</h2>
+
+<p>忽略了表达式内的条件，不能发现每个条件的错误</p>
+
+<h2 id="条件覆盖">条件覆盖</h2>
+
+<p>确保每个条件取True和False各一次，可以检查每个原子条件，不能保证所有判断分支都覆盖</p>
+
+<h2 id="判定-条件覆盖">判定/条件覆盖</h2>
+
+<p>判定条件中的所有条件可能至少执行一次取值，同时，所有判定的可能结果至少执行一次。判定覆盖和条件覆盖的组合</p>
+
+<h2 id="条件组合覆盖">条件组合覆盖</h2>
+
+<p>使得每个判定的所有可能的条件取值组合至少执行一次</p>
+
+<p>可满足分支覆盖，也满足语句覆盖</p>
+
+<h1 id="覆盖率">覆盖率</h1>
+
+<p>基本准则：</p>
+
+<ul>
+<li>覆盖率部署目的，只是一种手段</li>
+<li>不可能针对所有的覆盖率去测试</li>
+<li>只考虑一种覆盖标准不恰当</li>
+<li>不要追求绝对100%覆盖率</li>
+</ul>
+
+<p>其它准则：</p>
+
+<ul>
+<li>使用最少的测试来达到最大的覆盖</li>
+<li>要考虑测试质量，兼顾效益、成本</li>
+<li>软件变化需要更新相应的覆盖</li>
+</ul>
+
+<h1 id="代码评审">代码评审</h1>
+
+<p>通过阅读代码来检查软件是否符合编码规范，是否符合代码质量标准</p>
+
+<p>评审内容：</p>
+
+<ul>
+<li>编码规范问题：命名不规范、magic number、System.out&hellip;</li>
+<li>代码结构问题：重复代码、巨大的方法和类、分层不当</li>
+<li>工具、框架使用不当：Spring、Hibernate、AJAX</li>
+<li>实现问题：错误验证、异常处理、事务划分、线程、性能、安全、代码过于复杂、代码可读性不佳、扩展性不好</li>
+<li>测试问题：测试覆盖率不高、可测试性不好</li>
+</ul>
+
+<p>代码评审中的问题：</p>
+
+<ul>
+<li>低级问题 命名规范和代码风格</li>
+<li>中级问题 可重用性问题、控制结构和逻辑问题</li>
+<li>高级问题 性能、安全、冗余、功能问题、错误处理、可测量性问题</li>
+</ul>
+
+<p>检查点：</p>
+
+<p>路径测试：</p>
+
+<ul>
+<li>误解或用错了算符优先级</li>
+<li>混合类型运算</li>
+<li>变量初值错</li>
+<li>精度不够</li>
+<li>表达式符号错误</li>
+<li>其它</li>
+</ul>
+
+<p>数据结构测试：</p>
+
+<ul>
+<li>变量无初值</li>
+<li>不适合或者不相容的类型说明</li>
+<li>变量初始化或者默认值有错</li>
+<li>不正确的变量名或从未被使用过</li>
+<li>出现上溢或下溢地址异常</li>
+<li>其它</li>
+</ul>
+
+<p>模块接口测试：</p>
+
+<ul>
+<li>输入的实际参数与形式参数是否一致</li>
+<li>调用其它模块的实际参数和被调模块的形参是否一致</li>
+<li>全程变量的定义在各模块是否一致</li>
+<li>外部输入、输出</li>
+<li>文件、缓冲区、错误处理</li>
+<li>其它</li>
+</ul>
+
+<p>单元边界条件测试：</p>
+
+<ul>
+<li>普通合法数据的处理</li>
+<li>普通非法数据的处理</li>
+<li>边界值内合法边界数据的处理</li>
+<li>边界值外非法边界数据的处理</li>
+<li>其它</li>
+</ul>
+
+<p>单元容错测试：</p>
+
+<ul>
+<li>输出的出错信息难以理解</li>
+<li>记录的错误和实际不相符</li>
+<li>异常处理不当</li>
+<li>未提供足够的定位出错信息</li>
+<li>其它</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/" data-tooltip="软件测试方法和技术实践笔记（一）——软件测试基础">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Tom. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/" data-tooltip="软件测试方法和技术实践笔记（一）——软件测试基础">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Tom</h4>
+    
+      <div id="about-card-bio">生命不息 奋斗不止</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        IT
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        中国
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="搜索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                <h3 class="media-heading">Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>解决在Genymotion模拟器上安装APP失败的问题</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+                <h3 class="media-heading">软件测试方法和技术实践笔记（二）——单元测试基础</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>单元测试基础</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+                <h3 class="media-heading">软件测试方法和技术实践笔记（一）——软件测试基础</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>软件测试基础概要</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                <h3 class="media-heading">搭建brook服务器</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在Linux上搭建brook代理服务器</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
+                <h3 class="media-heading">Git基础——子模块</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/">
+                <h3 class="media-heading">自动化测试报告（一）——Allure2简介</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/">
+                <h3 class="media-heading">Hugo搭建博客（二）——部署到Github</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
+                <h3 class="media-heading">Hugo搭建博客（一）——搭建Hugo博客</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         8 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://jeshs.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jeshs.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/02\/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80\/';
+          
+            this.page.identifier = '\/2019\/02\/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'tomblog1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
