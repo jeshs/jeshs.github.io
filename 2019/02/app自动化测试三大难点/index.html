@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Tom">
+<meta name="keywords" content="自动化测试, UI, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+
+
+<meta property="og:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+<meta property="og:type" content="article">
+<meta property="og:title" content="App自动化测试三大难点">
+<meta name="twitter:title" content="App自动化测试三大难点">
+<meta property="og:url" content="https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/">
+<meta property="og:site_name" content="Tom blog">
+<meta property="og:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+<meta name="twitter:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-02-26T21:45:22">
+  
+  
+    <meta property="article:modified_time" content="2019-02-26T21:45:22">
+  
+  
+  
+    
+      <meta property="article:section" content="自动化测试">
+    
+      <meta property="article:section" content="UI自动化测试">
+    
+  
+  
+    
+      <meta property="article:tag" content="自动化测试">
+    
+      <meta property="article:tag" content="UI">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/automationTest.jpg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/automationTest.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
+  <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
+
+
+    <title>App自动化测试三大难点</title>
+
+    <link rel="icon" href="https://jeshs.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://jeshs.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="5">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jeshs.github.io/">Tom blog</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="5">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jeshs.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Tom</h4>
+        
+          <h5 class="sidebar-profile-bio">生命不息 奋斗不止</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jeshs.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="5"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      App自动化测试三大难点
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-02-26T21:45:22&#43;08:00">
+        
+  二月 26, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://jeshs.github.io/categories/%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95">自动化测试</a>, 
+    
+      <a class="category-link" href="https://jeshs.github.io/categories/ui%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95">UI自动化测试</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略</p>
+
+<h1 id="稳定性差">稳定性差</h1>
+
+<p>UI测试的不稳定性主要来自两个方面，一个是被测对象的不稳定，一个是测试代码的不稳定</p>
+
+<p>稳定性非常重要，不稳定的自动化测试，会让开发和团队成员失去信任，直接决定成败</p>
+
+<h2 id="被测对象的不稳定">被测对象的不稳定</h2>
+
+<p>在UI自动化测试中，由于盛行敏捷管理，需求变化快，导致UI经常变化</p>
+
+<p>建议：准确把握介入时机，不要在项目早期介入UI自动化测试，等待版本相对比较稳定成熟后在开展UI自动化测试</p>
+
+<h2 id="测试代码的不稳定">测试代码的不稳定</h2>
+
+<p>测试代码的不稳定主要体现在经常定位不到元素，从而容易失败。有时候会有莫名其妙的原因导致测试失败</p>
+
+<p>建议：</p>
+
+<ul>
+<li>元素查找方式使用更稳定的id，xpath等方式</li>
+<li>元素查找时间适当延长</li>
+<li>使用适用性更广、更通用、更稳定的断言方式，尽量不使用UI元素作为断言，推荐如Activity</li>
+<li>尽量使用逻辑验证，减少数据验证，数据验证更适合接口测试</li>
+<li>更新到最新的版本Appium，更稳定</li>
+<li>尽量不要用sleep</li>
+<li>保证稳定测试环境：网络、测试系统和被测系统、测试账号等</li>
+</ul>
+
+<h1 id="可维护性差">可维护性差</h1>
+
+<p>可维护性是UI自动化测试的另一个难点，直接决定效率。为什么录制的脚本都不算自动化测试，就是这个原因</p>
+
+<p>建议：</p>
+
+<ul>
+<li>PO设计模式</li>
+<li>抽取页面公共方法，抽取测试用例公共方法，抽取常用手势操作方法</li>
+<li>测试数据和测试用例分离，测试用例和业务逻辑分离</li>
+<li>同一个类中测试用例链式依赖，方便增减测试用例</li>
+</ul>
+
+<h1 id="执行效率低">执行效率低</h1>
+
+<p>UI执行效率慢，这个倒是客观原因，因为需要模拟用户真实操作</p>
+
+<p>建议：</p>
+
+<ul>
+<li>科学的设计测试用例，用例不是越多越好</li>
+<li>升级Appium到新版本，执行时间减少三分之一</li>
+<li>Appium执行器使用uiautomator2</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">自动化测试</a>
+
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/ui/">UI</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="VirtualBox虚拟机不能ping通宿主机的解决方法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 Tom. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="VirtualBox虚拟机不能ping通宿主机的解决方法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Tom</h4>
+    
+      <div id="about-card-bio">生命不息 奋斗不止</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        测试工程师
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        深圳
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="搜索" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/">
+                <h3 class="media-heading">App自动化测试三大难点</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                <h3 class="media-heading">VirtualBox虚拟机不能ping通宿主机的解决方法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>解决VirtualBox虚拟机不能ping通宿主机的问题</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                <h3 class="media-heading">Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>解决在Genymotion模拟器上安装APP失败的问题</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+                <h3 class="media-heading">软件测试方法和技术实践笔记（二）——单元测试基础</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>单元测试基础</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+                <h3 class="media-heading">软件测试方法和技术实践笔记（一）——软件测试基础</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>软件测试基础概要</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E6%90%AD%E5%BB%BAbrook%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                <h3 class="media-heading">搭建brook服务器</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在Linux上搭建brook代理服务器</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/git%E5%9F%BA%E7%A1%80%E5%AD%90%E6%A8%A1%E5%9D%97/">
+                <h3 class="media-heading">Git基础——子模块</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E4%B8%80allure2%E7%AE%80%E4%BB%8B/">
+                <h3 class="media-heading">自动化测试报告（一）——Allure2简介</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%E9%83%A8%E7%BD%B2%E5%88%B0github/">
+                <h3 class="media-heading">Hugo搭建博客（二）——部署到Github</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>在本地搭建调试博客没有问题后，就需要发布了，本文简述怎么将Hugo搭建的博客部署到Github</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
+                <h3 class="media-heading">Hugo搭建博客（一）——搭建Hugo博客</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         10 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://jeshs.github.io/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jeshs.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/02\/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9\/';
+          
+            this.page.identifier = '\/2019\/02\/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'tomblog1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
