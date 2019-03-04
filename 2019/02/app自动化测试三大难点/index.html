@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
 <meta name="keywords" content="自动化测试, UI, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+<meta name="description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略">
 
 
-<meta property="og:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+<meta property="og:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="App自动化测试三大难点">
 <meta name="twitter:title" content="App自动化测试三大难点">
 <meta property="og:url" content="https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/">
 <meta property="twitter:url" content="https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
-<meta name="twitter:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略">
+<meta property="og:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略">
+<meta name="twitter:description" content="App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -53,8 +53,8 @@
 
 
 
-  <meta property="og:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/automationTest.jpg">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/automationTest.jpg">
+  <meta property="og:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/AutomationTesting.gif">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/AutomationTesting.gif">
 
 
 
@@ -238,13 +238,15 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略</p>
+              <p>App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略</p>
 
 <h1 id="稳定性差">稳定性差</h1>
 
 <p>UI测试的不稳定性主要来自两个方面，一个是被测对象的不稳定，一个是测试代码的不稳定</p>
 
-<p>稳定性非常重要，不稳定的自动化测试，会让开发和团队成员失去信任，直接决定成败</p>
+<p>另外，测试框架的不稳定，在早期阶段确实是这样，不过开源社区的发展和努力，现在测试框架已经越来越成熟和稳定，所以由此带来的不稳定性可以忽略</p>
+
+<p>稳定性非常重要，不稳定的自动化测试如果一直持续，会逐渐让开发和团队成员失去信任，所以测试的稳定性直接决定成败</p>
 
 <h2 id="被测对象的不稳定">被测对象的不稳定</h2>
 
@@ -259,13 +261,14 @@
 <p>建议：</p>
 
 <ul>
-<li>元素查找方式使用更稳定的id，xpath等方式</li>
-<li>元素查找时间适当延长</li>
-<li>使用适用性更广、更通用、更稳定的断言方式，尽量不使用UI元素作为断言，推荐如Activity</li>
-<li>尽量使用逻辑验证，减少数据验证，数据验证更适合接口测试</li>
+<li>元素查找方式使用更稳定的id，xpath等方式，使用数组方式定位查找一组元素，有可能出现数组越界异常</li>
+<li>元素查找时间适当延长，应对不稳定网络情况，我一般设置全局时间是30秒</li>
+<li>PO设计模式的页面类的构造函数中，加入一些判断条件，确保页面加载完成再进行UI操作</li>
+<li>使用适用性更广、更通用、更稳定的断言方式，尽量不依赖UI元素作为断言，推荐如当前的Activity</li>
+<li>尽量使用逻辑验证，减少数据验证，数据验证更适合接口测试。我曾经把商品订单页、确认订单页、订单详情页全部字段进行校验，20多个字段，这是非常错误的。不仅耗费时间，而且导致测试用例不稳定</li>
 <li>更新到最新的版本Appium，更稳定</li>
-<li>尽量不要用sleep</li>
-<li>保证稳定测试环境：网络、测试系统和被测系统、测试账号等</li>
+<li>尽量不要用sleep，将sleep方法封装</li>
+<li>保证稳定测试环境：网络、测试系统和被测系统、测试账号等。测试数据在测试完成后需要重置</li>
 </ul>
 
 <h1 id="可维护性差">可维护性差</h1>
@@ -277,7 +280,7 @@
 <ul>
 <li>PO设计模式</li>
 <li>抽取页面公共方法，抽取测试用例公共方法，抽取常用手势操作方法</li>
-<li>测试数据和测试用例分离，测试用例和业务逻辑分离</li>
+<li>测试数据和测试用例分离，测试用例和业务逻辑分离，页面元素和页面操作分离</li>
 <li>同一个类中测试用例链式依赖，方便增减测试用例</li>
 </ul>
 
@@ -288,9 +291,9 @@
 <p>建议：</p>
 
 <ul>
-<li>科学的设计测试用例，用例不是越多越好</li>
-<li>升级Appium到新版本，执行时间减少三分之一</li>
-<li>Appium执行器使用uiautomator2</li>
+<li>科学的设计测试用例，精简价值低和效用低的用例，用例不是越多越好</li>
+<li>测试用例前置条件和后置条件使用BeforeClass 和 AfterClass，这样一组测试用例只需要执行一次前置条件和后置条件。好处是大幅度提升测试速度，缺点是，这一组测试用例是相互依赖的，其中一个测试出错，会影响后面的测试用例。所以控制一个类中的测试用例数据量在10-20个为宜</li>
+<li>Appium执行器使用uiautomator2，执行时间减少三分之一</li>
 </ul>
               
             </div>
@@ -499,7 +502,7 @@
                   Feb 2, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>App自动化测试稳定性差、可维护性差、执行效率低三大难点应对策略</p></div>
+              <div class="media-content hide-xs font-merryweather"><p>App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -534,6 +537,23 @@
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather"><p>解决在Genymotion模拟器上安装APP失败的问题</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%89%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/">
+                <h3 class="media-heading">软件测试方法和技术实践笔记（三）——单元测试方法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>代码测试方法，包括自动代码扫描、插桩、单元测试框架等</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -641,23 +661,6 @@
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/01/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%E6%90%AD%E5%BB%BAhugo%E5%8D%9A%E5%AE%A2/">
-                <h3 class="media-heading">Hugo搭建博客（一）——搭建Hugo博客</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Jan 1, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>Hugo是开源的静态网站生成器，用go语言编写，生成网站速度非常快。本文以Windows为例，介绍如何使用Hugo搭建博客</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -665,7 +668,7 @@
          data-message-zero=""
          data-message-one=""
          data-message-other="">
-         10 posts found
+         11 posts found
       </p>
     </div>
   </div>
