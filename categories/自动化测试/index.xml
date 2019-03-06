@@ -6,19 +6,10 @@
     <description>Recent content in 自动化测试 on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Feb 2019 21:45:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jan 2019 18:13:45 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>App自动化测试三大难点</title>
-      <link>https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/</link>
-      <pubDate>Tue, 26 Feb 2019 21:45:22 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/</guid>
-      <description>&lt;p&gt;App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>自动化测试报告（一）——Allure2简介</title>
