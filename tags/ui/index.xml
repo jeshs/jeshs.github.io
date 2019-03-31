@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>App自动化测试三大难点</title>
-      <link>https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/</link>
+      <title>App UI自动化测试难点及应对策略</title>
+      <link>https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/</link>
       <pubDate>Tue, 26 Feb 2019 21:45:22 +0800</pubDate>
       
-      <guid>https://jeshs.github.io/2019/02/app%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E4%B8%89%E5%A4%A7%E9%9A%BE%E7%82%B9/</guid>
-      <description>&lt;p&gt;App自动化测试稳定性差、可维护性差、执行效率低三大难点和应对策略&lt;/p&gt;</description>
+      <guid>https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/</guid>
+      <description>&lt;p&gt;App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略&lt;/p&gt;</description>
     </item>
     
   </channel>
