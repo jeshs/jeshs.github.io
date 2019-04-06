@@ -7,40 +7,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Tom">
-<meta name="keywords" content="自动化测试, UI, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略">
+<meta name="keywords" content="Git, 代理, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="在Windows中设置Git代理，解决操作git push 和git clone时出现连接Github失败的问题">
 
 
-<meta property="og:description" content="App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略">
+<meta property="og:description" content="在Windows中设置Git代理，解决操作git push 和git clone时出现连接Github失败的问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="App UI自动化测试难点及应对策略">
-<meta name="twitter:title" content="App UI自动化测试难点及应对策略">
-<meta property="og:url" content="https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/">
-<meta property="twitter:url" content="https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/">
+<meta property="og:title" content="Git基础——代理">
+<meta name="twitter:title" content="Git基础——代理">
+<meta property="og:url" content="https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/">
+<meta property="twitter:url" content="https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略">
-<meta name="twitter:description" content="App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略">
+<meta property="og:description" content="在Windows中设置Git代理，解决操作git push 和git clone时出现连接Github失败的问题">
+<meta name="twitter:description" content="在Windows中设置Git代理，解决操作git push 和git clone时出现连接Github失败的问题">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-02-26T21:45:22">
+    <meta property="article:published_time" content="2019-04-06T10:08:22">
   
   
-    <meta property="article:modified_time" content="2019-02-26T21:45:22">
+    <meta property="article:modified_time" content="2019-04-06T10:08:22">
   
-  
-  
-    
-      <meta property="article:section" content="自动化测试">
-    
-      <meta property="article:section" content="UI自动化测试">
-    
   
   
     
-      <meta property="article:tag" content="自动化测试">
+      <meta property="article:section" content="工具">
     
-      <meta property="article:tag" content="UI">
+      <meta property="article:section" content="Git">
+    
+  
+  
+    
+      <meta property="article:tag" content="Git">
+    
+      <meta property="article:tag" content="代理">
     
   
 
@@ -53,8 +53,8 @@
 
 
 
-  <meta property="og:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/AutomationTesting.gif">
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/AutomationTesting.gif">
+  <meta property="og:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/git.png">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/jeshs/jeshs.github.io/master/post/img/git.png">
 
 
 
@@ -64,14 +64,14 @@
   <meta property="twitter:image" content="https://images.liqucn.com/img/h1/h994/img201802021439050_info300X300.jpg">
 
 
-    <title>App UI自动化测试难点及应对策略</title>
+    <title>Git基础——代理</title>
 
     <link rel="icon" href="https://jeshs.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/">
+    <link rel="canonical" href="https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -209,15 +209,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      App UI自动化测试难点及应对策略
+      Git基础——代理
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-02-26T21:45:22&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-04-06T10:08:22&#43;08:00">
         
-  二月 26, 2019
+  四月 6, 2019
 
       </time>
     
@@ -226,9 +226,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://jeshs.github.io/categories/%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95">自动化测试</a>, 
+      <a class="category-link" href="https://jeshs.github.io/categories/%e5%b7%a5%e5%85%b7">工具</a>, 
     
-      <a class="category-link" href="https://jeshs.github.io/categories/ui%e8%87%aa%e5%8a%a8%e5%8c%96%e6%b5%8b%e8%af%95">UI自动化测试</a>
+      <a class="category-link" href="https://jeshs.github.io/categories/git">Git</a>
     
   
 
@@ -238,68 +238,175 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略</p>
+              <p>在Windows中设置Git代理，解决操作<code>git push</code> 和<code>git clone</code>时出现连接<code>Github</code>失败的问题</p>
 
-<h1 id="稳定性差">稳定性差</h1>
+<h1 id="git协议">Git协议</h1>
 
-<p>UI测试的不稳定性主要来自两个方面，一个是被测对象的不稳定，一个是测试代码的不稳定</p>
+<p>Git支持多种协议，包括http、ssh、git等，这里只介绍使用http和ssh这两种方式设置代理，这两种协议是独立的，如果只设置了其中一种的代理，那么另一种是不会走代理的，具体设置哪种，根据个人需要：</p>
 
-<p>另外，测试框架的不稳定，在早期阶段确实是这样，不过开源社区的发展和努力，现在测试框架已经越来越成熟和稳定，所以由此带来的不稳定性可以忽略</p>
+<ol>
+<li>通过http的方式类似下面这样</li>
+</ol>
 
-<p>稳定性非常重要，不稳定的自动化测试如果一直持续，会逐渐让开发和团队成员失去信任，所以测试的稳定性直接决定成败</p>
+<pre><code class="language-shell">   git clone https://github.com/xxx/xxx.git
+</code></pre>
 
-<h2 id="被测对象的不稳定">被测对象的不稳定</h2>
+<ol>
+<li>通过ssh的方式类似下面这样</li>
+</ol>
 
-<p>在UI自动化测试中，由于盛行敏捷管理，需求变化快，导致UI经常变化</p>
+<pre><code class="language-shell">   git clone git@github.com:xxx/xxx.git
+</code></pre>
 
-<p>建议：</p>
+<p>查看远程仓库地址</p>
+
+<pre><code class="language-shell">git remote -v
+</code></pre>
+
+<p>修改远程仓库url</p>
+
+<pre><code class="language-shell">git remote set-url origin &lt;url&gt;
+</code></pre>
+
+<h1 id="设置git-http代理">设置Git http代理</h1>
+
+<p><strong>注意</strong>：设置代理前，需要有一个代理服务器，我这里使用本地搭建的socks代理，地址为<code>socks5://127.0.0.1:1080</code>，如果你是http代理，改为<code>http://127.0.0.1:1080</code>即可</p>
+
+<h2 id="给所有网站设置http代理">给所有网站设置http代理</h2>
+
+<p>设置git使用http代理</p>
+
+<pre><code class="language-shell">git config --global http.proxy socks5://127.0.0.1:1080
+</code></pre>
+
+<p>设置成功后，会在<code>C:/Users/username/.gitconfig</code>文件中添加以下内容</p>
+
+<pre><code class="language-json">[http]
+    proxy = socks5://127.0.0.1:1080
+</code></pre>
+
+<p>查看配置文件是否配置成功：</p>
+
+<pre><code class="language-shell">git config --global -e
+</code></pre>
+
+<p>如果希望主机名也由代理解析（这意味着通过代理传递所有内容），尤其是在克隆<code>gist</code>时，可以使用以下设置（关键是它使用socks5h而不是socks5）</p>
+
+<pre><code class="language-shell">git config --global http.proxy socks5h://127.0.0.1:1080
+</code></pre>
+
+<p>删除http代理：</p>
 
 <ul>
-<li>准确把握介入时机，不要在项目早期介入UI自动化测试，等待版本相对比较稳定成熟后在开展UI自动化测试</li>
-<li>优先实现较稳定模块的自动化测试</li>
+<li>使用以下命令取消设置的代理</li>
 </ul>
 
-<h2 id="测试代码的不稳定">测试代码的不稳定</h2>
-
-<p>测试代码的不稳定主要体现在经常定位不到元素，从而容易失败。有时候会有莫名其妙的原因导致测试失败</p>
-
-<p>建议：</p>
+<pre><code class="language-shell">  git config --global --unset http.proxy
+</code></pre>
 
 <ul>
-<li>元素查找方式使用更稳定的id，xpath等方式，使用数组方式定位查找一组元素，有可能出现数组越界异常</li>
-<li>元素查找时间适当延长，应对不稳定网络情况，我一般设置全局时间是30秒</li>
-<li>PO设计模式的页面类的构造函数中，加入一些判断条件，确保页面加载完成再进行UI操作</li>
-<li>使用适用性更广、更通用、更稳定的断言方式，尽量不依赖UI元素作为断言，例如判断处于某个界面可使用Activity</li>
-<li>尽量使用逻辑验证，减少数据验证，数据验证更适合接口测试。过多的数据验证牵涉到更多的UI元素，容易导致测试不稳定。我曾经把商品订单页、确认订单页、订单详情页全部字段进行校验，有20多个字段，这是非常错误的，不仅耗费时间，而且会导致测试用例不稳定</li>
-<li>更新到最新的版本Appium，更稳定</li>
-<li>尽量不要用sleep，将sleep方法封装</li>
-<li>保证稳定测试环境：网络、测试系统和被测系统、测试账号等。测试数据在测试完成后需要重置</li>
+<li>也可以手动删除<code>C:/Users/username/.gitconfig</code>文件中对应的内容</li>
 </ul>
 
-<h1 id="可维护性差">可维护性差</h1>
-
-<p>可维护性是UI自动化测试的另一个难点，直接决定效率。为什么录制的脚本都不算自动化测试，就是这个原因</p>
-
-<p>建议：</p>
+<pre><code class="language-shell">  [http]
+    proxy = socks5://127.0.0.1:1080
+</code></pre>
 
 <ul>
-<li>PO设计模式</li>
-<li>抽取页面公共方法，抽取测试用例公共方法，抽取常用手势操作方法</li>
-<li>测试数据和测试用例分离，测试用例和业务逻辑分离，页面元素和页面操作分离</li>
-<li>同一个类中测试用例链式依赖，方便增减测试用例</li>
+<li>查看是否删除成功</li>
 </ul>
 
-<h1 id="执行效率低">执行效率低</h1>
+<pre><code class="language-shell">  git config --global -e
+</code></pre>
 
-<p>UI执行效率慢，这个倒是客观原因，因为需要模拟用户真实操作</p>
-
-<p>建议：</p>
+<p>注意：</p>
 
 <ul>
-<li>科学的设计测试用例，精简价值低和效用低的用例，用例不是越多越好</li>
-<li>测试用例前置条件和后置条件使用BeforeClass 和 AfterClass，这样一组测试用例只需要执行一次前置条件和后置条件。好处是大幅度提升测试速度，缺点是，这一组测试用例是相互依赖的，其中一个测试出错，会影响后面的测试用例。所以控制一个类中的测试用例数据量在10-20个为宜</li>
-<li>Appium执行器使用uiautomator2，执行时间减少三分之一</li>
+<li>代理地址<code>socks5://127.0.0.1:1080</code>不要加引号</li>
+<li>不需要配置<code>https.proxy</code>，配置了也没用，只需要设置<code>http.proxy</code>，对<code>http</code>和<code>https</code>都起作用</li>
 </ul>
+
+<h2 id="给某个网站设置http代理">给某个网站设置http代理</h2>
+
+<p>如果只想设置某个网站走代理，以<code>github.com</code>为例，可使用以下命令</p>
+
+<pre><code class="language-shell">git config --global http.https://github.com.proxy socks5h://127.0.0.1:1080
+</code></pre>
+
+<p>设置成功后，会在<code>C:/Users/username/.gitconfig</code>文件中添加以下内容</p>
+
+<pre><code class="language-json">[http &quot;https://github.com&quot;]
+    proxy = socks5h://127.0.0.1:1080
+</code></pre>
+
+<p>查看是否配置成功：</p>
+
+<pre><code class="language-shell">git config --global -e
+</code></pre>
+
+<p>删除代理：</p>
+
+<pre><code class="language-shell">git config --global --unset http.https://github.com.proxy
+</code></pre>
+
+<p>查看是否删除成功：</p>
+
+<pre><code class="language-shell">git config --global -e
+</code></pre>
+
+<h1 id="设置git-ssh代理">设置Git SSH代理</h1>
+
+<p>在<code>C:\Users\username\.ssh\config</code>文件中添加相关配置，如果没有config文件需要手动创建，connect命令是git Windows客户端<code>git for windows</code>自带的, 位于<code>&lt;Git-install-path&gt;\mingw64\bin\connect.exe</code></p>
+
+<ul>
+<li><p>socks代理添加以下配置</p>
+
+<pre><code class="language-json">Host github.com(改成你的站点)
+ProxyCommand connect -S 127.0.0.1:1080 %h %p
+</code></pre></li>
+
+<li><p>如果使用http代理，则需要将<code>-S</code>改成<code>-H</code>使用以下配置</p>
+
+<pre><code class="language-json">Host github.com(改成你的站点)
+ProxyCommand connect -H 127.0.0.1:1080 %h %p
+</code></pre></li>
+</ul>
+
+<p>可以配置多个网站Host</p>
+
+<pre><code class="language-json">Host github.com(改成你的站点)
+ProxyCommand connect -H 127.0.0.1:1080 %h %p
+
+Host bitbucket.com(改成你的站点)
+ProxyCommand connect -H 127.0.0.1:1080 %h %p
+</code></pre>
+
+<p>如果Host设置为<code>*</code>，代理会对所有未配置的Host起作用。以下有三项配置，访问github使用第二项配置，访问bitbucket使用第三项配置，其它网站使用第一项配置</p>
+
+<pre><code class="language-json">Host *
+ ProxyCommand &quot;C:/Program Files/Git/mingw64/bin/connect.exe&quot; -H {proxyserver}:{port} %h %p
+ IdentityFile &quot;C:/Users/username/.ssh/id_rsa&quot;
+ TCPKeepAlive yes
+ IdentitiesOnly yes
+
+Host github.com(改成你的站点)
+ProxyCommand connect -H 127.0.0.1:1080 %h %p
+
+Host bitbucket.com(改成你的站点)
+ProxyCommand connect -H 127.0.0.1:1080 %h %p
+</code></pre>
+
+<p>其中<code>ProxyCommand</code>命令中，<code>%h</code>引用配置文件中的host，<code>%p</code>引用配置的端口(这里没有配置，默认端口为22)</p>
+
+<h1 id="参考">参考</h1>
+
+<p><a href="https://gist.github.com/laispace/666dd7b27e9116faece6">git 设置和取消代理</a></p>
+
+<p><a href="https://stackoverflow.com/questions/15227130/using-a-socks-proxy-with-git-for-the-http-transport">Using a socks proxy with git for the http transport</a></p>
+
+<p><a href="https://segmentfault.com/q/1010000000118837">如何为 Git 设置代理</a></p>
+
+<p><a href="https://communary.net/2017/01/12/getting-git-to-work-through-a-proxy-server-in-windows/">Getting git to work through a proxy server (in Windows)</a></p>
               
             </div>
           </div>
@@ -311,9 +418,9 @@
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">自动化测试</a>
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/git/">Git</a>
 
-  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/ui/">UI</a>
+  <a class="tag tag--primary tag--small" href="https://jeshs.github.io/tags/%E4%BB%A3%E7%90%86/">代理</a>
 
                   </div>
                 
@@ -326,7 +433,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/" data-tooltip="解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -334,7 +441,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="VirtualBox虚拟机不能ping通宿主机的解决方法">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/" data-tooltip="解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -394,7 +501,7 @@
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/" data-tooltip="解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -402,7 +509,7 @@
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" data-tooltip="VirtualBox虚拟机不能ping通宿主机的解决方法">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/" data-tooltip="解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -728,9 +835,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/jeshs.github.io\/2019\/02\/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5\/';
+          this.page.url = 'https:\/\/jeshs.github.io\/2019\/04\/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86\/';
           
-            this.page.identifier = '\/2019\/02\/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5\/'
+            this.page.identifier = '\/2019\/04\/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86\/'
           
         };
         (function() {

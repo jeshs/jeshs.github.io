@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https-services.gradle.org-distributions-gradle-4.10.1-all.zip/</loc>
+    <loc>https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/</loc>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/</loc>
     <lastmod>2019-03-31T17:18:20+08:00</lastmod>
   </url>
   
@@ -69,25 +74,25 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/android/</loc>
-    <lastmod>2019-03-31T17:18:20+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jeshs.github.io/tags/android/</loc>
     <lastmod>2019-03-31T17:18:20+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/android-studio/</loc>
+    <loc>https://jeshs.github.io/categories/android/</loc>
     <lastmod>2019-03-31T17:18:20+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jeshs.github.io/tags/android-studio/</loc>
+    <lastmod>2019-03-31T17:18:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/categories/android-studio/</loc>
     <lastmod>2019-03-31T17:18:20+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -116,26 +121,26 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/genymotion/</loc>
-    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jeshs.github.io/tags/genymotion/</loc>
     <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/git/</loc>
-    <lastmod>2019-02-01T16:00:38+08:00</lastmod>
+    <loc>https://jeshs.github.io/categories/genymotion/</loc>
+    <lastmod>2019-02-24T15:11:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jeshs.github.io/tags/git/</loc>
-    <lastmod>2019-02-01T16:00:38+08:00</lastmod>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/categories/git/</loc>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -153,7 +158,7 @@
   
   <url>
     <loc>https://jeshs.github.io/post/</loc>
-    <lastmod>2019-03-31T17:18:20+08:00</lastmod>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -171,7 +176,7 @@
   
   <url>
     <loc>https://jeshs.github.io/</loc>
-    <lastmod>2019-03-31T17:18:20+08:00</lastmod>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -188,25 +193,25 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/virtualbox/</loc>
-    <lastmod>2019-02-24T21:13:40+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jeshs.github.io/tags/virtualbox/</loc>
     <lastmod>2019-02-24T21:13:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2019-02-19T11:29:29+08:00</lastmod>
+    <loc>https://jeshs.github.io/categories/virtualbox/</loc>
+    <lastmod>2019-02-24T21:13:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jeshs.github.io/tags/%E4%BB%A3%E7%90%86/</loc>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2019-02-19T11:29:29+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -224,20 +229,20 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2019-01-20T22:07:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jeshs.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2019-01-20T20:50:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-01-20T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jeshs.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2019-02-19T11:29:29+08:00</lastmod>
+    <lastmod>2019-04-06T10:08:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -254,25 +259,25 @@
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
-    <lastmod>2019-01-31T18:13:45+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jeshs.github.io/tags/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2019-01-31T18:13:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2019-02-26T21:45:22+08:00</lastmod>
+    <loc>https://jeshs.github.io/categories/%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A/</loc>
+    <lastmod>2019-01-31T18:13:45+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jeshs.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2019-02-26T21:45:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2019-02-26T21:45:22+08:00</lastmod>
     <priority>0</priority>
   </url>

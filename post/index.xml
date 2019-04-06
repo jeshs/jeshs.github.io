@@ -6,17 +6,26 @@
     <description>Recent content in Posts on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Mar 2019 17:18:20 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 10:08:22 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Git基础——代理</title>
+      <link>https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sat, 06 Apr 2019 10:08:22 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/</guid>
+      <description>&lt;p&gt;在Windows中设置Git代理，解决操作&lt;code&gt;git push&lt;/code&gt; 和&lt;code&gt;git clone&lt;/code&gt;时出现连接&lt;code&gt;Github&lt;/code&gt;失败的问题&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”</title>
-      <link>https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https-services.gradle.org-distributions-gradle-4.10.1-all.zip/</link>
+      <link>https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/</link>
       <pubDate>Sun, 31 Mar 2019 17:18:20 +0800</pubDate>
       
-      <guid>https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https-services.gradle.org-distributions-gradle-4.10.1-all.zip/</guid>
+      <guid>https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/</guid>
       <description>&lt;p&gt;解决Android Studio 3.3 同步项目时，一直卡在下载Gradle中&lt;/p&gt;</description>
     </item>
     
