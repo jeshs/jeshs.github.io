@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stf on Tom blog</title>
+    <link>https://jeshs.github.io/tags/stf/</link>
+    <description>Recent content in Stf on Tom blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 May 2019 23:53:35 +0800</lastBuildDate>
+    
+	<atom:link href="https://jeshs.github.io/tags/stf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Docker安装STF</title>
+      <link>https://jeshs.github.io/2019/05/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85stf/</link>
+      <pubDate>Tue, 07 May 2019 23:53:35 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/05/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85stf/</guid>
+      <description>&lt;p&gt;使用docker搭建STF手机管理平台&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

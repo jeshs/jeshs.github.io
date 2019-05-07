@@ -6,10 +6,19 @@
     <description>Recent content in 工具 on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Apr 2019 10:08:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 23:53:35 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用Docker安装STF</title>
+      <link>https://jeshs.github.io/2019/05/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85stf/</link>
+      <pubDate>Tue, 07 May 2019 23:53:35 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/05/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85stf/</guid>
+      <description>&lt;p&gt;使用docker搭建STF手机管理平台&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Git基础——代理</title>
