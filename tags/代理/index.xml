@@ -6,10 +6,19 @@
     <description>Recent content in 代理 on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Apr 2019 10:08:22 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 10:34:06 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/tags/%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在VPS安装V2ray代理</title>
+      <link>https://jeshs.github.io/2019/05/%E5%9C%A8vps%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sun, 12 May 2019 10:34:06 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/05/%E5%9C%A8vps%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86/</guid>
+      <description>&lt;p&gt;在VPS服务器上安装v2ray代理&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Git基础——代理</title>
