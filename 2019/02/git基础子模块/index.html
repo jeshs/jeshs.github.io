@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="Git, submodule, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解">
@@ -79,7 +79,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://jeshs.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://jeshs.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
     
     
 
@@ -239,149 +239,99 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <p>之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解</p>
-
 <h1 id="什么是git子模块">什么是Git子模块?</h1>
-
 <p>在一个项目中，有可能需要包含并使用另一个项目，它们虽然是两个独立的项目，但是处于一个项目中，为了避免混乱，Git引入了子模块submodule的概念</p>
-
 <blockquote>
 <p>子模块允许你将一个 Git 仓库作为另一个 Git 仓库的子目录。 它能让你将另一个仓库克隆到自己的项目中，同时还保持提交的独立</p>
 </blockquote>
-
 <h1 id="git子模块基本使用">Git子模块基本使用</h1>
-
 <h2 id="给项目添加子模块">给项目添加子模块</h2>
-
 <p>将一个已存在的 Git 仓库添加为正在工作的仓库的子模块</p>
-
-<pre><code class="language-shell">git submodule add &lt;GIT-PROJECT-URL&gt;
-</code></pre>
-
-<p>添加成功后会在项目下创建一个<code>.gitmodules</code>文件，该文件保存了子模块的基本信息，包括名称、path、url等，该文件也像 <code>.gitignore</code> 文件一样受到（通过）版本控制。 它会和该项目的其他部分一同被拉取推送</p>
-
-<pre><code class="language-shell">$ cat .gitmodules
-[submodule &quot;DbConnector&quot;]
-    path = DbConnector
-    url = https://github.com/chaconinc/DbConnector
-</code></pre>
-
-<h2 id="克隆含有子模块的项目">克隆含有子模块的项目</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add &lt;GIT-PROJECT-URL&gt;
+</code></pre></div><p>添加成功后会在项目下创建一个<code>.gitmodules</code>文件，该文件保存了子模块的基本信息，包括名称、path、url等，该文件也像 <code>.gitignore</code> 文件一样受到（通过）版本控制。 它会和该项目的其他部分一同被拉取推送</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cat .gitmodules
+<span style="color:#f92672">[</span>submodule <span style="color:#e6db74">&#34;DbConnector&#34;</span><span style="color:#f92672">]</span>
+	path <span style="color:#f92672">=</span> DbConnector
+	url <span style="color:#f92672">=</span> https://github.com/chaconinc/DbConnector
+</code></pre></div><h2 id="克隆含有子模块的项目">克隆含有子模块的项目</h2>
 <p>克隆含有子模块的项目，有两种方式</p>
-
 <ul>
-<li><p>使用<code>git clone</code>克隆主项目，克隆后默认会包含该子模块目录，但子模块中没有任何文件，只是一个空目录</p>
-
-<pre><code class="language-shell">git clone &lt;GIT-PROJECT-URL&gt;
-</code></pre>
-
-<p>必须运行两个命令：<code>git submodule init</code> 用来初始化本地配置文件，而 <code>git submodule update</code> 则从该项目中抓取所有数据并检出父项目中列出的合适的提交</p>
-
-<pre><code class="language-shell">git submodule init
+<li>
+<p>使用<code>git clone</code>克隆主项目，克隆后默认会包含该子模块目录，但子模块中没有任何文件，只是一个空目录</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone &lt;GIT-PROJECT-URL&gt;
+</code></pre></div><p>必须运行两个命令：<code>git submodule init</code> 用来初始化本地配置文件，而 <code>git submodule update</code> 则从该项目中抓取所有数据并检出父项目中列出的合适的提交</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule init
 git submodule update
-</code></pre></li>
-
-<li><p>另一个方法是克隆主项目时给 <code>git clone</code> 命令传递 <code>--recursive</code> 选项，它就会自动初始化并更新仓库中的每一个子模块</p>
-
-<pre><code class="language-shell">git clone --recursive &lt;GIT-PROJECT-URL&gt;
-</code></pre></li>
+</code></pre></div></li>
+<li>
+<p>另一个方法是克隆主项目时给 <code>git clone</code> 命令传递 <code>--recursive</code> 选项，它就会自动初始化并更新仓库中的每一个子模块</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone --recursive &lt;GIT-PROJECT-URL&gt;
+</code></pre></div></li>
 </ul>
-
 <h2 id="在包含子模块的项目上工作">在包含子模块的项目上工作</h2>
-
 <h3 id="拉取上游修改">拉取上游修改</h3>
-
 <p>如果想要在子模块中查看新工作，可以进入到目录中运行 <code>git fetch</code> 与 <code>git merge</code>，合并上游分支来更新本地代码</p>
-
-<pre><code class="language-shell">$ git fetch
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git fetch
 $ git merge origin/master
-</code></pre>
-
-<p>如果你不想在子目录中手动抓取与合并，那么还有种更容易的方式。 运行 <code>git submodule update --remote</code>，Git 将会进入子模块然后抓取并更新。Git 默认会尝试更新<strong>所有</strong>子模块，所以如果有很多子模块的话，你可以传递想要更新的子模块的名字。</p>
-
-<pre><code class="language-shell">$ git submodule update --remote
-</code></pre>
-
-<p>上面的命令只会更新并检出子模块的<code>master</code>分支，如果想要指定子模块的分支，如<code>stable</code>分支，执行下面的设置</p>
-
-<pre><code class="language-shell">$ git config -f .gitmodules submodule.SUB_PROJECT.branch stable
+</code></pre></div><p>如果你不想在子目录中手动抓取与合并，那么还有种更容易的方式。 运行 <code>git submodule update --remote</code>，Git 将会进入子模块然后抓取并更新。Git 默认会尝试更新<strong>所有</strong>子模块，所以如果有很多子模块的话，你可以传递想要更新的子模块的名字。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule update --remote
+</code></pre></div><p>上面的命令只会更新并检出子模块的<code>master</code>分支，如果想要指定子模块的分支，如<code>stable</code>分支，执行下面的设置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git config -f .gitmodules submodule.SUB_PROJECT.branch stable
 $ git submodule update --remote
-</code></pre>
-
-<h3 id="在子模块上工作">在子模块上工作</h3>
-
+</code></pre></div><h3 id="在子模块上工作">在子模块上工作</h3>
 <p>当我们运行 <code>git submodule update</code> 从子模块仓库中抓取修改时，Git 将会获得这些改动并更新子目录中的文件，但是会将子仓库留在一个称作 “游离的 HEAD” 的状态。 这意味着没有本地工作分支（例如 “master”）跟踪改动。 所以你做的任何改动都不会被跟踪</p>
-
 <p>为了将子模块设置得更容易进入并修改，你需要做两件事。 首先，进入每个子模块并检出其相应的工作分支。 接着，若你做了更改就需要告诉 Git 它该做什么，然后运行 <code>git submodule update --remote</code> 来从上游拉取新工作。 你可以选择将它们合并到你的本地工作中，也可以尝试将你的工作变基到新的更改上</p>
-
 <ol>
-<li><p>首先，进入子模块目录然后检出一个分支</p>
-
-<pre><code class="language-shell">$ git checkout master
-</code></pre></li>
-
-<li><p>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</p>
-
-<pre><code class="language-shell">$ git submodule update --remote --merge
-</code></pre></li>
-
-<li><p>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</p>
-
-<pre><code class="language-shell">$ git submodule update --remote --rebase
-</code></pre></li>
-
-<li><p>如果你忘记 <code>--rebase</code> 或 <code>--merge</code>，Git 会将子模块更新为服务器上的状态。并且会将项目重置为一个游离的 HEAD 状态</p>
-
-<pre><code class="language-shell">$ git submodule update --remote
+<li>
+<p>首先，进入子模块目录然后检出一个分支</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git checkout master
+</code></pre></div></li>
+<li>
+<p>然后尝试用 “merge” 选项。 为了手动指定它，我们只需给 <code>update</code> 添加 <code>--merge</code> 选项即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule update --remote --merge
+</code></pre></div></li>
+<li>
+<p>如果我们现在更新子模块，就会看到当我们在本地做了更改时上游也有一个改动，我们需要将它并入本地</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule update --remote --rebase
+</code></pre></div></li>
+<li>
+<p>如果你忘记 <code>--rebase</code> 或 <code>--merge</code>，Git 会将子模块更新为服务器上的状态。并且会将项目重置为一个游离的 HEAD 状态</p>
+<pre><code>```shell
 </code></pre>
-
+<p>$ git submodule update &ndash;remote
+```</p>
 <p>出现这个问题，只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
-
-<p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p></li>
+<p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p>
+</li>
 </ol>
-
 <h3 id="发布子模块改动">发布子模块改动</h3>
-
 <p>如果我们在主项目中提交并推送但并不推送子模块上的改动，其他人尝试检出我们修改会遇到麻烦，因为他们无法得到依赖的子模块改动。 那些改动只存在于我们本地的拷贝中。</p>
-
 <p>为了确保这不会发生，你可以让 Git 在推送到主项目前检查所有子模块是否已推送。 <code>git push</code> 命令接受可以设置为 “check” 或 “on-demand” 的 <code>--recurse-submodules</code> 参数。 如果任何提交的子模块改动没有推送那么 “check” 选项会直接使 <code>push</code> 操作失败</p>
-
-<pre><code class="language-shell">$ git push --recurse-submodules=check
-</code></pre>
-
-<p>另一个选项是使用 “on-demand” 值，Git 进入到 子模块中然后在推送主项目前推送子模块。 如果那个子模块因为某些原因推送失败，主项目也会推送失败</p>
-
-<pre><code class="language-shell">$ git push --recurse-submodules=on-demand
-</code></pre>
-
-<h3 id="删除子模块">删除子模块</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push --recurse-submodules<span style="color:#f92672">=</span>check
+</code></pre></div><p>另一个选项是使用 “on-demand” 值，Git 进入到 子模块中然后在推送主项目前推送子模块。 如果那个子模块因为某些原因推送失败，主项目也会推送失败</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git push --recurse-submodules<span style="color:#f92672">=</span>on-demand
+</code></pre></div><h3 id="删除子模块">删除子模块</h3>
 <p>先反初始化，再删除子模块，最后提交。模块名后面不要加<code>/</code></p>
-
-<pre><code class="language-shell">#反初始化
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#反初始化</span>
 git submodule deinit &lt;submodule&gt;
-#不保留在工作目录
+<span style="color:#75715e">#不保留在工作目录</span>
 git rm &lt;submodule&gt;
-#保留在工作目录
+<span style="color:#75715e">#保留在工作目录</span>
 git rm --cached &lt;submodule&gt;
-#提交
-git commit -am &quot;Remove a submodule.&quot;
-</code></pre>
-
-<h3 id="修改子模块url">修改子模块URL</h3>
-
+<span style="color:#75715e">#提交</span>
+git commit -am <span style="color:#e6db74">&#34;Remove a submodule.&#34;</span>
+</code></pre></div><h3 id="修改子模块url">修改子模块URL</h3>
 <ol>
-<li><p>编辑<code>.gitmodules</code>文件</p></li>
-
-<li><p>执行下列命令，执行后可以看到.git/config中url更新了</p>
-
-<pre><code class="language-shell">$ git submodule sync
-$ git commit -am &quot;Update submodule url.&quot; # 提交变更
-</code></pre></li>
+<li>
+<p>编辑<code>.gitmodules</code>文件</p>
+</li>
+<li>
+<p>执行下列命令，执行后可以看到.git/config中url更新了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule sync
+$ git commit -am <span style="color:#e6db74">&#34;Update submodule url.&#34;</span> <span style="color:#75715e"># 提交变更</span>
+</code></pre></div></li>
 </ol>
-
 <h3 id="合并子模块改动">合并子模块改动</h3>
-
 <ol>
 <li>首先解决冲突</li>
 <li>然后返回到主项目目录中</li>
@@ -389,11 +339,8 @@ $ git commit -am &quot;Update submodule url.&quot; # 提交变更
 <li>解决冲突的子模块记录</li>
 <li>提交我们的合并</li>
 </ol>
-
 <h1 id="参考">参考</h1>
-
 <p><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">Git官方文档</a></p>
-
 <p><a href="https://www.jianshu.com/p/ed0cb6c75e25">[Git] 如何优雅的删除子模块(submodule)或修改Submodule URL</a></p>
               
             </div>
@@ -476,7 +423,7 @@ $ git commit -am &quot;Update submodule url.&quot; # 提交变更
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 Tom. All Rights Reserved
+    &copy; 2020 Tom. All Rights Reserved
   </span>
 </footer>
 
@@ -572,211 +519,13 @@ $ git commit -am &quot;Update submodule url.&quot; # 提交变更
   </div>
 </div>
 
-    <div id="algolia-search-modal" class="modal-container">
-  <div class="modal">
-    <div class="modal-header">
-      <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
-        <span class="searchby-algolia-text text-color-light text-small">by</span>
-        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
-      </a>
-      <i class="search-icon fa fa-search"></i>
-      <form id="algolia-search-form">
-        <input type="text" id="algolia-search-input" name="search"
-          class="form-control input--large search-input" placeholder="搜索" />
-      </form>
-    </div>
-    <div class="modal-body">
-      <div class="no-result text-color-light text-center"></div>
-      <div class="results">
-        
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/05/%E5%9C%A8vps%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86/">
-                <h3 class="media-heading">在VPS安装V2ray代理</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在VPS服务器上安装v2ray代理</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/05/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85stf/">
-                <h3 class="media-heading">使用Docker安装STF</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>使用docker搭建STF手机管理平台</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/">
-                <h3 class="media-heading">Git基础——代理</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在Windows中设置Git代理，解决操作<code>git push</code> 和<code>git clone</code>时出现连接<code>Github</code>失败的问题</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/">
-                <h3 class="media-heading">解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>解决Android Studio 3.3 同步项目时，一直卡在下载Gradle中</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/">
-                <h3 class="media-heading">App UI自动化测试难点及应对策略</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-                <h3 class="media-heading">VirtualBox虚拟机不能ping通宿主机的解决方法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>解决VirtualBox虚拟机不能ping通宿主机的问题</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-                <h3 class="media-heading">Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>解决在Genymotion模拟器上安装APP失败的问题</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%89%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/">
-                <h3 class="media-heading">软件测试方法和技术实践笔记（三）——单元测试方法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>代码测试方法，包括自动代码扫描、插桩、单元测试框架等</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
-                <h3 class="media-heading">软件测试方法和技术实践笔记（二）——单元测试基础</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>单元测试基础</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
-                <h3 class="media-heading">软件测试方法和技术实践笔记（一）——软件测试基础</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>软件测试基础概要</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-      </div>
-    </div>
-    <div class="modal-footer">
-      <p class="results-count text-medium"
-         data-message-zero=""
-         data-message-one=""
-         data-message-other="">
-         15 posts found
-      </p>
-    </div>
-  </div>
-</div>
+    
+
     
   
     
-    <div id="cover" style="background-image:url('https://jeshs.github.io/images/cover.jpg');"></div>
+      <div id="cover" style="background-image:url('https://jeshs.github.io/cover.jpg');"></div>
+    
   
 
 
@@ -788,7 +537,7 @@ $ git commit -am &quot;Update submodule url.&quot; # 提交变更
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://jeshs.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+<script src="https://jeshs.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
 
 
 <script lang="javascript">

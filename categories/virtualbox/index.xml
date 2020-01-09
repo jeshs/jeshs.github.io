@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Virtualbox on Tom blog</title>
+    <title>VirtualBox on Tom blog</title>
     <link>https://jeshs.github.io/categories/virtualbox/</link>
-    <description>Recent content in Virtualbox on Tom blog</description>
+    <description>Recent content in VirtualBox on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 24 Feb 2019 21:13:40 +0800</lastBuildDate>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="brook, 代理, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="在Linux上搭建brook代理服务器">
@@ -79,7 +79,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
     
     
-    <link rel="stylesheet" href="https://jeshs.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    <link rel="stylesheet" href="https://jeshs.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
     
     
 
@@ -239,83 +239,68 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <p>在Linux上搭建brook代理服务器</p>
-
 <h1 id="brook简介">brook简介</h1>
-
 <p>Brook是一个跨平台的代理软件，使用简单，支持Linux、MacOS、Windows、Android、iOS等</p>
-
 <h1 id="安装brook服务器">安装brook服务器</h1>
-
 <p>brook分为服务端和客户端</p>
-
 <ol>
-<li><p>登录Linux服务器，下载brook，请将<code>v20190205</code>替换为最新版本</p>
-
-<pre><code class="language-shell">wget https://github.com/txthinking/brook/releases/download/v20190205/brook
-</code></pre></li>
-
-<li><p>赋予brook执行权限</p>
-
-<pre><code class="language-shell">chmod +x brook
-</code></pre></li>
-
-<li><p>启动brook，端口设置为<code>9999</code>，密码设置为<code>password</code>，同时监听TCP/UDP</p>
-
-<pre><code class="language-shell">./brook server -l :9999 -p password
-</code></pre></li>
-
-<li><p>停止brook<code>Control + C</code></p></li>
-
-<li><p>启动brook并在后台运行</p>
-
-<pre><code class="language-shell">nohup ./brook server -l :9999 -p password &amp;
-</code></pre></li>
-
-<li><p>如果想要停止后台brook，运行<code>killall brook</code></p></li>
+<li>
+<p>登录Linux服务器，下载brook，请将<code>v20190205</code>替换为最新版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://github.com/txthinking/brook/releases/download/v20190205/brook
+</code></pre></div></li>
+<li>
+<p>赋予brook执行权限</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">chmod +x brook
+</code></pre></div></li>
+<li>
+<p>启动brook，端口设置为<code>9999</code>，密码设置为<code>password</code>，同时监听TCP/UDP</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">./brook server -l :9999 -p password
+</code></pre></div></li>
+<li>
+<p>停止brook<code>Control + C</code></p>
+</li>
+<li>
+<p>启动brook并在后台运行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">nohup ./brook server -l :9999 -p password &amp;
+</code></pre></div></li>
+<li>
+<p>如果想要停止后台brook，运行<code>killall brook</code></p>
+</li>
 </ol>
-
 <h1 id="brook客户端">brook客户端</h1>
-
 <p>brook客户端支持多平台，这里只尝试了Android端和Windows端</p>
-
 <h2 id="android客户端">Android客户端</h2>
-
 <ol>
 <li>下载Android版本brook客户端<a href="https://github.com/txthinking/brook/releases">Brook.apk</a></li>
 <li>启动APP，配置服务器IP+端口、密码，点击“开启”按钮即可正常使用了</li>
 </ol>
-
 <h2 id="windows客户端">Windows客户端</h2>
-
 <p>Windows客户端有两种，一种是GUI，一种是CLI命令行的。我测试使用都不能正常使用，GUI版本无法访问Google。CLI版本提示<code>Invalid Version</code>，服务器提示<code>cipher: message authentication failed</code>，不知道是不是bug,还是版本有问题</p>
-
 <ul>
-<li><p>GUI版本</p>
-
+<li>
+<p>GUI版本</p>
 <ul>
 <li>下载<a href="https://github.com/txthinking/brook/releases">Brook.exe</a></li>
 <li>打开后任务栏有个图标，右键图标，点击Setting，配置服务器IP+端口，密码，点击SAVE保存配置</li>
 <li>右键任务栏图标，点击Start开启代理</li>
-</ul></li>
-
-<li><p>CLI版本</p>
-
+</ul>
+</li>
+<li>
+<p>CLI版本</p>
 <ul>
-<li><p>下载<a href="https://github.com/txthinking/brook/releases">brook_windows_amd64.exe</a></p></li>
-
-<li><p>打开CMD进入下载目录，执行命令开启代理</p></li>
+<li>
+<p>下载<a href="https://github.com/txthinking/brook/releases">brook_windows_amd64.exe</a></p>
+</li>
+<li>
+<p>打开CMD进入下载目录，执行命令开启代理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brook client -l 127.0.0.1:1080 -i 127.0.0.1 -s server_address:port -p password
+</code></pre></div></li>
 </ul>
-
-<pre><code class="language-shell">brook client -l 127.0.0.1:1080 -i 127.0.0.1 -s server_address:port -p password
-</code></pre></li>
+</li>
 </ul>
-
 <h1 id="总结">总结</h1>
-
 <p>总体感觉搭建使用比较简单，比较小巧，但是没有v2ray、SSR等成熟稳定，可以考虑作为备用方案</p>
-
 <h1 id="参考">参考</h1>
-
 <p><a href="https://github.com/txthinking/brook/wiki/How-to-use-Brook-Windows-Client%3F">brook wiki</a></p>
               
             </div>
@@ -398,7 +383,7 @@
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2019 Tom. All Rights Reserved
+    &copy; 2020 Tom. All Rights Reserved
   </span>
 </footer>
 
@@ -494,211 +479,13 @@
   </div>
 </div>
 
-    <div id="algolia-search-modal" class="modal-container">
-  <div class="modal">
-    <div class="modal-header">
-      <span class="close-button"><i class="fa fa-close"></i></span>
-      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
-        <span class="searchby-algolia-text text-color-light text-small">by</span>
-        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
-      </a>
-      <i class="search-icon fa fa-search"></i>
-      <form id="algolia-search-form">
-        <input type="text" id="algolia-search-input" name="search"
-          class="form-control input--large search-input" placeholder="搜索" />
-      </form>
-    </div>
-    <div class="modal-body">
-      <div class="no-result text-color-light text-center"></div>
-      <div class="results">
-        
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/05/%E5%9C%A8vps%E5%AE%89%E8%A3%85v2ray%E4%BB%A3%E7%90%86/">
-                <h3 class="media-heading">在VPS安装V2ray代理</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在VPS服务器上安装v2ray代理</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/05/%E4%BD%BF%E7%94%A8docker%E5%AE%89%E8%A3%85stf/">
-                <h3 class="media-heading">使用Docker安装STF</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>使用docker搭建STF手机管理平台</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/">
-                <h3 class="media-heading">Git基础——代理</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Apr 4, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>在Windows中设置Git代理，解决操作<code>git push</code> 和<code>git clone</code>时出现连接<code>Github</code>失败的问题</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/03/%E8%A7%A3%E5%86%B3android-studio-3.3-%E4%B8%80%E7%9B%B4%E5%8D%A1%E5%9C%A8download-https/services.gradle.org/distributions/gradle-4.10.1-all.zip/">
-                <h3 class="media-heading">解决Android Studio 3.3 一直卡在“Download https://services.gradle.org/distributions/gradle-4.10.1-all.zip”</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Mar 3, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>解决Android Studio 3.3 同步项目时，一直卡在下载Gradle中</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/app-ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E9%9A%BE%E7%82%B9%E5%8F%8A%E5%BA%94%E5%AF%B9%E7%AD%96%E7%95%A5/">
-                <h3 class="media-heading">App UI自动化测试难点及应对策略</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>App UI自动化测试中，稳定性差、可维护性差、执行效率低的解决方法和应对策略</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/virtualbox%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8D%E8%83%BDping%E9%80%9A%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-                <h3 class="media-heading">VirtualBox虚拟机不能ping通宿主机的解决方法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>解决VirtualBox虚拟机不能ping通宿主机的问题</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
-                <h3 class="media-heading">Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>解决在Genymotion模拟器上安装APP失败的问题</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%89%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/">
-                <h3 class="media-heading">软件测试方法和技术实践笔记（三）——单元测试方法</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>代码测试方法，包括自动代码扫描、插桩、单元测试框架等</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%BA%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
-                <h3 class="media-heading">软件测试方法和技术实践笔记（二）——单元测试基础</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>单元测试基础</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jeshs.github.io/2019/02/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0%E4%B8%80%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
-                <h3 class="media-heading">软件测试方法和技术实践笔记（一）——软件测试基础</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Feb 2, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>软件测试基础概要</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
-      </div>
-    </div>
-    <div class="modal-footer">
-      <p class="results-count text-medium"
-         data-message-zero=""
-         data-message-one=""
-         data-message-other="">
-         15 posts found
-      </p>
-    </div>
-  </div>
-</div>
+    
+
     
   
     
-    <div id="cover" style="background-image:url('https://jeshs.github.io/images/cover.jpg');"></div>
+      <div id="cover" style="background-image:url('https://jeshs.github.io/cover.jpg');"></div>
+    
   
 
 
@@ -710,7 +497,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
 
 
-<script src="https://jeshs.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+<script src="https://jeshs.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
 
 
 <script lang="javascript">

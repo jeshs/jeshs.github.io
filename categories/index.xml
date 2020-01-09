@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Tom blog</title>
@@ -6,10 +6,46 @@
     <description>Recent content in Categories on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Mar 2019 17:18:20 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 10:34:06 +0800</lastBuildDate>
     
 	<atom:link href="https://jeshs.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>代理</title>
+      <link>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sun, 12 May 2019 10:34:06 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>https://jeshs.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Sun, 12 May 2019 10:34:06 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>STF</title>
+      <link>https://jeshs.github.io/categories/stf/</link>
+      <pubDate>Tue, 07 May 2019 23:53:35 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/stf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://jeshs.github.io/categories/git/</link>
+      <pubDate>Sat, 06 Apr 2019 10:08:22 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/git/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Android</title>
@@ -30,6 +66,42 @@
     </item>
     
     <item>
+      <title>UI自动化测试</title>
+      <link>https://jeshs.github.io/categories/ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 26 Feb 2019 21:45:22 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>自动化测试</title>
+      <link>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 26 Feb 2019 21:45:22 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VirtualBox</title>
+      <link>https://jeshs.github.io/categories/virtualbox/</link>
+      <pubDate>Sun, 24 Feb 2019 21:13:40 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/virtualbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>问题解决</title>
+      <link>https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Sun, 24 Feb 2019 21:13:40 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Genymotion</title>
       <link>https://jeshs.github.io/categories/genymotion/</link>
       <pubDate>Sun, 24 Feb 2019 15:11:56 +0800</pubDate>
@@ -39,74 +111,11 @@
     </item>
     
     <item>
-      <title>Git</title>
-      <link>https://jeshs.github.io/categories/git/</link>
-      <pubDate>Sat, 06 Apr 2019 10:08:22 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Stf</title>
-      <link>https://jeshs.github.io/categories/stf/</link>
-      <pubDate>Tue, 07 May 2019 23:53:35 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/stf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ui自动化测试</title>
-      <link>https://jeshs.github.io/categories/ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Tue, 26 Feb 2019 21:45:22 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/ui%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Virtualbox</title>
-      <link>https://jeshs.github.io/categories/virtualbox/</link>
-      <pubDate>Sun, 24 Feb 2019 21:13:40 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/virtualbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>代理</title>
-      <link>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</link>
-      <pubDate>Sun, 12 May 2019 10:34:06 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/%E4%BB%A3%E7%90%86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>其它</title>
       <link>https://jeshs.github.io/categories/%E5%85%B6%E5%AE%83/</link>
       <pubDate>Fri, 22 Feb 2019 16:56:45 +0800</pubDate>
       
       <guid>https://jeshs.github.io/categories/%E5%85%B6%E5%AE%83/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>博客</title>
-      <link>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Sun, 20 Jan 2019 22:07:46 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>https://jeshs.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Sun, 12 May 2019 10:34:06 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
@@ -129,20 +138,11 @@
     </item>
     
     <item>
-      <title>自动化测试</title>
-      <link>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Tue, 26 Feb 2019 21:45:22 +0800</pubDate>
+      <title>博客</title>
+      <link>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 20 Jan 2019 22:07:46 +0800</pubDate>
       
-      <guid>https://jeshs.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>问题解决</title>
-      <link>https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
-      <pubDate>Sun, 24 Feb 2019 21:13:40 +0800</pubDate>
-      
-      <guid>https://jeshs.github.io/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
+      <guid>https://jeshs.github.io/categories/%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
     </item>
     
