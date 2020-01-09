@@ -29,5 +29,14 @@
       <description>&lt;p&gt;之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Git基础——常用操作</title>
+      <link>https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 22 Jan 2019 18:32:00 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/01/git%E5%9F%BA%E7%A1%80%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid>
+      <description>&lt;p&gt;Git常用方法和命令&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
