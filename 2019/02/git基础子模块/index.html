@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="Git, submodule, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="之前在搭建Hugo博客时，由于对Git子模块不熟悉，折腾了很久，本文对Git子模块进行基本了解">
@@ -276,14 +276,12 @@ $ git submodule update --remote
 </code></pre></div></li>
 <li>
 <p>如果你忘记 <code>--rebase</code> 或 <code>--merge</code>，Git 会将子模块更新为服务器上的状态。并且会将项目重置为一个游离的 HEAD 状态</p>
-<pre><code>```shell
+<pre><code>$ git submodule update --remote
 </code></pre>
-<p>$ git submodule update &ndash;remote
-```</p>
 <p>出现这个问题，只需回到目录中再次检出你的分支（即还包含着你的工作的分支）然后手动地合并或变基 <code>origin/stable</code>（或任何一个你想要的远程分支）就行了</p>
-<p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p>
 </li>
 </ol>
+<p>如果你没有提交子模块的改动，那么运行一个子模块更新也不会出现问题，此时 Git 会只会抓取更改而并不会覆盖子模块目录中未保存的工作</p>
 <h3 id="发布子模块改动">发布子模块改动</h3>
 <p>如果我们在主项目中提交并推送但并不推送子模块上的改动，其他人尝试检出我们修改会遇到麻烦，因为他们无法得到依赖的子模块改动。 那些改动只存在于我们本地的拷贝中。</p>
 <p>为了确保这不会发生，你可以让 Git 在推送到主项目前检查所有子模块是否已推送。 <code>git push</code> 命令接受可以设置为 “check” 或 “on-demand” 的 <code>--recurse-submodules</code> 参数。 如果任何提交的子模块改动没有推送那么 “check” 选项会直接使 <code>push</code> 操作失败</p>

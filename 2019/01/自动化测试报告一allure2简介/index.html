@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="Allure2, 测试报告, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="Allure2是一个开源测试报告框架，能够生成简洁美观的自动化测试报告输出">
@@ -258,16 +258,16 @@ Path %ALLURE_HOME%\bin
 <ul>
 <li>
 <p>从Allure结果数据生成报告，需要添加集成相应的库执行测试后才会生成测试结果到<code>allure-results</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\a</span>llure-results<span style="color:#ae81ff">\</span>
-</code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\a</span>llure-results<span style="color:#ae81ff">\
+</span></code></pre></div></li>
 <li>
 <p>从Junit测试结果生成报告，经过测试，以下路径都可以作为报告生成的来源数据，但是报告的详细程度都不如从<code>target\allure-results</code>生成的全面，生成的报告是比较简单的，只包含一些基本信息，缺少Allure的高级功能</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#这个命令生成报告过程中会报错，但是还是可以成功生成报告</span>
-$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\</span>
-$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\S</span>uite01<span style="color:#ae81ff">\</span>
-$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\x</span>ml<span style="color:#ae81ff">\</span>
-$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\j</span>unitreports<span style="color:#ae81ff">\</span>
-</code></pre></div></li>
+$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\S</span>uite01<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\x</span>ml<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>$ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget<span style="color:#ae81ff">\s</span>urefire-reports<span style="color:#ae81ff">\j</span>unitreports<span style="color:#ae81ff">\
+</span></code></pre></div></li>
 </ul>
 <p>如果不指定报告的生成目标路径，生成的报告会保存在当前目录下的<code>allure-report</code>文件夹，可以使用<code>-o</code>参数指定生成报告目标路径</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ allure generate &lt;directory-with-results&gt; -o &lt;directory-with-report&gt;
@@ -296,7 +296,7 @@ $ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget
 <p>标记不稳定测试，给方法或类添加<code>@Flaky</code>注解标记为不稳定的测试，标记的方法或类再测试报告中会显示一个炸弹图标</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Flaky</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> aTestWhichFailsFromTimeToTime <span style="color:#f92672">{</span>
-   <span style="color:#f92672">.</span><span style="color:#f92672">.</span><span style="color:#f92672">.</span>
+   <span style="color:#f92672">...</span>
 <span style="color:#f92672">}</span>
 </code></pre></div></li>
 <li>
@@ -306,60 +306,55 @@ $ allure generate &lt;PROJECT_PATH&gt;<span style="color:#ae81ff">\t</span>arget
 Browser.Version=63.0
 Stand=Production
 </code></pre><p><em>environment.xml</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;environment</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;parameter</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;key</span><span style="color:#f92672">&gt;</span>Browser<span style="color:#f92672">&lt;/key&gt;</span>
-      <span style="color:#f92672">&lt;value</span><span style="color:#f92672">&gt;</span>Chrome<span style="color:#f92672">&lt;/value&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;environment&gt;</span>
+  <span style="color:#f92672">&lt;parameter&gt;</span>
+      <span style="color:#f92672">&lt;key&gt;</span>Browser<span style="color:#f92672">&lt;/key&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>Chrome<span style="color:#f92672">&lt;/value&gt;</span>
   <span style="color:#f92672">&lt;/parameter&gt;</span>
-  <span style="color:#f92672">&lt;parameter</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;key</span><span style="color:#f92672">&gt;</span>Browser.Version<span style="color:#f92672">&lt;/key&gt;</span>
-      <span style="color:#f92672">&lt;value</span><span style="color:#f92672">&gt;</span>63.0<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;parameter&gt;</span>
+      <span style="color:#f92672">&lt;key&gt;</span>Browser.Version<span style="color:#f92672">&lt;/key&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>63.0<span style="color:#f92672">&lt;/value&gt;</span>
   <span style="color:#f92672">&lt;/parameter&gt;</span>
-  <span style="color:#f92672">&lt;parameter</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;key</span><span style="color:#f92672">&gt;</span>Stand<span style="color:#f92672">&lt;/key&gt;</span>
-      <span style="color:#f92672">&lt;value</span><span style="color:#f92672">&gt;</span>Production<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;parameter&gt;</span>
+      <span style="color:#f92672">&lt;key&gt;</span>Stand<span style="color:#f92672">&lt;/key&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>Production<span style="color:#f92672">&lt;/value&gt;</span>
   <span style="color:#f92672">&lt;/parameter&gt;</span>
 <span style="color:#f92672">&lt;/environment&gt;</span>
 </code></pre></div></li>
 <li>
 <p>缺陷分类，默认将缺陷分成两类</p>
 <ul>
-<li>
-<p>产品缺陷 由被测对象产生 failed test</p>
+<li>产品缺陷 由被测对象产生 failed test</li>
+</ul>
 </li>
 <li>
 <p>测试缺陷 由测试代码产生 broken test</p>
 <p>要自定义缺陷，请在生成报告之前将categories.json文件添加到allure-results目录</p>
 <p><em>categories.json</em></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"></code></pre></div></li>
-</ul>
-<p>[
+<pre><code>[
 {
-&ldquo;name&rdquo;: &ldquo;Ignored tests&rdquo;, 
-&ldquo;matchedStatuses&rdquo;: [&ldquo;skipped&rdquo;] 
+  &quot;name&quot;: &quot;Ignored tests&quot;, 
+  &quot;matchedStatuses&quot;: [&quot;skipped&quot;] 
 },
 {
-&ldquo;name&rdquo;: &ldquo;Infrastructure problems&rdquo;,
-&ldquo;matchedStatuses&rdquo;: [&ldquo;broken&rdquo;, &ldquo;failed&rdquo;]
-&ldquo;messageRegex&rdquo;: &ldquo;.<em>bye-bye.</em>&quot;, 
+  &quot;name&quot;: &quot;Infrastructure problems&quot;,
+  &quot;matchedStatuses&quot;: [&quot;broken&quot;, &quot;failed&quot;]
+  &quot;messageRegex&quot;: &quot;.*bye-bye.*&quot;, 
 },
 {
-&ldquo;name&rdquo;: &ldquo;Outdated tests&rdquo;,
-&ldquo;matchedStatuses&rdquo;: [&ldquo;broken&rdquo;]
-&ldquo;traceRegex&rdquo;: &ldquo;.<em>FileNotFoundException.</em>&quot;, 
+  &quot;name&quot;: &quot;Outdated tests&quot;,
+  &quot;matchedStatuses&quot;: [&quot;broken&quot;]
+  &quot;traceRegex&quot;: &quot;.*FileNotFoundException.*&quot;, 
 },
 {
-&ldquo;name&rdquo;: &ldquo;Product defects&rdquo;,
-&ldquo;matchedStatuses&rdquo;: [&ldquo;failed&rdquo;]
+  &quot;name&quot;: &quot;Product defects&quot;,
+  &quot;matchedStatuses&quot;: [&quot;failed&quot;]
 },
 {
-&ldquo;name&rdquo;: &ldquo;Test defects&rdquo;,
-&ldquo;matchedStatuses&rdquo;: [&ldquo;broken&rdquo;]
+  &quot;name&quot;: &quot;Test defects&quot;,
+  &quot;matchedStatuses&quot;: [&quot;broken&quot;]
 }
-]</p>
-<pre><code>
-
-
+]
 </code></pre></li>
 </ul>
 <h1 id="参考">参考</h1>

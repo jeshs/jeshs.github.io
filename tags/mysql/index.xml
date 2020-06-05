@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL on Tom blog</title>
+    <link>https://jeshs.github.io/tags/mysql/</link>
+    <description>Recent content in MySQL on Tom blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Mar 2019 10:09:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://jeshs.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Windows安装MySQL 8.0过程</title>
+      <link>https://jeshs.github.io/2019/03/%E5%9C%A8windows%E5%AE%89%E8%A3%85mysql-8.0%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Wed, 06 Mar 2019 10:09:49 +0800</pubDate>
+      
+      <guid>https://jeshs.github.io/2019/03/%E5%9C%A8windows%E5%AE%89%E8%A3%85mysql-8.0%E8%BF%87%E7%A8%8B/</guid>
+      <description>&lt;p&gt;在Windows安装MySQL 8.0 的步骤，使用的是免安装版&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

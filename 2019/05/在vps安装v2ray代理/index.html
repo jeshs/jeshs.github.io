@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.62.2 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="v2ray, 代理, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="在VPS服务器上安装v2ray代理">
@@ -231,7 +231,7 @@ tail -3 /etc/sudoers
 <p>为了防止服务器被暴力破解，编辑sshd配置文件，禁止root用户登录，更改ssh端口</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vi /etc/ssh/sshd_config
     PermitRootLogin no
-    Port 12345
+    Port <span style="color:#ae81ff">12345</span>
 </code></pre></div><p>重启sshd服务</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo service sshd restart
 </code></pre></div><p>提示：sudo vim /etc/passwd 将用户末尾改成 /bin/bash 解决乱码问题</p>
