@@ -6,11 +6,7 @@
     <description>Recent content in Git on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Apr 2019 10:08:22 +0800</lastBuildDate>
-    
-	<atom:link href="https://jeshs.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 06 Apr 2019 10:08:22 +0800</lastBuildDate><atom:link href="https://jeshs.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git基础——代理</title>
       <link>https://jeshs.github.io/2019/04/git%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%90%86/</link>

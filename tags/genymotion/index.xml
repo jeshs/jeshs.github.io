@@ -6,11 +6,7 @@
     <description>Recent content in Genymotion on Tom blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Feb 2019 15:11:56 +0800</lastBuildDate>
-    
-	<atom:link href="https://jeshs.github.io/tags/genymotion/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 24 Feb 2019 15:11:56 +0800</lastBuildDate><atom:link href="https://jeshs.github.io/tags/genymotion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Genymotion报错INSTALL_FAILED_CPU_ABI_INCOMPATIBLE的解决方法</title>
       <link>https://jeshs.github.io/2019/02/genymotion%E6%8A%A5%E9%94%99install_failed_cpu_abi_incompatible%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>

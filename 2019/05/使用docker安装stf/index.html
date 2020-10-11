@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.72.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="generator" content="Hugo 0.75.1 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="STF, Docker, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
 <meta name="description" content="使用docker搭建STF手机管理平台">
@@ -302,7 +302,7 @@ sudo docker pull sorccu/adb:latest <span style="color:#75715e"># android adb 镜
 sudo docker pull rethinkdb:latest <span style="color:#75715e"># rethinkdb 镜像</span>
 sudo docker pull openstf/ambassador:latest
 sudo docker pull nginx:latest <span style="color:#75715e"># nginx 代理镜像</span>
-sudo docker images <span style="color:#75715e">#查看已经拉取好的镜像</span> 
+sudo docker images <span style="color:#75715e">#查看已经拉取好的镜像 </span>
 </code></pre></div><p><strong>注意</strong>：如果拉取速度较慢，可以配置docker镜像加速。docker官方为国内提供了服务器</p>
 <p>添加以下配置到<code>/etc/docker/daemon.json</code>文件，没有该文件可以创建一个，注意文件必须是json格式。配置完成后需要重启docker</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
