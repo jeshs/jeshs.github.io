@@ -228,7 +228,7 @@
 <li>发布流程中某个必要的环节被省略，比如前端某个功能需要依赖后端，但是后端没有发布，导致前端功能不可用甚至崩溃等</li>
 <li>某些约定的规则通常是由少数当事人协商的，没有告知其他人员，或者即使告知了，其他人在大量的信息覆盖后很可能遗忘和忽略</li>
 <li>分散的信息散落在不同的地方、不同的人手上，如QQ群、微信群等聊天工具、腾讯文档、Excel、Word、PDF等，没有做到统一管理，导致有需要的时候获取的信息总是不完整的</li>
-<li>新入职或者新加入项目的人想要了解情况，只能找相关人员了解，一方面浪费沟通时间，另一方面临时口头表达的信息可能出现错误、不完整等问题</li>
+<li>新入职或者新加入项目的人想要了解情况，只能找相关人员了解，一方面浪费沟通时间，另一方面临时口头表达的信息可能出现错误、遗漏等问题</li>
 </ul>
 <h2 id="wiki系统的比较">Wiki系统的比较</h2>
 <p>作为企业内部使用的Wiki系统，需要满足以下几点：</p>
@@ -239,7 +239,7 @@
 <li>目录结构清晰，方面对信息进行统一管理和分类</li>
 <li>良好的使用体验，支持WYSIWYG所见即所得编辑器，方便不熟悉<code>Markdown</code>语法的人员编辑文档</li>
 </ul>
-<p>以下为个人对目前比较流行的Wiki系统进行初步实际体验后的总结，仅供参考。一个比较专业的wiki比较网站是<a href="https://www.wikimatrix.org/">WikiMatrix</a>，该网站支持以表格的形式对Wiki系统的各项功能进行详细比较。</p>
+<p>以下为个人对目前比较流行的Wiki系统进行初步体验后的总结，仅供参考。一个比较专业的wiki比较网站是<a href="https://www.wikimatrix.org/">WikiMatrix</a>，该网站支持以表格的形式对Wiki系统的各项功能进行详细比较。</p>
 <table>
 <thead>
 <tr>
@@ -696,7 +696,7 @@ quick
 </ul>
 </li>
 <li>
-<p>创建xwiki数据库，在mysql 8 中，InnoDB是默认的MySQL存储引擎</p>
+<p>创建xwiki数据库，在mysql 8 中，InnoDB是默认的MySQL存储引擎，不需要进行设置</p>
 <pre><code>mysql -u root -p -e &quot;create database xwiki default character set utf8mb4 collate utf8mb4_bin&quot;
 </code></pre></li>
 <li>
@@ -713,7 +713,7 @@ quick
 sudo chown tomcat:tomcat /opt/tomcat/webapps/xwiki/WEB-INF/lib/mysql-connector-java-8.0.21.jar
 </code></pre></li>
 <li>
-<p>编辑xwiki的数据库配置文件<code>WEB-INF/hibernate.cfg.xml</code>，注释默认的数据库配置部分，取消注释Mysql数据库配置部分（按照MySQL配置部分的说明，如果使用mysql 8+ JDBC driver，不需要``hibernate.connection.driver_class<code>属性，注释mysql配置部分的</code>hibernate.connection.driver_class`属性）</p>
+<p>编辑xwiki的数据库配置文件<code>WEB-INF/hibernate.cfg.xml</code>，注释默认的数据库配置部分，取消注释Mysql数据库配置部分（<del>按照MySQL配置部分的说明，如果使用mysql 8+ JDBC driver，不需要``hibernate.connection.driver_class<code>属性，注释mysql配置部分的</code>hibernate.connection.driver_class`属性</del>）</p>
 <pre><code>&lt;!--&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;--&gt;
 </code></pre></li>
 </ul>
@@ -721,6 +721,7 @@ sudo chown tomcat:tomcat /opt/tomcat/webapps/xwiki/WEB-INF/lib/mysql-connector-j
 <li>
 <p>解压xwiki 扩展文件<code>xip</code>文件到xwiki的永久目录<code>xwiki/data/extension/repository</code>，修改所有者和所属用户组为<code>tomcat</code></p>
 <pre><code>sudo unzip xwiki-platform-distribution-flavor-xip-12.8.xip -d xwiki/data/extension/repository
+  
 sudo chown tomcat:tomcat xwiki
 </code></pre></li>
 <li>
@@ -733,20 +734,29 @@ sudo chown tomcat:tomcat xwiki
 <li>
 <p>访问xwiki报错，查看xwiki日志<code>sudo tail -111f /opt/tomcat/logs/catalina.out</code></p>
 <pre><code>java.sql.SQLException: Cannot create PoolableConnectionFactory (Public Key Retrieval is not allowed)
-</code></pre><p>如果用户使用了 sha256_password 认证，密码在传输过程中必须使用 TLS 协议保护，但是如果 RSA 公钥不可用，可以使用服务器提供的公钥；可以在连接中通过 ServerRSAPublicKeyFile 指定服务器的 RSA 公钥，或者AllowPublicKeyRetrieval=True参数以允许客户端从服务器获取公钥；但是需要注意的是 AllowPublicKeyRetrieval=True可能会导致恶意的代理通过中间人攻击(MITM)获取到明文密码，所以默认是关闭的，必须显式开启。</p>
+</code></pre><p>查找资料，MySQL的官方文档：</p>
+<blockquote>
+<p>如果用户使用了 sha256_password 认证，密码在传输过程中必须使用 TLS 协议保护，但是如果 RSA 公钥不可用，可以使用服务器提供的公钥；可以在连接中通过 ServerRSAPublicKeyFile 指定服务器的 RSA 公钥，或者AllowPublicKeyRetrieval=True参数以允许客户端从服务器获取公钥；但是需要注意的是 AllowPublicKeyRetrieval=True可能会导致恶意的代理通过中间人攻击(MITM)获取到明文密码，所以默认是关闭的，必须显式开启。</p>
+</blockquote>
+<p>有两种解决方式</p>
 <ul>
 <li>
 <p>第一种方式可以用mysql_native_password插件鉴权,不要用sha256_password方式鉴权，编辑my.cnf文件（此方法测试不成功）</p>
-<pre><code>sudo vim /etc/my.cnf
-</code></pre><p>添加以下配置到[mysqld]部分，然后重启mysqld</p>
-<pre><code>default-authentication-plugin=mysql_native_password
-</code></pre></li>
-<li>
-<p>第二种方式是连接mysql的url中添加参数<code>allowPublicKeyRetrieval=true</code>，注意XML中<code>&amp;</code>符号用<code>&amp;amp;</code>表示</p>
-<pre><code>jdbc:mysql://localhost/xwiki?allowPublicKeyRetrieval=true&amp;amp;useSSL=false
-</code></pre></li>
+<pre><code></code></pre></li>
 </ul>
-</li>
+<p>sudo vim /etc/my.cnf</p>
+<pre><code>
+添加以下配置到[mysqld]部分，然后重启mysqld
+
+</code></pre><p>default-authentication-plugin=mysql_native_password</p>
+<pre><code>
+- 第二种方式是连接mysql的url中添加参数`allowPublicKeyRetrieval=true`，注意XML中`&amp;`符号用`&amp;amp;`表示
+
+</code></pre><p>jdbc:mysql://localhost/xwiki?allowPublicKeyRetrieval=true&amp;useSSL=false</p>
+<pre><code>
+  
+
+</code></pre></li>
 </ul>
 <h3 id="xwiki设置">XWiki设置</h3>
 <p>安装完成后，对XWiki进行一些设置，需要使用管理员账号登录</p>
