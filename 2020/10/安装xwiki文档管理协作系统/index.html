@@ -8,18 +8,18 @@
 <meta name="generator" content="Hugo 0.75.1 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Tom">
 <meta name="keywords" content="Wiki, XWiki, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文介绍XWiki的安装使用">
+<meta name="description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
 
 
-<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文介绍XWiki的安装使用">
+<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装XWiki文档管理协作系统">
 <meta name="twitter:title" content="安装XWiki文档管理协作系统">
 <meta property="og:url" content="https://jeshs.github.io/2020/10/%E5%AE%89%E8%A3%85xwiki%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 <meta property="twitter:url" content="https://jeshs.github.io/2020/10/%E5%AE%89%E8%A3%85xwiki%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文介绍XWiki的安装使用">
-<meta name="twitter:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文介绍XWiki的安装使用">
+<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
+<meta name="twitter:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -218,18 +218,20 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文介绍XWiki的安装使用</p>
+              <p>XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装</p>
 <h1 id="什么是wiki">什么是Wiki?</h1>
 <p><strong>Wiki</strong>是在<a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2">万维网</a>上开放，且可供多人协同创作的<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E7%B3%BB%E7%B5%B1">超文本系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E6%B2%83%E5%BE%B7%C2%B7%E5%9D%8E%E5%AE%81%E5%AE%89">沃德·坎宁安</a>于1995年首先开发。沃德·坎宁安将wiki定义为一种允许一群用户用简单的描述来创建和连接一组<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5">网页</a>的社会计算系统。如维基百科就是典型的Wiki应用</p>
 <p>作为信息共享和协作工具，Wiki也在互联网企业内部被广泛使用，如商业的企业协作软件<code>Confluence</code>，也有许多开源免费的Wiki软件</p>
 <h2 id="为什么需要搭建wiki系统">为什么需要搭建Wiki系统</h2>
-<p>Wiki作为团队信息和知识共享和协作工具，可以极大的提高团队协作效率和信息透明度，减少因信息同步不及时、信息分散等带来的问题，越是需要密切协作的团队，Wiki系统越重要，目前团队出现的问题包括：</p>
+<p>Wiki作为团队信息和知识共享和协作工具，可以极大的提高团队协作效率和信息透明度，减少因信息同步不及时、信息分散等原因带来的团队运转效率低下问题，越是需要密切协作的团队，Wiki系统越重要</p>
+<p>一个团队可以比作一个网络，每个人可以看作是网络中的一个节点，每个人既需要输出信息给其它人，也需要从其它人输入信息。输出的信息需要快速、准确地传达给其它人</p>
+<p>Wiki就是有效的信息管理工具，Wiki的作用包括：</p>
 <ul>
-<li>信息共享，发布流程中某个必要的环节执行缺失，比如前端某个功能需要依赖后端，但是后端没有发布，导致前端功能不可用甚至崩溃等</li>
-<li>信息保存，某些约定的规则通常是由少数当事人协商的，没有告知其他人员，或者即使告知了，其他人也很可能遗忘和忽略</li>
-<li>信息整合，分散的信息散落在不同的平台、不同的人、不同的文件中，为了获取资料，经常需要在自己电脑中、聊天群、在线文档查找，或者问别人等，没有做到统一管理，导致有需要的时候获取资料困难</li>
-<li>信息同步，文档的生产者如果更新了文档，没有办法及时传达给所有人，由于没有统一管理，有时候其它人想要更新文档也不方便</li>
-<li>低效的口口相传，新入职或者新加入项目的人想要了解情况，只能找相关人员了解，一方面浪费沟通时间，另一方面临时口头表达的信息可能出现错误、遗漏等问题</li>
+<li>信息共享，将个人的知识输出到平台，使其转化为团队的知识。新入职或者新加入项目的人想要了解情况，直接查阅文档，不需要找相关人员了解，因为这样既浪费沟通时间，又可能出现信息传达错误、遗漏等问题</li>
+<li>信息保存，在项目中，往往有许多约定的规则通常是由少数当事人协商的，如果没有告知其他人，或者即使告知了，其他人也很可能遗忘和忽略，因此记录在Wiki中可以让所有人避免这些坑</li>
+<li>信息整合，平时分散的信息散落在不同的平台、不同的人、不同的文件中，为了获取资料，经常需要在自己电脑中、聊天群、在线文档查找，或者问别人等，没有做到统一管理，导致有需要的时候获取困难，也不知道是否存在相关的文档。因此将全部文档整合在一个平台并分类管理就显得非常重要了</li>
+<li>信息同步，文档作者如果更新了文档，会自动通知关注了该文档的人</li>
+<li>信息修复，由于所有人都可以编辑，所以错误的信息会被立即修复，从而减少信息错误造成的成本</li>
 </ul>
 <h2 id="哪些信息需要上传到wiki">哪些信息需要上传到Wiki？</h2>
 <p>几乎所有和团队或项目相关的信息都可以上传到Wiki，包括但不限于</p>
@@ -251,6 +253,7 @@
 <li>测试技术</li>
 <li>会议纪要</li>
 <li>团建记录（经费、方案等）</li>
+<li>常见问题FAQ</li>
 </ul>
 <p>不应上传的内容</p>
 <ul>
@@ -284,7 +287,7 @@
 <tbody>
 <tr>
 <td>XWiki</td>
-<td>1、良好的用户使用体验  <!-- raw HTML omitted -->2、开源免费      <!-- raw HTML omitted -->3、功能成熟，评论、历史版本控制、通知等都是自带的  <!-- raw HTML omitted -->4、丰富的扩展和插件</td>
+<td>1、良好的用户使用体验  <!-- raw HTML omitted -->2、开源免费      <!-- raw HTML omitted -->3、功能成熟，评论、历史版本控制、通知等功能都是自带的  <!-- raw HTML omitted -->4、丰富的扩展和插件</td>
 <td>1、汉化不完全 <!-- raw HTML omitted -->2、部署较麻烦  <!-- raw HTML omitted -->3、部分插件需要付费使用</td>
 </tr>
 <tr>
