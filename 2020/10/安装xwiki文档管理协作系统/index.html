@@ -7,19 +7,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.75.1 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Tom">
-<meta name="keywords" content="Wiki, XWiki, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
-<meta name="description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
+<meta name="keywords" content="安装, XWiki, 软件测试, 自动化测试, 测试技术, 接口测试, 性能测试">
+<meta name="description" content="XWiki是一个使用Java编写的开源的Wiki引擎，是一个功能强大，类似confluence的知识管理系统，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装过程">
 
 
-<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
+<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，是一个功能强大，类似confluence的知识管理系统，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装过程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装XWiki文档管理协作系统">
 <meta name="twitter:title" content="安装XWiki文档管理协作系统">
 <meta property="og:url" content="https://jeshs.github.io/2020/10/%E5%AE%89%E8%A3%85xwiki%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 <meta property="twitter:url" content="https://jeshs.github.io/2020/10/%E5%AE%89%E8%A3%85xwiki%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 <meta property="og:site_name" content="Tom blog">
-<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
-<meta name="twitter:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装">
+<meta property="og:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，是一个功能强大，类似confluence的知识管理系统，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装过程">
+<meta name="twitter:description" content="XWiki是一个使用Java编写的开源的Wiki引擎，是一个功能强大，类似confluence的知识管理系统，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装过程">
 <meta property="og:locale" content="zh-cn">
 
   
@@ -218,7 +218,7 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>XWiki是一个使用Java编写的开源的Wiki引擎，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装</p>
+              <p>XWiki是一个使用Java编写的开源的Wiki引擎，是一个功能强大，类似<code>confluence</code>的知识管理系统，XWiki自称其为“第二代Wiki”。本文主要介绍为什么使用Wiki和XWiki的安装过程</p>
 <h1 id="什么是wiki">什么是Wiki?</h1>
 <p><strong>Wiki</strong>是在<a href="https://zh.wikipedia.org/wiki/%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2">万维网</a>上开放，且可供多人协同创作的<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E7%B3%BB%E7%B5%B1">超文本系统</a>，由<a href="https://zh.wikipedia.org/wiki/%E6%B2%83%E5%BE%B7%C2%B7%E5%9D%8E%E5%AE%81%E5%AE%89">沃德·坎宁安</a>于1995年首先开发。沃德·坎宁安将wiki定义为一种允许一群用户用简单的描述来创建和连接一组<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5">网页</a>的社会计算系统。如维基百科就是典型的Wiki应用</p>
 <p>作为信息共享和协作工具，Wiki也在互联网企业内部被广泛使用，如商业的企业协作软件<code>Confluence</code>，也有许多开源免费的Wiki软件</p>
@@ -275,7 +275,7 @@
 <li>目录结构清晰，支持对信息进行统一管理和分类，方便查找</li>
 <li>良好的使用体验，支持WYSIWYG所见即所得编辑器，方便不熟悉<code>Markdown</code>语法的人员编辑文档</li>
 </ul>
-<p>以下为个人对目前比较流行的Wiki系统进行初步体验后的总结，仅供参考。一个比较专业的wiki比较网站是<a href="https://www.wikimatrix.org/">WikiMatrix</a>，该网站支持以表格的形式对Wiki系统的各项功能进行详细比较。</p>
+<p>以下为个人对目前比较流行的Wiki系统进行初步体验后的简单对比，仅供参考。一个比较专业的wiki比较网站是<a href="https://www.wikimatrix.org/">WikiMatrix</a>，该网站支持以表格的形式对Wiki系统的各项功能进行详细比较</p>
 <table>
 <thead>
 <tr>
@@ -307,7 +307,7 @@
 </tr>
 </tbody>
 </table>
-<p>综合比较，xwiki符合需要，没有明显的缺点，作为团队协作工具是满足需求的</p>
+<p>综合比较，xwiki的功能符合需要，没有明显的缺点，作为团队协作工具是满足需求的</p>
 <h2 id="什么是xwiki">什么是XWiki</h2>
 <p>XWiki是开源的Wiki管理系统，具有和知名的协作软件confluence类似的功能，如内容管理（浏览、编辑、预览、保存）、支持附件、版本控制、全文本搜索、权限管理、WYSIWYG所见即所得编辑器、丰富的扩展（应用、宏、皮肤、插件、主题等）</p>
 <h1 id="安装xwiki">安装XWiki</h1>
@@ -419,7 +419,7 @@
 <p>支持的浏览器，除了老版本的IE和冷门浏览器，几乎都支持，详见<a href="https://dev.xwiki.org/xwiki/bin/view/Community/SupportStrategy/BrowserSupportStrategy">Browser Support Strategy</a></p>
 </li>
 <li>
-<p>内存，XWiki需要配置合适的内存，内存不是设置的越大越好，官方给出推荐设置如下</p>
+<p>内存，XWiki需要配置合适的内存，内存不是设置的越大越好，官方推荐设置如下</p>
 <ul>
 <li>
 <p>For Java 8 (i.e. XWiki &gt;= 8.1). Notice that there&rsquo;s no permgen anymore in Java 8:</p>
@@ -437,7 +437,7 @@
 </ul>
 </li>
 <li>
-<p>官方给出了xwiki.org网站的设置作参考</p>
+<p>官方也给出了xwiki.org网站的设置作参考</p>
 <pre><code>CATALINA_OPTS=&quot;-server -Xms800m -Xmx1600m -Dfile.encoding=utf-8 -Djava.awt.headless=true -XX:+UseParallelGC -XX:MaxGCPauseMillis=100&quot;
 </code></pre></li>
 </ul>
@@ -465,7 +465,7 @@ sudo wget &quot;https://maven.xwiki.org/stable/xwiki-stable.list&quot; -P /etc/a
 <pre><code>apt-cache search xwiki
 </code></pre></li>
 <li>
-<p>根据选择，包管理会安装所有必需的依赖项（应用程序服务器，数据库，Java运行时），如使用MySQL，输入以下命令安装，在安装过程中，dbconfig负责数据库的配置，它会询问数据库密码</p>
+<p>根据选择，包管理会安装所有必需的依赖项（应用程序服务器，数据库，Java运行时），如使用MySQL，输入以下命令安装，会自动安装<code>tomca9</code>和<code>mysql</code>在安装过程中，dbconfig负责数据库的配置，它会询问数据库密码</p>
 <pre><code>sudo apt-get install xwiki-tomcat9-mysql
 </code></pre></li>
 <li>
@@ -473,7 +473,7 @@ sudo wget &quot;https://maven.xwiki.org/stable/xwiki-stable.list&quot; -P /etc/a
 <pre><code>JAVA_OPTS=&quot;-Djava.awt.headless=true -Xmx1024m&quot;
 </code></pre></li>
 <li>
-<p>安装完成后，在浏览器访问XWiki：<code>http://localhost:8080/xwiki</code></p>
+<p>安装完成后，在浏览器访问XWiki打开安装向导：<code>http://localhost:8080/xwiki</code></p>
 </li>
 </ul>
 <h3 id="方式二使用war包安装">方式二：使用War包安装</h3>
@@ -482,7 +482,7 @@ sudo wget &quot;https://maven.xwiki.org/stable/xwiki-stable.list&quot; -P /etc/a
 <p>下载war包，地址：<code>https://www.xwiki.org/xwiki/bin/view/Download/</code></p>
 </li>
 <li>
-<p>下载离线安装标准Flavor扩展包<code>XIP Package</code>，扩展包可以看作是基本功能插件合集，在xwiki首次启动后的安装向导界面可以选择离线安装本地扩展包，在线安装非常慢，扩展包下载地址：<code>https://www.xwiki.org/xwiki/bin/view/Download/</code></p>
+<p>下载离线安装标准Flavor扩展包<code>XIP Package</code>，扩展包可以看作是基本功能插件合集，在xwiki首次启动后的安装向导界面可以选择离线安装xwiki xip扩展包。如选择在线安装，速度很可能非常慢。xwiki离线扩展包下载地址：<code>https://www.xwiki.org/xwiki/bin/view/Download/</code></p>
 </li>
 <li>
 <p>安装JAVA并设置环境变量</p>
@@ -495,7 +495,7 @@ sudo wget &quot;https://maven.xwiki.org/stable/xwiki-stable.list&quot; -P /etc/a
 <pre><code>sudo groupadd tomcat
 </code></pre></li>
 <li>
-<p>添加<code>tomcat</code>用户，设置禁止登录，设置用户组为<code>tomcat</code>，设置tomcat Home目录为<code>/opt/tomcat</code></p>
+<p>创建<code>tomcat</code>用户，设置禁止登录，设置用户组为<code>tomcat</code>，设置tomcat Home目录为<code>/opt/tomcat</code></p>
 <pre><code>sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 </code></pre></li>
 <li>
@@ -503,16 +503,16 @@ sudo wget &quot;https://maven.xwiki.org/stable/xwiki-stable.list&quot; -P /etc/a
 <pre><code>curl -O paste_the_tomcat_download_link_here
 </code></pre></li>
 <li>
-<p>创建<code>/opt/tomcat</code>目前，并解压tar包到该目录，参数<code>--strip-components=1</code>表示去掉解压后的第一层目录</p>
+<p>创建<code>/opt/tomcat</code>目录，并解压tar包到该目录，参数<code>--strip-components=1</code>表示去掉解压后的第一层（即最上层）目录</p>
 <pre><code>sudo mkdir /opt/tomcat
 sudo tar xzvf apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
 </code></pre></li>
 <li>
-<p>将<code>tomcat</code>安装目录授予<code>tomcat</code>用户组</p>
+<p>将<code>tomcat</code>安装目录和子目录授予<code>tomcat</code>用户组</p>
 <pre><code>sudo chgrp -R tomcat /opt/tomcat
 </code></pre></li>
 <li>
-<p>接下来，授予tomcat组对conf目录及其所有内容的读取权限，并执行对目录本身的访问权限</p>
+<p>接下来，授予tomcat组对conf目录及其所有内容的读取权限，以及conf目录本身的执行权限</p>
 <pre><code>sudo chmod -R g+r conf
 sudo chmod g+x conf
 </code></pre></li>
@@ -576,13 +576,13 @@ WantedBy=multi-user.target
 <p>默认是不能访问tomcat web管理界面的，需要进行配置</p>
 <ul>
 <li>
-<p>添加tomcat web管理账号，编辑<code>/opt/tomcat/conf/tomcat-users.xml</code>添加以下内容</p>
+<p>添加tomcat web管理账号，可以在<code>tomcat-users</code>标签之间定义一个用户，编辑<code>/opt/tomcat/conf/tomcat-users.xml</code>添加以下内容</p>
 <pre><code>&lt;tomcat-users . . .&gt;
     &lt;user username=&quot;admin&quot; password=&quot;password&quot; roles=&quot;manager-gui,admin-gui&quot;/&gt;
 &lt;/tomcat-users&gt;
 </code></pre></li>
 <li>
-<p>tomcat web管理界面，默认情况下，较新版本的Tomcat将访问Manager和Host Manager限制为来自服务器本身的连接，编辑以下文件</p>
+<p>tomcat web管理界面中，默认情况下，较新版本的Tomcat将访问Manager和Host Manager限制为来自服务器本身的连接，编辑以下文件注释IP限制</p>
 <ul>
 <li>
 <p>对于Server Status和Manager App，编辑下列文件注释IP限制</p>
@@ -592,15 +592,15 @@ WantedBy=multi-user.target
 <p>对于Host Manager，编辑下列文件注释IP限制</p>
 <pre><code>sudo vim /opt/tomcat/webapps/host-manager/META-INF/context.xml
 </code></pre></li>
-</ul>
-</li>
 <li>
-<p>注释IP限制</p>
+<p>注释IP限制，注释掉IP地址限制以允许从任何地方进行连接</p>
 <pre><code>&lt;Context antiResourceLocking=&quot;false&quot; privileged=&quot;true&quot; &gt;
   &lt;!--&lt;Valve className=&quot;org.apache.catalina.valves.RemoteAddrValve&quot;
          allow=&quot;127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1&quot; /&gt;--&gt;
 &lt;/Context&gt;
 </code></pre></li>
+</ul>
+</li>
 <li>
 <p>重启tomcat，即可从tomcat web管理界面访问Server Status、Manager App 和 Host Manager</p>
 <pre><code>sudo systemctl restart tomcat
@@ -613,8 +613,9 @@ WantedBy=multi-user.target
 sudo chown -R tomcat:tomcat /opt/tomcat/webapps/xwiki
 </code></pre></li>
 <li>
-<p>修改配置xwiki的永久目录，搜索<code>environment.permanentDirectory</code>字段设置xwiki的数据保存目录，注意该目录需要tomcat服务器具有写权限</p>
+<p>（可选）修改配置xwiki的永久目录，这是xwiki保存数据的地方。编辑设置文件<code>xwiki.properties</code>搜索<code>environment.permanentDirectory</code>字段进行设置xwiki永久目录为<code>/home/username/xwiki/data</code>，注意该目录也需要tomcat服务器具有读写权限</p>
 <pre><code>sudo vim /opt/tomcat/webapps/xwiki/WEB-INF/xwiki.properties
+sudo chown tomcat:tomcat -R /home/username/xwiki
 </code></pre></li>
 </ul>
 </li>
@@ -622,7 +623,7 @@ sudo chown -R tomcat:tomcat /opt/tomcat/webapps/xwiki
 <p>安装MySQL数据库</p>
 <ul>
 <li>
-<p>下载MySQL：<code>https://dev.mysql.com/downloads/mysql/</code>,并上传到服务器</p>
+<p>下载MySQL：<code>https://dev.mysql.com/downloads/mysql/</code>，并上传到服务器</p>
 </li>
 <li>
 <p>创建<code>mysql</code>用户组和用户</p>
@@ -650,13 +651,15 @@ sudo chmod 750 mysql-files
 <pre><code>mysqld --initialize --user=mysql
 </code></pre></li>
 <li>
-<p>正常启动mysql服务器，使用之前分配的随机root密码登录（手动输入容易出错，建议直接粘贴），如果输入<code>mysql -u root -p</code>时提示<code>mysql: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory</code>，则安装依赖<code>sudo apt install libncurses5</code></p>
-<pre><code>mysqld &amp;
+<p>正常启动mysql服务器，使用之前分配的随机root密码登录（手动输入容易出错，建议直接<code>shift+insert</code>粘贴），如果输入<code>mysql -u root -p</code>时提示<code>mysql: error while loading shared libraries: libncurses.so.5: cannot open shared object file: No such file or directory</code>，则安装依赖<code>sudo apt install libncurses5</code></p>
+<pre><code>#启动mysql服务
+mysqld &amp;
+#连接mysql服务
 mysql -u root -p
 Enter password: (在这里粘贴随机root密码)
 </code></pre></li>
 <li>
-<p>分配新的root密码，不要忘记末尾分号</p>
+<p>分配新的root密码，不要遗漏末尾分号</p>
 <pre><code>mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
 </code></pre></li>
 <li>
@@ -691,7 +694,7 @@ Type=notify
 TimeoutSec=0
       
 # Start main service
-ExecStart=/home/tom/mysql/bin/mysqld --defaults-file=/etc/my.cnf $MYSQLD_OPTS 
+ExecStart=/home/username/mysql/bin/mysqld --defaults-file=/etc/my.cnf $MYSQLD_OPTS 
       
 # Use this to switch malloc implementation
 EnvironmentFile=-/etc/sysconfig/mysql
@@ -732,7 +735,7 @@ quick
 </ul>
 </li>
 <li>
-<p>创建xwiki数据库，在mysql 8 中，InnoDB是默认的MySQL存储引擎，不需要进行设置</p>
+<p>创建xwiki数据库，在MySQL 8 中，由于InnoDB是默认的MySQL存储引擎，因此不需要进行额外的设置</p>
 <pre><code>mysql -u root -p -e &quot;create database xwiki default character set utf8mb4 collate utf8mb4_bin&quot;
 </code></pre></li>
 <li>
@@ -740,16 +743,72 @@ quick
 <pre><code>mysql -u root -p -e &quot;CREATE USER 'xwiki'@'localhost' IDENTIFIED BY 'xwiki'&quot;;
 </code></pre></li>
 <li>
-<p>给<code>xwiki</code>用户授权</p>
+<p>给MySQL数据库的<code>xwiki</code>用户授权</p>
 <pre><code>mysql -u root -p -e &quot;grant all privileges on *.* to xwiki@localhost&quot;
 </code></pre></li>
 <li>
 <p>下载MySQL JDBC Driver，如<code>mysql-connector-java-8.0.21.jar</code>，下载地址：<code>https://dev.mysql.com/downloads/connector/j/</code>，将jar复制到<code>/opt/tomcat/webapps/xwiki/WEB-INF/lib</code>目录，并修改权限</p>
-<pre><code>sudo cp /home/tom/mysql-connector-java-8.0.21.jar  /opt/tomcat/webapps/xwiki/WEB-INF/lib
+<pre><code>sudo cp /home/username/mysql-connector-java-8.0.21.jar  /opt/tomcat/webapps/xwiki/WEB-INF/lib
 sudo chown tomcat:tomcat /opt/tomcat/webapps/xwiki/WEB-INF/lib/mysql-connector-java-8.0.21.jar
 </code></pre></li>
 <li>
-<p>编辑xwiki的数据库配置文件<code>WEB-INF/hibernate.cfg.xml</code>，注释默认的数据库配置部分，取消注释Mysql数据库配置部分（<del>按照MySQL配置部分的说明，如果使用mysql 8+ JDBC driver，不需要``hibernate.connection.driver_class<code>属性，注释mysql配置部分的</code>hibernate.connection.driver_class`属性</del>）</p>
+<p>编辑xwiki的数据库配置文件<code>WEB-INF/hibernate.cfg.xml</code>，注释默认的数据库配置部分，如下所示</p>
+<pre><code>&lt;!-- Configuration for the default database.
+         Comment out this section and uncomment other sections below if you want to use another database.
+         Note that the database tables will be created automatically if they don't already exist.
+    
+         If you want the main wiki database to be different than &quot;xwiki&quot; (or the default schema for schema based engines)
+         you will also have to set the property xwiki.db in xwiki.cfg file
+    --&gt;
+    &lt;!--
+    &lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:hsqldb:file:${environment.permanentDirectory}/database/xwiki_db;shutdown=true&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.username&quot;&gt;sa&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.password&quot;&gt;&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;org.hsqldb.jdbcDriver&lt;/property&gt;
+    
+    &lt;property name=&quot;hibernate.connection.charSet&quot;&gt;UTF-8&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.useUnicode&quot;&gt;true&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.characterEncoding&quot;&gt;utf8&lt;/property&gt;
+    
+    &lt;mapping resource=&quot;xwiki.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;feeds.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;instance.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;notification-filter-preferences.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;mailsender.hbm.xml&quot;/&gt;
+    --&gt;
+    
+</code></pre></li>
+<li>
+<p>取消注释Mysql数据库配置部分，激活配置，并在这里配置相应的值，如下所示</p>
+<pre><code>&lt;!-- MySQL configuration.
+         Uncomment if you want to use MySQL and comment out other database configurations.
+         Notes:
+           - if you want the main wiki database to be different than &quot;xwiki&quot;
+             you will also have to set the property xwiki.db in xwiki.cfg file
+           - if you're using a MySQL 8+ JDBC driver, you don't need the &quot;hibernate.connection.driver_class&quot; which will
+             generate a warning since it's not needed as the driver is registered automatically
+    --&gt;
+    &lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql://localhost/xwiki?useSSL=false&amp;amp;allowPublicKeyRetrieval=true&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.username&quot;&gt;xwiki&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.password&quot;&gt;xwiki&lt;/property&gt;
+            &lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;
+    &lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQL5InnoDBDialect&lt;/property&gt;
+    &lt;property name=&quot;hibernate.dbcp.poolPreparedStatements&quot;&gt;true&lt;/property&gt;
+    &lt;property name=&quot;hibernate.dbcp.maxOpenPreparedStatements&quot;&gt;20&lt;/property&gt;
+    
+    &lt;property name=&quot;hibernate.connection.charSet&quot;&gt;UTF-8&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.useUnicode&quot;&gt;true&lt;/property&gt;
+    &lt;property name=&quot;hibernate.connection.characterEncoding&quot;&gt;utf8&lt;/property&gt;
+    
+    &lt;mapping resource=&quot;xwiki.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;feeds.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;instance.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;notification-filter-preferences.hbm.xml&quot;/&gt;
+    &lt;mapping resource=&quot;mailsender.hbm.xml&quot;/&gt;
+    
+</code></pre></li>
+<li>
+<p>按照<code>hibernate.cfg.xml</code>中MySQL配置部分的注释说明(if you&rsquo;re using a MySQL 8+ JDBC driver, you don&rsquo;t need the &ldquo;hibernate.connection.driver_class&rdquo; which will generate a warning since it&rsquo;s not needed as the driver is registered automatically)，如果使用MySQL 8和以上版本的 JDBC driver，就不需要配置<code>hibernate.connection.driver_class</code>属性。但是实际测试发现，如果注释了下面的配置后启动XWiki，会报错SQL连接异常！</p>
 <pre><code>&lt;!--&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.cj.jdbc.Driver&lt;/property&gt;--&gt;
 </code></pre></li>
 </ul>
@@ -767,134 +826,36 @@ sudo chown tomcat:tomcat xwiki
 <li>
 <p>访问xwiki：ip:8080/xwiki，首次访问会自动进入安装向导</p>
 </li>
-<li>
-<p>访问xwiki报错，查看xwiki日志<code>sudo tail -111f /opt/tomcat/logs/catalina.out</code></p>
+</ul>
+<h4 id="遇到的问题">遇到的问题</h4>
+<p>安装完成后，首次访问xwiki会进入安装向导，如果没有成功进入安装向导，可以查看<code>tomcat</code>日志</p>
+<pre><code>sudo tail -111f /opt/tomcat/logs/catalina.out
+</code></pre><p>出现下列错误</p>
 <pre><code>java.sql.SQLException: Cannot create PoolableConnectionFactory (Public Key Retrieval is not allowed)
-</code></pre><p>查找资料，MySQL的官方文档：</p>
+</code></pre><p>查找资料发现，MySQL的官方文档中有对这个问题的说明：</p>
 <blockquote>
 <p>如果用户使用了 sha256_password 认证，密码在传输过程中必须使用 TLS 协议保护，但是如果 RSA 公钥不可用，可以使用服务器提供的公钥；可以在连接中通过 ServerRSAPublicKeyFile 指定服务器的 RSA 公钥，或者AllowPublicKeyRetrieval=True参数以允许客户端从服务器获取公钥；但是需要注意的是 AllowPublicKeyRetrieval=True可能会导致恶意的代理通过中间人攻击(MITM)获取到明文密码，所以默认是关闭的，必须显式开启。</p>
 </blockquote>
 <p>有两种解决方式</p>
 <ul>
 <li>
-<p>第一种方式可以用mysql_native_password插件鉴权,不要用sha256_password方式鉴权，编辑my.cnf文件（此方法测试不成功）</p>
-<pre><code></code></pre></li>
-</ul>
-<p>sudo vim /etc/my.cnf</p>
-<pre><code>
-添加以下配置到[mysqld]部分，然后重启mysqld
-
-</code></pre><p>default-authentication-plugin=mysql_native_password</p>
-<pre><code>
-- 第二种方式是连接mysql的url中添加参数`allowPublicKeyRetrieval=true`，注意XML中`&amp;`符号用`&amp;amp;`表示
-
-</code></pre><p>jdbc:mysql://localhost/xwiki?allowPublicKeyRetrieval=true&amp;useSSL=false</p>
-<pre><code>
-  
-
-</code></pre></li>
-</ul>
-<h3 id="xwiki设置">XWiki设置</h3>
-<p>安装完成后，对XWiki进行一些设置，需要使用管理员账号登录</p>
-<ul>
-<li>
-<p>设置界面为中文，进入右上角设置&ndash;&gt;Content-Localization，Default Language设置为<code>中文（Chinese）</code></p>
-<ul>
-<li>设置为中文后，新创建的页面的属性LOCALE就是中文了</li>
-<li>搜索页面的结果列表中，默认只会展示页面LOCALE为<code>中文</code>和<code>No language</code>这2种搜索结果，需要手动勾选未展示的搜索结果</li>
-<li>设置为中文后，右上角的搜索框不能展示搜索建议了（无论是搜索中文页面还是英文页面、搜索的关键字是中文还是英文），但是在搜索页面还是能搜索到结果</li>
-<li>设置为中文（Chinese）后，页面编辑器展示的是繁体字，想要展示简体字，Default Language应设置为<code>中文(中国)</code></li>
-<li>设置为中文后，就搜不到页面LOCALE为中文的文章内容了，只能搜到文章标题，LOCALE为英文的页面内容还是可以搜到的，需要设置solr搜索引擎支持中文搜索</li>
-</ul>
-</li>
-<li>
-<p>设置solr搜索引擎支持中文搜索，如果将xwiki 的设置中的<code>Default Language</code> 设置为中文，就不能搜索到文档中的内容了，因为xwiki默认的solr搜索引擎不支持中文搜索（xwiki的搜索引擎也可以设置成<code>database</code>，测试发现设置<code>database</code>后可以搜索到文档内容，但是不会在搜索结果页面的列表中显示搜到的文档内容预览）。因此，最好的办法是修改solr配置以支持中文搜索</p>
-<ul>
-<li>
-<p>下载中文分词器<a href="https://github.com/magese/ik-analyzer-solr">ik-analyzer-solr</a>，包括jar包和工程文件</p>
-</li>
-<li>
-<p>将jar包放入Solr服务的<code>Jetty</code>或<code>Tomcat</code>的<code>webapp/WEB-INF/lib/</code>目录下，我的目录为<code>/home/tom/xwiki/data/store/solr/search/lib</code>（放到<code>/opt/tomcat/webapps/xwiki/WEB-INF/lib</code>应该也是可以的），修改jar包的权限为<code>tomcat</code></p>
-<pre><code>chown tomcat:tomcat ik-analyzer-8.3.0.jar
+<p>第一种方式可以用mysql_native_password插件鉴权,不要用sha256_password方式鉴权，编辑my.cnf文件（<strong>此方法测试不成功</strong>）</p>
+<pre><code>sudo vim /etc/my.cnf
+</code></pre><p>添加以下配置到[mysqld]部分，然后重启mysqld</p>
+<pre><code>default-authentication-plugin=mysql_native_password
 </code></pre></li>
 <li>
-<p>将<code>resources</code>目录下的5个文件放入solr服务的<code>Jetty</code>或<code>Tomcat</code>的<code>webapp/WEB-INF/classes/</code>目录下，我的目录是<code>/opt/tomcat/webapps/xwiki/WEB-INF/classes</code>，注意有3个文件是空的，不能使用rz命令上传，直接touch创建（这里可以设置stopword.dic和ext.dic文件的内容，在网上可以找到词库，我没有设置，留空的）</p>
-<pre><code>① IKAnalyzer.cfg.xml
-② ext.dic
-③ stopword.dic
-④ ik.conf
-⑤ dynamicdic.txt
-</code></pre><p>修改这些文件的权限</p>
-<pre><code>chown tomcat:tomcat dynamicdic.txt ext.dic stopword.dic IKAnalyzer.cfg.xml ik.conf 
+<p>第二种方式是连接MySQL的url中添加参数<code>allowPublicKeyRetrieval=true</code>，注意XML中<code>&amp;</code>符号用<code>&amp;amp;</code>表示。编辑xwiki的数据库配置文件<code>WEB-INF/hibernate.cfg.xml</code>，修改MySQL配置部分的<code>hibernate.connection.url</code>设置如下</p>
+<pre><code>&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql://localhost/xwiki?useSSL=false&amp;amp;allowPublicKeyRetrieval=true&lt;/property&gt;
 </code></pre></li>
-<li>
-<p>编辑solr的配置文件<code>vim /home/tom/xwiki/data/store/solr/search/conf/managed-schema</code>，添加以下内容</p>
-<pre><code>&lt;!-- ik分词器 --&gt;
-&lt;dynamicField name=&quot;*_zh&quot;  type=&quot;text_ik&quot;    indexed=&quot;true&quot;  stored=&quot;true&quot; multiValued=&quot;true&quot; /&gt;
-&lt;dynamicField name=&quot;*_zh_CN&quot;  type=&quot;text_ik&quot;    indexed=&quot;true&quot;  stored=&quot;true&quot; multiValued=&quot;true&quot; /&gt;
-&lt;dynamicField name=&quot;*_zh_TW&quot;  type=&quot;text_ik&quot;    indexed=&quot;true&quot;  stored=&quot;true&quot; multiValued=&quot;true&quot; /&gt;
-    
-    
-&lt;!-- ik分词器 --&gt;
-&lt;fieldType name=&quot;text_ik&quot; class=&quot;solr.TextField&quot;&gt;
-  &lt;analyzer type=&quot;index&quot;&gt;
-      &lt;tokenizer class=&quot;org.wltea.analyzer.lucene.IKTokenizerFactory&quot; useSmart=&quot;false&quot; conf=&quot;ik.conf&quot;/&gt;
-      &lt;filter class=&quot;solr.LowerCaseFilterFactory&quot;/&gt;
-  &lt;/analyzer&gt;
-  &lt;analyzer type=&quot;query&quot;&gt;
-      &lt;tokenizer class=&quot;org.wltea.analyzer.lucene.IKTokenizerFactory&quot; useSmart=&quot;true&quot; conf=&quot;ik.conf&quot;/&gt;
-      &lt;filter class=&quot;solr.LowerCaseFilterFactory&quot;/&gt;
-  &lt;/analyzer&gt;
-&lt;/fieldType&gt;
-</code></pre></li>
-<li>
-<p>重启xwiki</p>
-<pre><code>systemctl restart tomcat.service
-</code></pre></li>
-<li>
-<p>重新创建索引，进入xwiki设置&ndash;&gt;查询&ndash;&gt;查询&ndash;&gt;<code>Action</code>选择<code>Reindex</code>，点击<code>Apply</code>,等待索引创建完成，然后就可以搜索中文内容了</p>
-</li>
-</ul>
-</li>
-<li>
-<p>设置Office支持，安装libreoffice服务后，在xwiki创建页面时可以选择从office文件（doc、excel、ppt）导入到xwiki页面，还可以在CKEdit编辑器中点击“+”&ndash;&gt; import office file 导入到编辑器，不过不能完全保留源文档的全部格式特征。实际测试docx、xlsx导入成功，pptx导入失败</p>
-<ul>
-<li>
-<p>安装libreoffice</p>
-<pre><code>sudo apt-get install libreoffice
-</code></pre></li>
-<li>
-<p>在xwiki的配置文件中设置Libreoffice的home路径，并设置在xwiki启动时自动启动libreoffice服务，编辑<code>/opt/tomcat/webapps/xwiki/WEB-INF/xwiki.properties</code>文件</p>
-<pre><code>vim /opt/tomcat/webapps/xwiki/WEB-INF/xwiki.properties
-</code></pre><p>设置如下参数</p>
-<pre><code>openoffice.autoStart=true
-openoffice.homePath=/usr/lib/libreoffice/
-</code></pre></li>
-<li>
-<p>重新启动xwiki</p>
-<pre><code>systemctl restart tomcat.service
-</code></pre></li>
-<li>
-<p>进入xwiki的设置-内容-Office服务，选择启动服务，如果没有检测到安装的office，可能是homepath路径不对</p>
-</li>
-</ul>
-</li>
-<li>
-<p>设置编辑器颜色按钮，XWiki自带的CKEdit编辑器禁用了颜色按钮，需要在设置中启用。进入设置&ndash;&gt;Editing&ndash;&gt;WYSIWYG Editor&ndash;&gt;Disabled Plugins，取消选择<code>colorbutton</code>，保存即可</p>
-</li>
-<li>
-<p>支持markdown编辑，xwiki默认没有带markdown编辑，可以安装扩展支持</p>
-<ul>
-<li>安装扩展<code>Markdown Syntax 1.2</code></li>
-<li>进入设置&ndash;&gt;Syntaxes&ndash;&gt;取消勾选Markdown 1.2，保存即可</li>
-</ul>
-</li>
 </ul>
 <h1 id="参考">参考</h1>
-<p><a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Installation/">xwiki官方文档Installation</a></p>
+<p><a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Installation/">Installation</a></p>
+<p><a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Installation/InstallationViaAPT/">Installation using Debian (.DEB) packages</a></p>
+<p><a href="https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Installation/InstallationWAR/">Installing XWiki .war package manually</a></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/install-tomcat-9-ubuntu-1804">How To Install Apache Tomcat 9 on Ubuntu 18.04</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/109282621">XWiki的中文配置笔记</a></p>
-<p><a href="https://github.com/magese/ik-analyzer-solr">ik-analyzer-solr</a></p>
+<p><a href="https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/binary-installation.html">Chapter 3 Installing MySQL on Unix/Linux Using Generic Binaries</a></p>
+<p><a href="https://juejin.im/post/6844903740625911821">XWiki_安装和基础配置企业级知识库</a></p>
               
             </div>
           </div>
@@ -921,7 +882,7 @@ openoffice.homePath=/usr/lib/libreoffice/
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2020/10/xwiki%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E6%8F%92%E4%BB%B6/" data-tooltip="XWiki的配置和插件">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -989,7 +950,7 @@ openoffice.homePath=/usr/lib/libreoffice/
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jeshs.github.io/2020/10/xwiki%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E6%8F%92%E4%BB%B6/" data-tooltip="XWiki的配置和插件">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
